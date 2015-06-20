@@ -1,0 +1,20 @@
+.row {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.heading {
+	background-color: #5bc0de;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.first-level {
+  padding: 15px;
+  margin-bottom: 0px;
+}
+
+.second-level {
+  padding: 12px;
+  margin: 12px -9px 0px -15px;
+}

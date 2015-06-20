@@ -1,0 +1,26 @@
+.left-col.second-level {
+  margin: 12px -9px 0px -15px;
+}
+
+.right-col.second-level {
+  margin: 12px -15px 0px -9px;
+}
+
+.pk-feature {
+  border: 2px dashed #5bc0de;
+  border-radius: 6px;
+  height: 300px;
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+.left-col.pk-feature {
+  margin-right: -9px;
+  margin-left: -15px;
+}
+
+.right-col.pk-feature {
+  margin-right: -15px;
+  margin-left: -9px;
+}
+
