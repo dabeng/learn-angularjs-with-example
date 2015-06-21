@@ -17,6 +17,15 @@
       }
     });
 
+    // show additional explanation
+    $('.feature').popover({
+        selector: '.btn-expl',
+        html : true,
+        content: function() {
+          return $(this).siblings('.popoverContent').html();
+        }
+    });
+
   $( '#ng-data-bind' ).load( 'view/angularjs/data-bind.html', function() {
     angular.element('.ng-app').ready(function() {
       angular.bootstrap('.ng-app');
