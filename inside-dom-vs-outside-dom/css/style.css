@@ -6,21 +6,71 @@
   margin: 12px -15px 0px -9px;
 }
 
-.pk-feature {
+.feature-wrapper {
+  padding-bottom: 15px;
+}
+
+.feature {
   border: 2px dashed #5bc0de;
   border-radius: 6px;
   height: 300px;
   margin-top: 12px;
   margin-bottom: 0px;
+  padding: 10px;
 }
 
-.left-col.pk-feature {
+.left-col.feature {
   margin-right: -9px;
   margin-left: -15px;
+  overflow-y: hidden;
 }
 
-.right-col.pk-feature {
+.right-col.feature {
   margin-right: -15px;
   margin-left: -9px;
+  overflow-y: hidden;
 }
+
+.col-md-12 .feature {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  height: auto;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.btn-toggle {
+  color: #5bc0de;
+}
+
+pre {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  left: 17px;
+  margin: 0px;
+  background-color: transparent; 
+  border: none;
+  border-radius: 6px;
+  padding: 0px;
+  height: calc(50% - 25px);
+  overflow-y: hidden;
+}
+
+.col-md-12 pre {
+  height: auto;
+    position: relative;
+  top: auto;
+    right: auto;
+      left: auto;
+}
+/*code {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}*/
 
