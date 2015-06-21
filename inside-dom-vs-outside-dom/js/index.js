@@ -2,7 +2,7 @@
 
   $(function() {
     // switch viewport
-    $('.btn-toggle').on('click', function() {
+    $('.feature').on('click', '.btn-toggle', function() {
       var $this  = $(this);
       if ($this.is('.fa-square')) {
         $this.removeClass('fa-square').addClass('fa-th-large');
@@ -17,9 +17,15 @@
       }
     });
 
+  $( '#ng-data-bind' ).load( 'view/angularjs/data-bind.html', function() {
+    angular.element('.ng-app').ready(function() {
+      angular.bootstrap('.ng-app');
+    });
+
     $('code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
+  });
 
 
   });

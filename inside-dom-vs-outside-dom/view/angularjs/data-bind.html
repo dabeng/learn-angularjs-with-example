@@ -1,0 +1,25 @@
+<div class="toolbar">
+  <i class="fa fa-square fa-lg btn-toggle"></i>
+  <i class="fa fa-lightbulb-o fa-lg btn-expl"></i>
+  <i class="feature-name">Two Way Data-Binding</i>
+</div>
+<div class="ng-app">
+  <label for="fav-sport" >type your favorite sport:</label>
+  <input type="text" id="fav-sport" ng-model="user.favSport" />
+  <h3>Echo: {{user.favSport}}</h3>
+  <button type="button" class="btn btn-success" ng-click="user.favSport='football'">Football</button>
+  <button type="button" class="btn btn-primary" ng-click="user.favSport='basketball'">Basketball</button>
+  <button type="button" class="btn btn-warning" ng-click="user.favSport='ping  pong'">ping  pong</button>
+</div>
+<pre>
+  <code class="html">
+&lt;div ng-app&gt;
+  &lt;label for=&quot;fav-sport&quot; &gt;type you favorite sport:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;fav-sport&quot; ng-model=&quot;user.favSport&quot; /&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;user.favSport='football'&quot;&gt;Football&lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;user.favSport='basketball'&quot;&gt;Basketball&lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot; ng-click=&quot;user.favSport='ping  pong'&quot;&gt;ping  pong&lt;/button&gt;
+  &lt;h3&gt;Echo: {{user.favSport}}&lt;/h3&gt;
+&lt;/div&gt;
+  </code>
+</pre>

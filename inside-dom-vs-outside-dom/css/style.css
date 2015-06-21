@@ -13,7 +13,7 @@
 .feature {
   border: 2px dashed #5bc0de;
   border-radius: 6px;
-  height: 300px;
+  height: 360px;
   margin-top: 12px;
   margin-bottom: 0px;
   padding: 10px;
@@ -42,8 +42,21 @@
   overflow-y: auto;
 }
 
-.btn-toggle {
-  color: #5bc0de;
+.toolbar {
+  background-color: #5bc0de;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.toolbar .fa {
+  margin-right: 10px;
+}
+
+.feature-name {
+  font-weight: bold;
 }
 
 pre {
@@ -67,10 +80,5 @@ pre {
     right: auto;
       left: auto;
 }
-/*code {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}*/
+
 
