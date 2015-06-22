@@ -35,6 +35,7 @@
     $( '#ng-data-bind' ).load( 'view/angularjs/data-bind.html', function() {
       angular.bootstrap('#ng-data-bind', ['dataBindApp']);
 
+      // just need to highlight all the source code at a time
       $('code').each(function(i, block) {
         hljs.highlightBlock(block);
       });
