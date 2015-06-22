@@ -28,7 +28,7 @@ pre {
   margin-top: -20px;
 }
 
-.code-heading {
+.example-heading, .code-heading {
   padding: 5px;
   margin-bottom: 0px;
   font-weight: bold;

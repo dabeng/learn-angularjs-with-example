@@ -34,13 +34,17 @@
     // data-binding feature
     $( '#ng-data-bind' ).load( 'view/angularjs/data-bind.html', function() {
       angular.bootstrap('#ng-data-bind', ['dataBindApp']);
+    });
+
+      // show/hide feature
+    $( '#ng-show-hide' ).load( 'view/angularjs/show-hide.html', function() {
+      angular.bootstrap('#ng-show-hide', ['showHideApp']);
 
       // just need to highlight all the source code at a time
       $('code').each(function(i, block) {
         hljs.highlightBlock(block);
       });
     });
-
 
   });
 
