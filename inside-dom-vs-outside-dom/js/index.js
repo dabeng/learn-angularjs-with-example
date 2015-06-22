@@ -36,9 +36,14 @@
       angular.bootstrap('#ng-data-bind', ['dataBindApp']);
     });
 
-      // show/hide feature
+    // show/hide dom feature
     $( '#ng-show-hide' ).load( 'view/angularjs/show-hide.html', function() {
       angular.bootstrap('#ng-show-hide', ['showHideApp']);
+    });
+
+    // show/hide feature
+    $( '#ng-switch-dom' ).load( 'view/angularjs/switch-dom.html', function() {
+      angular.bootstrap('#ng-switch-dom', ['switchDomApp']);
 
       // just need to highlight all the source code at a time
       $('code').each(function(i, block) {
