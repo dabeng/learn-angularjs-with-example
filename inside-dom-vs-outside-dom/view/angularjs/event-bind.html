@@ -1,24 +1,22 @@
+<div class="toolbar">
+  <i class="fa fa-square fa-lg btn-toggle"></i>
+  <i class="feature-name">Event-Binding</i>
+</div>
 <div ng-controller="EventBindCtrl">
-  <div class="toolbar">
-    <i class="fa fa-square fa-lg btn-toggle"></i>
-    <i class="feature-name">Event-Binding</i>
-  </div>
-  <div class="ng-app">
-    <button type="button" class="btn btn-success" ng-click="sayHello()">Say Hello</button>
-  </div>
-  <pre>
-    <code class="html">
+  <button type="button" class="btn btn-success" ng-click="sayHello()">Say Hello</button>
+</div>
+<pre>
+  <code class="html">
 &lt;div class=&quot;ng-app&quot;&gt;
   &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;&quot;&gt;Football&lt;/button&gt;
 &lt;/div&gt;
-    </code>
-  </pre>
-</div>
+  </code>
+</pre>
 <script type="text/javascript">
-      var eventBindApp = angular.module('eventBindApp', []);
-    eventBindApp.controller('EventBindCtrl', function($scope) {
-      $scope.sayHello = function() {
-        alert('Hello, guys!')
-      };
-    });
+  var eventBindApp = angular.module('eventBindApp', []);
+  eventBindApp.controller('EventBindCtrl', function($scope) {
+    $scope.sayHello = function() {
+      alert('Hello, guys!');
+    };
+  });
 </script>

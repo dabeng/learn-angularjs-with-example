@@ -26,26 +26,19 @@
         }
     });
 
+    // event-binding feature
     $( '#ng-event-bind' ).load( 'view/angularjs/event-bind.html', function() {
-      // angular.element('#ng-event-bind .ng-app').ready(function() {
-      //   angular.bootstrap('.ng-app');
-      // });
       angular.bootstrap('#ng-event-bind', ['eventBindApp']);
+    });
 
-      $( '#ng-event-bind' ).find('code').each(function(i, block) {
+    // data-binding feature
+    $( '#ng-data-bind' ).load( 'view/angularjs/data-bind.html', function() {
+      angular.bootstrap('#ng-data-bind', ['dataBindApp']);
+
+      $('code').each(function(i, block) {
         hljs.highlightBlock(block);
       });
     });
-
-  $( '#ng-data-bind' ).load( 'view/angularjs/data-bind.html', function() {
-    // angular.element('#ng-data-bind .ng-app').ready(function() {
-    //   angular.bootstrap('.ng-app');
-    // });
-    angular.bootstrap('#ng-data-bind', ['dataBindApp']);
-    $( '#ng-data-bind' ).find('code').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
-  });
 
 
   });

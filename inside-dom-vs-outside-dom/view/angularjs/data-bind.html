@@ -1,4 +1,3 @@
-<div ng-class="DataBindCtrl">
 <div class="toolbar">
   <i class="fa fa-square fa-lg btn-toggle"></i>
   <i class="fa fa-lightbulb-o fa-lg btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
@@ -7,9 +6,9 @@
     <img src="img/data-bind.jpg">
   </div>
 </div>
-<div class="ng-app">
+<div ng-controller="DataBindCtrl">
   <label for="fav-sport" >type your favorite sport:</label>
-  <input type="text" id="fav-sport" ng-model="favSport" />
+  <input type="text" id="fav-sport" ng-model="favSport" placeholder="haha" />
   <h3>Echo: {{favSport}}</h3>
   <button type="button" class="btn btn-success" ng-click="favSport='football'">Football</button>
   <button type="button" class="btn btn-primary" ng-click="favSport='basketball'">Basketball</button>
@@ -27,10 +26,9 @@
 &lt;/div&gt;
   </code>
 </pre>
-</div>
 <script type="text/javascript">
-      var dataBindApp = angular.module('dataBindApp', []);
-    dataBindApp.controller('DataBindCtrl', function($scope) {
-      $scope.favSport = 'My favorite sport'
-    });
+  var dataBindApp = angular.module('dataBindApp', []);
+  dataBindApp.controller('DataBindCtrl', function($scope) {
+    $scope.favSport = '';
+  });
 </script>
