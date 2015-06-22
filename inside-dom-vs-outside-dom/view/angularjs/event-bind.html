@@ -5,11 +5,24 @@
 <div ng-controller="EventBindCtrl">
   <button type="button" class="btn btn-success" ng-click="sayHello()">Say Hello</button>
 </div>
+<hr>
+<p class="bg-success code-heading">html source code</p>
 <pre>
   <code class="html">
-&lt;div class=&quot;ng-app&quot;&gt;
-  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;&quot;&gt;Football&lt;/button&gt;
+&lt;div ng-controller=&quot;EventBindCtrl&quot;&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;sayHello()&quot;&gt;Say Hello&lt;/button&gt;
 &lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var eventBindApp = angular.module('eventBindApp', []);
+eventBindApp.controller('EventBindCtrl', function($scope) {
+  $scope.sayHello = function() {
+    alert('Hello, guys!');
+  };
+});
   </code>
 </pre>
 <script type="text/javascript">

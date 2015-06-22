@@ -4,7 +4,7 @@
 }
 
 .heading {
-	background-color: #5bc0de;
+  background-color: #5bc0de;
   color: #fff;
   border-radius: 6px;
 }
@@ -17,4 +17,20 @@
 .second-level {
   padding: 12px;
   margin: 12px -9px 0px -15px;
+}
+
+hr {
+  border-width: 2px;
+  border-color: #5bc0de;
+}
+
+pre {
+  margin-top: -20px;
+}
+
+.code-heading {
+  padding: 5px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  text-align: center;
 }

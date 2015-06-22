@@ -74,25 +74,11 @@
 }
 
 pre {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  left: 17px;
-  margin: 0px;
   background-color: transparent; 
   border: none;
   border-radius: 6px;
   padding: 0px;
-  height: calc(50% - 25px);
   overflow-y: hidden;
-}
-
-.col-md-12 pre {
-  position: relative;
-  top: auto;
-  right: auto;
-  left: auto;
-  height: auto;
 }
 
 

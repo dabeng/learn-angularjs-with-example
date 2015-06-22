@@ -14,16 +14,27 @@
   <button type="button" class="btn btn-primary" ng-click="favSport='basketball'">Basketball</button>
   <button type="button" class="btn btn-warning" ng-click="favSport='ping  pong'">ping  pong</button>
 </div>
+<hr>
+<p class="bg-success code-heading">html source code</p>
 <pre>
   <code class="html">
-&lt;div ng-app&gt;
-  &lt;label for=&quot;fav-sport&quot; &gt;type you favorite sport:&lt;/label&gt;
-  &lt;input type=&quot;text&quot; id=&quot;fav-sport&quot; ng-model=&quot;user.favSport&quot; /&gt;
-  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;user.favSport='football'&quot;&gt;Football&lt;/button&gt;
-  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;user.favSport='basketball'&quot;&gt;Basketball&lt;/button&gt;
-  &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot; ng-click=&quot;user.favSport='ping  pong'&quot;&gt;ping  pong&lt;/button&gt;
-  &lt;h3&gt;Echo: {{user.favSport}}&lt;/h3&gt;
+&lt;div ng-controller=&quot;DataBindCtrl&quot;&gt;
+  &lt;label for=&quot;fav-sport&quot; &gt;type your favorite sport:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;fav-sport&quot; ng-model=&quot;favSport&quot; placeholder=&quot;haha&quot; /&gt;
+  &lt;h3&gt;Echo: {{favSport}}&lt;/h3&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;favSport='football'&quot;&gt;Football&lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;favSport='basketball'&quot;&gt;Basketball&lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot; ng-click=&quot;favSport='ping  pong'&quot;&gt;ping  pong&lt;/button&gt;
 &lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var dataBindApp = angular.module('dataBindApp', []);
+dataBindApp.controller('DataBindCtrl', function($scope) {
+  $scope.favSport = '';
+});
   </code>
 </pre>
 <script type="text/javascript">
