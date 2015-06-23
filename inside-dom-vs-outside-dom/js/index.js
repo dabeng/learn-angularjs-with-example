@@ -1,5 +1,12 @@
 (function($) {
 
+  // format the source code
+  function formatSourceCode(selector) {
+    $(selector).find('code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  }
+
   $(function() {
     // switch viewport
     $('.feature').on('click', '.btn-toggle', function() {
@@ -29,31 +36,31 @@
     // event-binding feature
     $('#ng-event-bind').load( 'view/angularjs/event-bind.html', function() {
       angular.bootstrap('#ng-event-bind', ['eventBindApp']);
+      formatSourceCode('#ng-event-bind');
     });
 
     // data-binding feature
     $('#ng-data-bind').load( 'view/angularjs/data-bind.html', function() {
       angular.bootstrap('#ng-data-bind', ['dataBindApp']);
+      formatSourceCode('#ng-data-bind');
     });
 
     // show/hide dom feature
     $('#ng-show-hide').load( 'view/angularjs/show-hide.html', function() {
       angular.bootstrap('#ng-show-hide', ['showHideApp']);
+      formatSourceCode('#ng-show-hide');
     });
 
     // show/hide feature
     $('#ng-switch-dom').load( 'view/angularjs/switch-dom.html', function() {
       angular.bootstrap('#ng-switch-dom', ['switchDomApp']);
+      formatSourceCode('#ng-switch-dom');
     });
 
     // filter feature
     $('#ng-filter').load( 'view/angularjs/filter.html', function() {
       angular.bootstrap('#ng-filter', ['filterApp']);
-
-      // just need to highlight all the source code at a time
-      $('code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
+      formatSourceCode('#ng-filter');
     });
 
   });
