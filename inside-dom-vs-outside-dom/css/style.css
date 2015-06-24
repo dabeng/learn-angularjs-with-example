@@ -68,7 +68,7 @@
   margin-right: 10px;
 }
 
-.toolbar .fa:hover {
+.toolbar .tool-btn:hover {
   transform: scale(1.5);
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
