@@ -71,6 +71,7 @@ dataBindApp.controller('DataBindCtrl', function($scope) {
 <script type="text/javascript">
   dataBindApp.controller('NgRepeatCtrl', function($scope) {
     $scope.candidates = [];
+    $scope.newCandidate ={};
     $scope.loadData = function() {
       $scope.candidates =
         [{name:'Sebastiane', department:'Philosophy'},
@@ -94,3 +95,62 @@ dataBindApp.controller('DataBindCtrl', function($scope) {
     };
   });
 </script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgRepeatCtrl&quot; class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;h3 style=&quot;display: inline-block;&quot;&gt;&lt;span class=&quot;label label-primary&quot;&gt;candidates list of election&lt;/span&gt;&lt;/h3&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;loadData()&quot;&gt;Load Data&lt;/button&gt;
+    &lt;ul&gt;
+      &lt;li ng-repeat=&quot;candidate in candidates&quot;&gt;
+        {{ candidate.name }} from {{ candidate.department }}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;li class=&quot;fa fa-smile-o fa-lg&quot;&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Name&quot; ng-model=&quot;newCandidate.name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;li class=&quot;fa fa-book fa-lg&quot;&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Department&quot; ng-model=&quot;newCandidate.department&quot;&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;appendCandidate()&quot;&gt;Append New Candidate&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var dataBindApp = angular.module('dataBindApp', []);
+dataBindApp.controller('NgRepeatCtrl', function($scope) {
+  $scope.candidates = [];
+  $scope.newCandidate ={};
+  $scope.loadData = function() {
+    $scope.candidates =
+      [{name:'Sebastiane', department:'Philosophy'},
+       {name:'Wendy', department:'Mathematics'},
+       {name:'Mike', department:'Economics'},
+       {name:'Adam', department:'Computer Science'},
+       {name:'Barton', department:'Electronics'},
+       {name:'Clark', department:'Accountancy'},
+       {name:'Emma', department:'Mechanical Engineering'},
+       {name:'George', department:'Communications'},
+       {name:'Mike', department:'Civil Engineering'},
+       {name:'Marina', department:'Human Resources'},
+       {name:'Julia', department:'Tourism Science'},
+       {name:'Donald', department:'Politics'}];
+  };
+
+  $scope.appendCandidate = function() {
+    if (this.newCandidate.name && this.newCandidate.department) {
+      this.candidates.push({ 'name': this.newCandidate.name, 'department': this.newCandidate.department });
+    }
+  };
+});
+  </code>
+</pre>

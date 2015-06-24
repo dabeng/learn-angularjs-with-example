@@ -1,3 +1,8 @@
+.input-group-addon {
+  color: #000;
+  background-color: #f0ad4e;
+}
+
 .left-col.second-level {
   margin: 12px -9px 0px -15px;
 }
