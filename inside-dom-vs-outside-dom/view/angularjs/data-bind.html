@@ -7,6 +7,7 @@
     <img src="img/data-bind.jpg">
   </div>
 </div>
+<p class="bg-info example-heading">Explicit example</p>
 <div ng-controller="DataBindCtrl">
   <label for="fav-sport" >type your favorite sport:</label>
   <input type="text" id="fav-sport" ng-model="favSport" placeholder="haha" />
@@ -15,6 +16,12 @@
   <button type="button" class="btn btn-primary" ng-click="favSport='basketball'">Basketball</button>
   <button type="button" class="btn btn-warning" ng-click="favSport='ping  pong'">ping  pong</button>
 </div>
+<script type="text/javascript">
+  var dataBindApp = angular.module('dataBindApp', []);
+  dataBindApp.controller('DataBindCtrl', function($scope) {
+    $scope.favSport = '';
+  });
+</script>
 <hr>
 <p class="bg-success code-heading">html source code</p>
 <pre>
@@ -38,9 +45,52 @@ dataBindApp.controller('DataBindCtrl', function($scope) {
 });
   </code>
 </pre>
+<p class="bg-info example-heading">Implicit example</p>
+<div ng-controller="NgRepeatCtrl" class="row">
+  <div class="col-md-4">
+    <h3 style="display: inline-block;"><span class="label label-primary">candidates list of election</span></h3>
+    <button type="button" class="btn btn-success" ng-click="loadData()">Load Data</button>
+    <ul>
+      <li ng-repeat="candidate in candidates">
+        {{ candidate.name }} from {{ candidate.department }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div class="input-group" style="margin-bottom: 20px; margin-top: 20px;">
+      <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
+      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
+    </div>
+    <div class="input-group" style="margin-bottom: 20px;">
+      <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
+      <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
+    </div>
+    <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
+  </div>
+</div>
 <script type="text/javascript">
-  var dataBindApp = angular.module('dataBindApp', []);
-  dataBindApp.controller('DataBindCtrl', function($scope) {
-    $scope.favSport = '';
+  dataBindApp.controller('NgRepeatCtrl', function($scope) {
+    $scope.candidates = [];
+    $scope.loadData = function() {
+      $scope.candidates =
+        [{name:'Sebastiane', department:'Philosophy'},
+         {name:'Wendy', department:'Mathematics'},
+         {name:'Mike', department:'Economics'},
+         {name:'Adam', department:'Computer Science'},
+         {name:'Barton', department:'Electronics'},
+         {name:'Clark', department:'Accountancy'},
+         {name:'Emma', department:'Mechanical Engineering'},
+         {name:'George', department:'Communications'},
+         {name:'Mike', department:'Civil Engineering'},
+         {name:'Marina', department:'Human Resources'},
+         {name:'Julia', department:'Tourism Science'},
+         {name:'Donald', department:'Politics'}];
+    };
+
+    $scope.appendCandidate = function() {
+      if (this.newCandidate.name && this.newCandidate.department) {
+        this.candidates.push({ 'name': this.newCandidate.name, 'department': this.newCandidate.department });
+      }
+    };
   });
 </script>
