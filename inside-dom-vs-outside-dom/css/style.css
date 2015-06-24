@@ -19,7 +19,7 @@
   padding: 10px;
 }
 
-.feature .fa {
+.toolbar .tool-btn {
   cursor:  pointer;
 }
 
@@ -63,9 +63,16 @@
   border-top-right-radius: 4px;
 }
 
-.toolbar .fa {
+.toolbar i {
   color: #fff;
   margin-right: 10px;
+}
+
+.toolbar .fa:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
 }
 
 .feature-name {
