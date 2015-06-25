@@ -68,6 +68,12 @@
       formatSourceCode('#ng-filter');
     });
 
+    // watcher behind tow-way data-bing
+    $('#ng-watcher').load( 'view/angularjs/watcher.html', function() {
+      angular.bootstrap('#ng-watcher', ['wtacherApp']);
+      formatSourceCode('#ng-watcher');
+    });
+
   });
 
 }(jQuery));

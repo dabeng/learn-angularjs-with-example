@@ -1,0 +1,23 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle"></i>
+  <i class="feature-name">dirty checking + $watch() + $digest() + $apply()</i>
+  <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
+  <i class="fa fa-star-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+  <i class="fa fa-star-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">$watch()</p>
+<div ng-controller="WatchCtrl">
+  <label for="fav-sport" >type your favorite sport:</label>
+  <input type="text" id="fav-sport" ng-model="favSport" placeholder="haha" />
+  <h3>Echo: {{favSport}}</h3>
+  <button type="button" class="btn btn-success" ng-click="favSport='football'">Football</button>
+  <button type="button" class="btn btn-primary" ng-click="favSport='basketball'">Basketball</button>
+  <button type="button" class="btn btn-warning" ng-click="favSport='ping  pong'">ping  pong</button>
+</div>
+<script type="text/javascript">
+  var watcherApp = angular.module('watcherApp', []);
+  watcherApp.controller('WatchCtrl', function($scope) {
+    $scope.favSport = '';
+  });
+</script>
+<hr>
