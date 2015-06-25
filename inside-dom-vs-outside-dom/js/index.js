@@ -33,6 +33,11 @@
         }
     });
 
+    // initialize tooltips of toolbar buttons
+    $('.feature').tooltip({
+      selector: '[data-toggle="tooltip"]'
+    });
+
     // event-binding feature
     $('#ng-event-bind').load( 'view/angularjs/event-bind.html', function() {
       angular.bootstrap('#ng-event-bind', ['eventBindApp']);
