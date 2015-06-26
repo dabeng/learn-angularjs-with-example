@@ -70,7 +70,7 @@
 
     // watcher behind tow-way data-bing
     $('#ng-watcher').load( 'view/angularjs/watcher.html', function() {
-      angular.bootstrap('#ng-watcher', ['wtacherApp']);
+      angular.bootstrap('#ng-watcher', ['watcherApp']);
       formatSourceCode('#ng-watcher');
     });
 
