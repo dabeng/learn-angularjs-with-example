@@ -26,11 +26,11 @@
 
     // show additional explanation
     $('.feature').popover({
-        selector: '.btn-expl',
-        html : true,
-        content: function() {
-          return $(this).siblings('.popoverContent').html();
-        }
+      selector: '.btn-expl',
+      html : true,
+      content: function() {
+        return $(this).siblings('.popoverContent').html();
+      }
     });
 
     // initialize tooltips of toolbar buttons
