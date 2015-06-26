@@ -22,6 +22,6 @@ AngularJS is amiable js framework as well as powerful. Let's step to her inch by
 * ngResource
 * ngMockE2E
 
-## lesson 5 - practical app demonstration
+## Lesson 5 - practical app demonstration
 * Let's sumup what AnguarlJS can do for you
 * Cohort — https://github.com/dabeng/cohort
