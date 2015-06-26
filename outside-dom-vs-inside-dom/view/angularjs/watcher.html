@@ -1,0 +1,95 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name">dirty checking + $watch() + $digest() + $apply()</i>
+  <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
+  <i class="fa fa-star fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+  <i class="fa fa-star fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">$watch()</p>
+<div ng-controller="WatchCtrl">
+  <div class="input-group" style="margin-bottom: 10px;">
+    <span class="input-group-addon"><i class="fa fa-comment-o fa-lg"></i></span>
+    <input type="text" class="form-control" id="mycomment" ng-disabled="disabled" value="haha">
+  </div>
+  <button type="button" class="btn btn-primary" ng-click="editComment()">
+    <li class="fa fa-pencil"></li> Edit
+  </button>
+  <button type="button" class="btn btn-success" ng-click="saveComment()">
+    <li class="fa fa-save"></li> Save
+  </button>
+  <span class="label label-warning pull-right" style="font-size:16px;">
+    edited on {{ editTime | date:'yyyy-MM-dd HH:mm:ss' }}
+  </span>
+</div>
+<script type="text/javascript">
+  var watcherApp = angular.module('watcherApp', []);
+  watcherApp.controller('WatchCtrl', function($scope) {
+    $scope.disabled = true;
+    $scope.comment = '';
+
+    $scope.editComment = function() {
+      this.disabled = false;
+    };
+
+    $scope.$watch('comment', function (newValue, oldValue) {
+      // we did nothing at the first run because there was no change of value in that time
+      if (newValue) {
+        $scope.editTime = new Date();
+      }
+    });
+
+    $scope.saveComment = function(event) {
+      this.comment = angular.element('#mycomment')[0].value.trim();
+      this.disabled = true;
+    }
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;WatchCtrl&quot;&gt;
+  &lt;div class=&quot;input-group&quot;&gt;
+    &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-comment-o&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;mycomment&quot; ng-disabled=&quot;disabled&quot; value=&quot;haha&quot;&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;editComment()&quot;&gt;
+    &lt;li class=&quot;fa fa-pencil&quot;&gt;&lt;/li&gt; Edit
+  &lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;saveComment()&quot;&gt;
+    &lt;li class=&quot;fa fa-save&quot;&gt;&lt;/li&gt; Save
+  &lt;/button&gt;
+  &lt;span class=&quot;label label-warning pull-right&quot;&gt;
+    edited on {{ editTime | date:'yyyy-MM-dd HH:mm:ss' }}
+  &lt;/span&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var watcherApp = angular.module('watcherApp', []);
+watcherApp.controller('WatchCtrl', function($scope) {
+  $scope.disabled = true;
+  $scope.comment = '';
+
+  $scope.editComment = function() {
+    this.disabled = false;
+  };
+
+  $scope.$watch('comment', function (newValue, oldValue) {
+    // we did nothing at the first run because there was no change of value in that time
+    if (newValue) {
+      $scope.editTime = new Date();
+    }
+  });
+
+  $scope.saveComment = function(event) {
+    this.comment = angular.element('#mycomment')[0].value.trim();
+    this.disabled = true;
+  }
+});
+  </code>
+</pre>
+
+  
