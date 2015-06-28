@@ -34,3 +34,18 @@ pre {
   font-weight: bold;
   text-align: center;
 }
+
+.code-heading i {
+  margin-right: 10px;
+}
+
+.code-heading i:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+.feature .popover {
+  max-width: 100%;
+}

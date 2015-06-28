@@ -38,6 +38,18 @@
       selector: '[data-toggle="tooltip"]'
     });
 
+    // binding 
+    $('.feature').on('click', '.btn-toggle-code', function() {
+      var $this = $(this);
+      if ($this.is('.fa-chevron-circle-up')) {
+        $this.removeClass('fa-chevron-circle-up').addClass('fa-chevron-circle-down')
+          .parent().next().children().addClass('hidden');
+      } else {
+        $this.removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up')
+          .parent().next().children().removeClass('hidden');
+      }
+    });
+
     // event-binding feature
     $('#ng-event-bind').load( 'view/angularjs/event-bind.html', function() {
       angular.bootstrap('#ng-event-bind', ['eventBindApp']);

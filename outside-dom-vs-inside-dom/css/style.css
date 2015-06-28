@@ -28,10 +28,6 @@
   cursor:  pointer;
 }
 
-.feature .popover {
-  max-width: 100%;
-}
-
 .feature .popover-title {
   color: #5bc0de;
   font-weight: bold;

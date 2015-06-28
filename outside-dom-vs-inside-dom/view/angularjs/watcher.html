@@ -1,11 +1,10 @@
 <div class="toolbar">
   <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
-  <i class="feature-name">dirty checking + $watch() + $digest() + $apply()</i>
-  <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
+  <i class="feature-name">$watch() + $digest() + $apply()</i>
   <i class="fa fa-star fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
   <i class="fa fa-star fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
 </div>
-<p class="bg-info example-heading">$watch()</p>
+<div class="bg-info example-heading"><span>$watch()</span></div>
 <div ng-controller="WatchCtrl">
   <div class="input-group" style="margin-bottom: 10px;">
     <span class="input-group-addon"><i class="fa fa-comment-o fa-lg"></i></span>
@@ -32,7 +31,7 @@
     };
 
     $scope.$watch('comment', function (newValue, oldValue) {
-      // we did nothing at the first run because there was no change of value in that time
+      // we did nothing at the controller initialization period because there was no change of modal in that time
       if (newValue) {
         $scope.editTime = new Date();
       }
@@ -44,8 +43,7 @@
     }
   });
 </script>
-<hr>
-<p class="bg-success code-heading">html source code</p>
+<div class="bg-success code-heading"><span>html source code</span></div>
 <pre>
   <code class="html">
 &lt;div ng-controller=&quot;WatchCtrl&quot;&gt;
@@ -91,5 +89,184 @@ watcherApp.controller('WatchCtrl', function($scope) {
 });
   </code>
 </pre>
+<hr>
+<p class="bg-info example-heading">$digest, $apply</p>
+<div ng-controller="WithoutDigestCtrl">
+  <div class="input-group" style="margin-bottom: 10px;">
+    <span class="input-group-addon"><i class="fa fa-comment-o fa-lg"></i></span>
+    <input type="text" class="form-control" ng-model="mycomment" ng-disabled="true">
+  </div>
+  <button type="button" class="btn btn-primary" ng-click="ngComment()">
+    <li class="fa fa-thumbs-o-up"></li> I like AngularJS
+  </button>
+  <button type="button" class="btn btn-success" id="btn-js-comment1">
+    <li class="fa fa-thumbs-o-down"></li> I dislike AngularJS
+  </button>
+</div>
+<script type="text/javascript">
+  watcherApp.controller('WithoutDigestCtrl', function($scope) {
+    $scope.mycomment = 'blablabla';
 
-  
+    $scope.ngComment = function() {
+      $scope.mycomment = 'I like AngularJS';
+    };
+
+    $('#btn-js-comment1').on('click', function() {
+      $scope.mycomment = 'I dislike AngularJS';
+      // current comment is now "dislike ...", but we can't see it in the view
+      console.log($scope.mycomment);
+    });
+  });
+</script>
+<div class="bg-success code-heading">
+  <span>html source code</span>
+  <i class="fa fa-chevron-circle-up btn-toggle-code"></i>
+</div>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;WithoutDigestCtrl&quot;&gt;
+  &lt;div class=&quot;input-group&quot;&gt;
+    &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-comment-o fa-lg&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; ng-model=&quot;mycomment&quot; ng-disabled=&quot;true&quot;&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;ngComment()&quot;&gt;
+    &lt;li class=&quot;fa fa-thumbs-o-up&quot;&gt;&lt;/li&gt; I like AngularJS
+  &lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; id=&quot;btn-js-comment1&quot;&gt;
+    &lt;li class=&quot;fa fa-thumbs-o-down&quot;&gt;&lt;/li&gt; I dislike AngularJS
+  &lt;/button&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<div class="bg-success code-heading">
+  <span>javascript source code</span>
+  <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Note" data-placement="bottom"></i>
+  <i class="fa fa-chevron-circle-up btn-toggle-code"></i>
+  <div class="popoverContent hidden">
+    The $scope.$digest() function iterates through all the watches in the $scope object, and its child $scope objects.
+  </div>
+</div>
+<pre>
+  <code class="javascript">
+var watcherApp = angular.module('watcherApp', []);
+watcherApp.controller('WithoutDigestCtrl', function($scope) {
+  $scope.mycomment = 'blablabla';
+
+  $scope.ngComment = function() {
+    $scope.mycomment = 'I like AngularJS';
+  };
+
+  $('#btn-js-comment1').on('click', function() {
+    $scope.mycomment = 'I dislike AngularJS';
+    // current comment is now "dislike ...", but we can't see it in the view
+    console.log($scope.mycomment);
+  });
+});
+  </code>
+</pre>
+<hr>
+<div ng-controller="WithDigestCtrl">
+  <div class="input-group" style="margin-bottom: 10px;">
+    <span class="input-group-addon"><i class="fa fa-comment-o fa-lg"></i></span>
+    <input type="text" class="form-control" ng-model="mycomment" ng-disabled="true">
+  </div>
+  <button type="button" class="btn btn-primary" ng-click="ngComment()">
+    <li class="fa fa-thumbs-o-up"></li> I like AngularJS
+  </button>
+  <button type="button" class="btn btn-success" id="btn-js-comment2">
+    <li class="fa fa-thumbs-o-down"></li> I dislike AngularJS
+  </button>
+</div>
+<script type="text/javascript">
+  watcherApp.controller('WithDigestCtrl', function($scope) {
+    $scope.mycomment = 'blablabla';
+
+    $scope.ngComment = function() {
+      $scope.mycomment = 'I like AngularJS';
+    };
+
+    $('#btn-js-comment2').on('click', function() {
+      $scope.mycomment = 'I dislike AngularJS';
+      $scope.$digest();
+    });
+  });
+</script>
+<div class="bg-success code-heading">
+  <span>javascript source code</span>
+  <i class="fa fa-chevron-circle-up btn-toggle-code"></i>
+</div>
+<pre>
+  <code class="javascript">
+var watcherApp = angular.module('watcherApp', []);
+watcherApp.controller('WithDigestCtrl', function($scope) {
+  $scope.mycomment = 'blablabla';
+
+  $scope.ngComment = function() {
+    $scope.mycomment = 'I like AngularJS';
+  };
+
+  $('#btn-js-comment2').on('click', function() {
+    $scope.mycomment = 'I dislike AngularJS';
+    $scope.$digest();
+  });
+});
+  </code>
+</pre>
+<hr>
+<div ng-controller="WithApplyCtrl">
+  <div class="input-group" style="margin-bottom: 10px;">
+    <span class="input-group-addon"><i class="fa fa-comment-o fa-lg"></i></span>
+    <input type="text" class="form-control" ng-model="mycomment" ng-disabled="true">
+  </div>
+  <button type="button" class="btn btn-primary" ng-click="ngComment()">
+    <li class="fa fa-thumbs-o-up"></li> I like AngularJS
+  </button>
+  <button type="button" class="btn btn-success" id="btn-js-comment3">
+    <li class="fa fa-thumbs-o-down"></li> I dislike AngularJS
+  </button>
+</div>
+<script type="text/javascript">
+  watcherApp.controller('WithApplyCtrl', function($scope) {
+    $scope.mycomment = 'blablabla';
+
+    $scope.ngComment = function() {
+      $scope.mycomment = 'I like AngularJS';
+    };
+
+    $('#btn-js-comment3').on('click', function() {
+      $scope.$apply(function() {
+        $scope.mycomment = 'I dislike AngularJS';
+      });
+    });
+  });
+</script>
+<div class="bg-success code-heading">
+  <span>javascript source code</span>
+  <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Note" data-placement="bottom"></i>
+  <i class="fa fa-chevron-circle-up btn-toggle-code"></i>
+  <div class="popoverContent hidden">
+    <ul>
+      <li>When you pass a function to $apply(), the function call is wrapped inside a try...catch block, and any exceptions that occur will be passed to the $exceptionHandler service.</li>
+      <li>Angular doesn’t directly call $digest(). Instead, it calls $scope.$apply(), which in turn calls $rootScope.$digest().</li>
+      <li>In fact, amost all of out code snippets are wrapped with $scope.$apply(), such as ng−click, initialization of controller, callback function of $http</li>
+    </ul>
+  </div>
+</div>
+<pre>
+  <code class="javascript">
+var watcherApp = angular.module('watcherApp', []);
+watcherApp.controller('WithApplyCtrl', function($scope) {
+  $scope.mycomment = 'blablabla';
+
+  $scope.ngComment = function() {
+    $scope.mycomment = 'I like AngularJS';
+  };
+
+  $('#btn-js-comment3').on('click', function() {
+    $scope.$apply(function() {
+      $scope.mycomment = 'I dislike AngularJS';
+    });
+  });
+});
+  </code>
+</pre>

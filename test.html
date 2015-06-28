@@ -1,0 +1,23 @@
+<!DOCTYPE html ng-app="myApp">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+<div ng-controller="SomeCtrl">
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript">
+  angular.module('myApp', [])
+  .controller('SomeCtrl', function($scope) {
+    $scope.mycomment = 'blablabla';
+
+    $scope.ngComment = function() {
+      $scope.mycomment = 'I like AngularJS';
+    };
+
+  });
+</script>
+</html>
