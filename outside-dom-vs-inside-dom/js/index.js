@@ -64,31 +64,33 @@
       angular.bootstrap('#ng-data-bind', ['dataBindApp']);
       formatSourceCode('#ng-data-bind');
     });
-    $('#jq-data-bind').load( 'view/jquery/data-bind.html');
 
     // show/hide dom feature
-    $('#ng-show-hide').load( 'view/angularjs/show-hide.html', function() {
+    $('#ng-show-hide').load('view/angularjs/show-hide.html', function() {
       angular.bootstrap('#ng-show-hide', ['showHideApp']);
       formatSourceCode('#ng-show-hide');
     });
-    $('#jq-show-hide').load( 'view/jquery/show-hide.html', function() {
+    $('#jq-show-hide').load('view/jquery/show-hide.html', function() {
       formatSourceCode('#jq-show-hide');
     });
 
     // show/hide feature
-    $('#ng-switch-dom').load( 'view/angularjs/switch-dom.html', function() {
+    $('#ng-switch-dom').load('view/angularjs/switch-dom.html', function() {
       angular.bootstrap('#ng-switch-dom', ['switchDomApp']);
       formatSourceCode('#ng-switch-dom');
     });
+    $('#jq-switch-dom').load('view/jquery/switch-dom.html', function() {
+      formatSourceCode('#jq-switch-dom');
+    });
 
     // free rendering feature
-    $('#ng-free-render').load( 'view/angularjs/free-render.html', function() {
+    $('#ng-free-render').load('view/angularjs/free-render.html', function() {
       angular.bootstrap('#ng-free-render', ['freeRenderApp']);
       formatSourceCode('#ng-free-render');
     });
 
     // filter feature
-    $('#ng-filter').load( 'view/angularjs/filter.html', function() {
+    $('#ng-filter').load('view/angularjs/filter.html', function() {
       angular.bootstrap('#ng-filter', ['filterApp']);
       formatSourceCode('#ng-filter');
     });

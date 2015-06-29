@@ -60,21 +60,21 @@ switchDomApp.controller('NgIfCtrl', function($scope) {
     <input type="radio" ng-model="opinion" value="3">  Somebody
   </label>
   <div ng-switch on="opinion">
-      <div ng-switch-when="1">
-        <p class="bg-success lead diff-opinion">AngularJS comes from Google, I trust Google, so I trust AngularJS.</p>
-        <p class="bg-info lead diff-opinion">It's so powerfull, I love it.</p>
-        <p class="bg-warning lead diff-opinion">I love its elegant grammar.</p>
-      </div>
-      <div ng-switch-when="2">
-        <p class="bg-danger lead diff-opinion">Oh. no! AngularJS is so obscure. It's my nightmare.</p>
-        <p class="bg-warning lead diff-opinion">AngularJS is too bloated. It's not my type.</p>
-      </div>
-      <div ng-switch-when="3">
-        <p class="bg-primary lead diff-opinion">Hey, dude! What's AngularJS?</p>
-      </div>
-      <div ng-switch-default>
-        <p class="bg-success lead diff-opinion">You know I'm backend guy, I don't care.</p>
-      </div>
+    <div ng-switch-when="1">
+      <p class="bg-success lead diff-opinion">AngularJS comes from Google, I trust Google, so I trust AngularJS.</p>
+      <p class="bg-info lead diff-opinion">It's so powerfull, I love it.</p>
+      <p class="bg-warning lead diff-opinion">I love its elegant grammar.</p>
+    </div>
+    <div ng-switch-when="2">
+      <p class="bg-danger lead diff-opinion">Oh. no! AngularJS is so obscure. It's my nightmare.</p>
+      <p class="bg-warning lead diff-opinion">AngularJS is too bloated. It's not my type.</p>
+    </div>
+    <div ng-switch-when="3">
+      <p class="bg-primary lead diff-opinion">Hey, dude! What's AngularJS?</p>
+    </div>
+    <div ng-switch-default>
+      <p class="bg-success lead diff-opinion">You know I'm backend guy, I don't care.</p>
+    </div>
   </div>
 </div>
 <script type="text/javascript">
