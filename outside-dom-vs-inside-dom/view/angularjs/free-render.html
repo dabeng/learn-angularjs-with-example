@@ -1,0 +1,114 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name">More free rendering</i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<div ng-controller="NgRepeatCtrl" class="row">
+  <div class="col-md-6">
+    <h3 style="display: inline-block;"><span class="label label-primary">Candidates List</span></h3>
+    <button type="button" class="btn btn-success" ng-click="loadData()">Load Data</button>
+    <ul>
+      <li ng-repeat="candidate in candidates">
+        {{ candidate.name }} from {{ candidate.department }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div class="input-group" style="margin-bottom: 20px; margin-top: 20px;">
+      <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
+      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
+    </div>
+    <div class="input-group" style="margin-bottom: 20px;">
+      <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
+      <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
+    </div>
+    <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
+  </div>
+</div>
+<script type="text/javascript">
+  var freeRenderApp = angular.module('freeRenderApp', []);
+  freeRenderApp.controller('NgRepeatCtrl', function($scope) {
+    $scope.candidates = [];
+    $scope.newCandidate = {};
+    $scope.loadData = function() {
+      $scope.candidates =
+        [{name:'Sebastiane', department:'Philosophy'},
+         {name:'Wendy', department:'Mathematics'},
+         {name:'Mike', department:'Economics'},
+         {name:'Adam', department:'Computer Science'},
+         {name:'Barton', department:'Electronics'},
+         {name:'Clark', department:'Accountancy'},
+         {name:'Emma', department:'Mechanical Engineering'},
+         {name:'George', department:'Communications'},
+         {name:'Mike', department:'Civil Engineering'},
+         {name:'Marina', department:'Human Resources'},
+         {name:'Julia', department:'Tourism Science'},
+         {name:'Donald', department:'Politics'}];
+    };
+
+    $scope.appendCandidate = function() {
+      if (this.newCandidate.name && this.newCandidate.department) {
+        this.candidates.push({ 'name': this.newCandidate.name, 'department': this.newCandidate.department });
+      }
+    };
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgRepeatCtrl&quot; class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;h3 style=&quot;display: inline-block;&quot;&gt;&lt;span class=&quot;label label-primary&quot;&gt;candidates list of election&lt;/span&gt;&lt;/h3&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;loadData()&quot;&gt;Load Data&lt;/button&gt;
+    &lt;ul&gt;
+      &lt;li ng-repeat=&quot;candidate in candidates&quot;&gt;
+        {{ candidate.name }} from {{ candidate.department }}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;li class=&quot;fa fa-smile-o fa-lg&quot;&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Name&quot; ng-model=&quot;newCandidate.name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;li class=&quot;fa fa-book fa-lg&quot;&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Department&quot; ng-model=&quot;newCandidate.department&quot;&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;appendCandidate()&quot;&gt;Append New Candidate&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var freeRenderApp = angular.module('freeRenderApp', []);
+freeRenderApp.controller('NgRepeatCtrl', function($scope) {
+  $scope.candidates = [];
+  $scope.newCandidate ={};
+  $scope.loadData = function() {
+    $scope.candidates =
+      [{name:'Sebastiane', department:'Philosophy'},
+       {name:'Wendy', department:'Mathematics'},
+       {name:'Mike', department:'Economics'},
+       {name:'Adam', department:'Computer Science'},
+       {name:'Barton', department:'Electronics'},
+       {name:'Clark', department:'Accountancy'},
+       {name:'Emma', department:'Mechanical Engineering'},
+       {name:'George', department:'Communications'},
+       {name:'Mike', department:'Civil Engineering'},
+       {name:'Marina', department:'Human Resources'},
+       {name:'Julia', department:'Tourism Science'},
+       {name:'Donald', department:'Politics'}];
+  };
+
+  $scope.appendCandidate = function() {
+    if (this.newCandidate.name && this.newCandidate.department) {
+      this.candidates.push({ 'name': this.newCandidate.name, 'department': this.newCandidate.department });
+    }
+  };
+});
+  </code>
+</pre>

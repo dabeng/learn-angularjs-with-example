@@ -55,23 +55,36 @@
       angular.bootstrap('#ng-event-bind', ['eventBindApp']);
       formatSourceCode('#ng-event-bind');
     });
+    $('#jq-event-bind').load( 'view/jquery/event-bind.html', function() {
+      formatSourceCode('#jq-event-bind');
+    });
 
     // data-binding feature
     $('#ng-data-bind').load( 'view/angularjs/data-bind.html', function() {
       angular.bootstrap('#ng-data-bind', ['dataBindApp']);
       formatSourceCode('#ng-data-bind');
     });
+    $('#jq-data-bind').load( 'view/jquery/data-bind.html');
 
     // show/hide dom feature
     $('#ng-show-hide').load( 'view/angularjs/show-hide.html', function() {
       angular.bootstrap('#ng-show-hide', ['showHideApp']);
       formatSourceCode('#ng-show-hide');
     });
+    $('#jq-show-hide').load( 'view/jquery/show-hide.html', function() {
+      formatSourceCode('#jq-show-hide');
+    });
 
     // show/hide feature
     $('#ng-switch-dom').load( 'view/angularjs/switch-dom.html', function() {
       angular.bootstrap('#ng-switch-dom', ['switchDomApp']);
       formatSourceCode('#ng-switch-dom');
+    });
+
+    // free rendering feature
+    $('#ng-free-render').load( 'view/angularjs/free-render.html', function() {
+      angular.bootstrap('#ng-free-render', ['freeRenderApp']);
+      formatSourceCode('#ng-free-render');
     });
 
     // filter feature
