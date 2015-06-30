@@ -88,11 +88,17 @@
       angular.bootstrap('#ng-free-render', ['freeRenderApp']);
       formatSourceCode('#ng-free-render');
     });
+    $('#jq-free-render').load('view/jquery/free-render.html', function() {
+      formatSourceCode('#jq-free-render');
+    });
 
     // filter feature
     $('#ng-filter').load('view/angularjs/filter.html', function() {
       angular.bootstrap('#ng-filter', ['filterApp']);
       formatSourceCode('#ng-filter');
+    });
+    $('#jq-filter').load('view/jquery/filter.html', function() {
+      formatSourceCode('#jq-filter');
     });
 
     // watcher behind tow-way data-bing

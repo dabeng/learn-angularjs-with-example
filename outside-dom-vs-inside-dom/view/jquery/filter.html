@@ -1,54 +1,58 @@
 <div class="toolbar">
   <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
-  <i class="feature-name">Filter is awesome</i>
+  <i class="feature-name">It's where Regular Expression comes in</i>
   <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
 </div>
-<p class="bg-info example-heading">filter</p>
+<p class="bg-info example-heading">manual filter</p>
 <div ng-controller="FilterCtrl">
   <div class="input-group">
     <span class="input-group-addon"><i class="fa fa-thumbs-o-up fa-lg"></i></span>
-    <input type="text" class="form-control" placeholder="Candidate" ng-model="keyword">
+    <input type="text" class="form-control" placeholder="Candidate" id="keyword">
   </div>
-  <ul>
-    <li ng-repeat="candidate in candidates | orderBy: 'name' | filter: keyword">
-      {{ candidate.name }} from {{ candidate.major }}
-    </li>
+  <ul id="candidate-list">
+    <li>Sebastiane from Philosophy</li>
+    <li>Wendy from Mathematics</li>
+    <li>Mike from Economics</li>
+    <li>Adam from Computer Science</li>
+    <li>Barton from Electronics</li>
+    <li>Clark from Accountancy</li>
+    <li>Emma from Mechanical Engineering</li>
+    <li>George from Communications</li>
+    <li>Mike from Civil Engineering</li>
+    <li>Marina from Human Resources</li>
+    <li>Julia from Tourism Science</li>
+    <li>Donald from Politics</li>
   </ul>
 </div>
 <script type="text/javascript">
-  var filterApp = angular.module('filterApp', []);
-  filterApp.controller('FilterCtrl', function($scope) {
-    $scope.candidates =
-      [{name:'Sebastiane', major:'Philosophy'},
-       {name:'Wendy', maior:'Mathematics'},
-       {name:'Mike', major:'Economics'},
-       {name:'Adam', major:'Computer Science'},
-       {name:'Barton', maior:'Electronics'},
-       {name:'Clark', major:'Accountancy'},
-       {name:'Emma', major:'Mechanical Engineering'},
-       {name:'George', maior:'Communications'},
-       {name:'Mike', major:'Civil Engineering'},
-       {name:'Marina', major:'Human Resources'},
-       {name:'Julia', major:'Tourism Science'},
-       {name:'Donald', major:'Politics'}];
+  $(function($) {
+    $('#keyword').on('keyup', function(event) {
+      var candidates = $('#candidate-list').children();
+      for (var i = 0; i < candidates.length; i++) {
+        var item = candidates.eq(i);
+        if ((new RegExp(event.target.value, 'i')).test(item.text())) {
+          item.show();
+        } else {
+          item.hide();
+        }
+      }
+    });
   });
 </script>
 <hr>
-<p class="bg-success code-heading">html source code</p>
-<pre>
-  <code class="html">
-  </code>
+<p class="bg-success code-heading">javascript source code</p>
 <pre>
   <code class="javscript">
-  refreshLicenses: function(event) {
-    for (var i = 0; i < $('.js-license-row').length; i++) {
-      var item = $('.js-license-row').eq(i);
-      if ((new RegExp(event.target.value, 'i')).test(item.text())) {
-        item.show();
-      } else {
-        item.hide();
-      }
+$('#keyword').on('keyup', function(event) {
+  var candidates = $('#candidate-list').children();
+  for (var i = 0; i < candidates.length; i++) {
+    var item = candidates.eq(i);
+    if ((new RegExp(event.target.value, 'i')).test(item.text())) {
+      item.show();
+    } else {
+      item.hide();
     }
   }
-</code>
+});
+  </code>
 </pre>
