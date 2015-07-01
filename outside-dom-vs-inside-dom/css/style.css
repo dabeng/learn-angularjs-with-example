@@ -4,7 +4,7 @@
 }
 
 .left-col.second-level {
-  margin: 12px -9px 0px -15px;
+  margin: 12px -9px 12px -15px;
 }
 
 .right-col.second-level {
@@ -19,7 +19,6 @@
   border: 2px dashed #5bc0de;
   border-radius: 6px;
   height: 360px;
-  margin-top: 12px;
   margin-bottom: 0px;
   padding: 10px;
 }
