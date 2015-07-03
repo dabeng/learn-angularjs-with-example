@@ -12,7 +12,8 @@ AngularJS is amiable js framework as well as powerful. Let's step to her inch by
 
 ## Lesson 2 - Angularjs and UI Design
 * collaboration between UE designer and ng developer
-* Improve UE with AngularJS
+* Vivify layout of webapp with ngClass & ngAnimate
+* AngularJS Material Design
 
 ## Lesson 3 - core stuff, cool stuff
 * Scope
