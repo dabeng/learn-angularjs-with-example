@@ -9,7 +9,7 @@
 
   $(function() {
 
-    $(window).on('load', function() {
+    $(window).load(function() {
       if (location.hash) {
         console.log(location.hash);
       }
