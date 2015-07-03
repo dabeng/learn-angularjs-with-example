@@ -8,7 +8,7 @@ AngularJS is amiable js framework as well as powerful. Let's step to her inch by
 * [Switch Dom Structure](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#switch-dom)
 * [More free rendering](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#free-render)
 * [Filter is awesome](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#filter)
-* [$watch() + $digest() + $apply()](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#watcher)
+* [$watch() + $digest() + $apply()](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom#watcher)
 
 ## Lesson 2 - Angularjs and UI Design
 * collaboration between UE designer and ng developer
