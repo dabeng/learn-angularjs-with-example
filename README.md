@@ -3,11 +3,12 @@ AngularJS is amiable js framework as well as powerful. Let's step to her inch by
 
 ## [Lesson 1 - jQuery vs AngularJS == outside DOM vs inside DOM](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/)
 * [Event-Binding](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#event-bind)
-* weird autocomplete
-* form validation
-* data-binding
-* soon coming love
-* plugin
+* [Two-way Data-Binding](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#data-bind)
+* [Show/Hide Control](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#show-hide)
+* [Switch Dom Structure](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#switch-dom)
+* [More free rendering](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#free-render)
+* [Filter is awesome](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#filter)
+* [$watch() + $digest() + $apply()](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#watcher)
 
 ## Lesson 2 - Angularjs and UI Design
 * collaboration between UE designer and ng developer
