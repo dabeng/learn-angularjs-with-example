@@ -2,7 +2,7 @@
 AngularJS is amiable js framework as well as powerful. Let's step to her inch by inch.
 
 ## [Lesson 1 - jQuery vs AngularJS == outside DOM vs inside DOM](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/)
-* simple sidebar
+* [Event-Binding](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#event-bind)
 * weird autocomplete
 * form validation
 * data-binding
