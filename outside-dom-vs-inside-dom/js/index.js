@@ -9,12 +9,6 @@
 
   $(function() {
 
-    $(window).load(function() {
-      if (location.hash) {
-        console.log(location.hash);
-      }
-    });
-
     // switch viewport
     $('.feature').on('click', '.btn-toggle', function() {
       var $this  = $(this);
