@@ -48,3 +48,12 @@ pre {
 .feature .popover {
   max-width: 100%;
 }
+
+.toolbar i a {
+  color: #fff;
+  text-decoration:none;
+}
+
+.toolbar i a:hover {
+  color: #337ab7;
+}
