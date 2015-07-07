@@ -1,0 +1,94 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name">JS Template Engine</i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<div class="row">
+  <div class="col-md-6" id="election-list">
+    <h3 style="display: inline-block;"><span class="label label-primary">Candidates List</span></h3>
+    <button type="button" class="btn btn-success" id="btn-renderlist">Load Data</button>
+  </div>
+  <div class="col-md-6">
+    <div class="input-group" style="margin-bottom: 20px; margin-top: 20px;">
+      <span class="input-group-addon"><li class="fa fa-smile-o fa-lg"></li></span>
+      <input type="text" class="form-control" placeholder="Name" id="new-candi-name">
+    </div>
+    <div class="input-group" style="margin-bottom: 20px;">
+      <span class="input-group-addon"><li class="fa fa-book fa-lg"></li></span>
+      <input type="text" class="form-control" placeholder="Department" id="new-candi-dep">
+    </div>
+    <button type="button" class="btn btn-success" id="btn-new-candi">Append New Candidate</button>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function($) {
+    $('#btn-renderlist').on('click', function() {
+      if (!$('#election-list').children('ul').length) {
+        $.ajax({ url: 'view/jquery/candidate-list.hbs', cache: false })
+          .done(function(source, textStatus, jqXHR) {
+            // remove zero width space
+            source = source.replace(/[\u200B]/g, '');
+            var template = Handlebars.compile(source); 
+            var data =
+              [{name:'Sebastiane', department:'Philosophy'},
+               {name:'Wendy', department:'Mathematics'},
+               {name:'Mike', department:'Economics'},
+               {name:'Adam', department:'Computer Science'},
+               {name:'Barton', department:'Electronics'},
+               {name:'Clark', department:'Accountancy'},
+               {name:'Emma', department:'Mechanical Engineering'},
+               {name:'George', department:'Communications'},
+               {name:'Mike', department:'Civil Engineering'},
+               {name:'Marina', department:'Human Resources'},
+               {name:'Julia', department:'Tourism Science'},
+               {name:'Donald', department:'Politics'}];
+            var result = template(data);
+            $("#election-list").append(result);
+          });
+      }
+    });
+
+    $('#btn-new-candi').on('click', function() {
+      if ($('#election-list').children('ul').length) {
+        var newName = $('#new-candi-name').val().trim();
+        var newDep = $('#new-candi-dep').val().trim();
+        if (newName && newDep) {
+          var source = "<li>{{name}} from {{department}}</li>";
+          var template = Handlebars.compile(source); 
+          var data = { name: newName, department: newDep };
+          var result = template(data);
+          $("#election-list").children('ul').append(result);
+        }
+      }
+    });
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-6&quot; id=&quot;election-list&quot;&gt;
+    &lt;h3 style=&quot;display: inline-block;&quot;&gt;&lt;span class=&quot;label label-primary&quot;&gt;Candidates List&lt;/span&gt;&lt;/h3&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; id=&quot;btn-renderlist&quot;&gt;Load Data&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-6&quot;&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;li class=&quot;fa fa-smile-o fa-lg&quot;&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Name&quot; id=&quot;new-candi-name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;li class=&quot;fa fa-book fa-lg&quot;&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Department&quot; id=&quot;new-candi-dep&quot;&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; id=&quot;btn-new-candi&quot;&gt;Append New Candidate&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+
+  </code>
+</pre>

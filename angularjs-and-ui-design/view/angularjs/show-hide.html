@@ -1,0 +1,123 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name"><a name="show-hide">Show/Hide Control</a></i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">ngHide/ngShow</p>
+<div ng-controller="NgShowNgHideCtrl">
+  <h3 ng-show="display">Oh. no! AngularJS is so obscure.</h3>
+  <h3 ng-hide="display">In general, AngularJS is straightforward.</h3>
+  <button type="button" class="btn btn-success" ng-click="toggleDisplay()">Toggle</button>
+</div>
+<script type="text/javascript">
+  var showHideApp = angular.module('showHideApp', []);
+  showHideApp.controller('NgShowNgHideCtrl', function($scope) {
+    $scope.display = true;
+    $scope.toggleDisplay = function() {
+      this.display = !this.display;
+    }
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgShowNgHideCtrl&quot;&gt;
+  &lt;h3 ng-show=&quot;display&quot;&gt;Oh. no! AngularJS is so obscure.&lt;/h3&gt;
+  &lt;h3 ng-hide=&quot;display&quot;&gt;In general, AngularJS is straightforward.&lt;/h3&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;toggleDisplay()&quot;&gt;Toggle&lt;/button&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var showHideApp = angular.module('showHideApp', []);
+showHideApp.controller('NgShowNgHideCtrl', function($scope) {
+  $scope.display = true;
+  $scope.toggleDisplay = function() {
+    this.display = !this.display;
+  }
+});
+  </code>
+</pre>
+<p class="bg-info example-heading">ngClass</p>
+<div ng-controller="NgClassCtrl">
+  <h3 ng-class="{'hidden': !display}">Oh. no! AngularJS is so obscure.</h3>
+  <h3 ng-class="{'hidden': display}">In general, AngularJS is straightforward.</h3>
+  <button type="button" class="btn btn-success" ng-click="toggleDisplay()">Toggle</button>
+</div>
+<script type="text/javascript">
+  showHideApp.controller('NgClassCtrl', function($scope) {
+    $scope.display = true;
+    $scope.toggleDisplay = function() {
+      this.display = !this.display;
+    }
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgClassCtrl&quot;&gt;
+  &lt;h3 ng-class=&quot;{'hidden': !display}&quot;&gt;Oh. no! AngularJS is so obscure.&lt;/h3&gt;
+  &lt;h3 ng-class=&quot;{'hidden': display}&quot;&gt;In general, AngularJS is straightforward.&lt;/h3&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;toggleDisplay()&quot;&gt;Toggle&lt;/button&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var showHideApp = angular.module('showHideApp', []);
+showHideApp.controller('NgClassCtrl', function($scope) {
+  $scope.display = true;
+  $scope.toggleDisplay = function() {
+    this.display = !this.display;
+  }
+});
+  </code>
+</pre>
+<p class="bg-info example-heading">ngOpen</p>
+<div ng-controller="NgOpenCtrl">
+  <details class="lead" ng-open="open">
+     <summary>What do you thing of AngularJS?</summary>
+     <p>Oh. no! AngularJS is so obscure.</p>
+     <p>In general, AngularJS is straightforward.</p>
+  </details>
+  <button type="button" class="btn btn-success" ng-click="toggleDetails()">Toggle</button>
+</div>
+<script type="text/javascript">
+  showHideApp.controller('NgOpenCtrl', function($scope) {
+    $scope.open = false;
+    $scope.toggleDetails = function() {
+      this.open = !this.open;
+    }
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgOpenCtrl&quot;&gt;
+  &lt;details class=&quot;lead&quot; ng-open=&quot;open&quot;&gt;
+     &lt;summary&gt;What do you thing of AngularJS&lt;/summary&gt;
+     &lt;p&gt;Oh. no! AngularJS is so obscure.&lt;/p&gt;
+     &lt;p&gt;In general, AngularJS is straightforward.&lt;/p&gt;
+  &lt;/details&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;toggleDetails()&quot;&gt;Toggle&lt;/button&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var showHideApp = angular.module('showHideApp', []);
+showHideApp.controller('NgOpenCtrl', function($scope) {
+  $scope.open = false;
+  $scope.toggleDetails = function() {
+    this.open = !this.open;
+  }
+});
+  </code>
+</pre>

@@ -1,0 +1,130 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name"><a name="switch-dom">Switch Dom Structure</a></i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">ngIf</p>
+<div ng-controller="NgIfCtrl">
+  <label style="margin-right:20px;"> 
+    <input type="radio" ng-model="opinion" ng-value="true"> I like AngularJS
+  </label>
+  <label>
+    <input type="radio" ng-model="opinion" ng-value="false"> I dont't like it
+  </label>
+  <h3 ng-if="opinion">In general, AngularJS is straightforward.</h3>
+  <h3 ng-if="!opinion">Oh. no! AngularJS is so obscure.</h3>
+</div>
+<script type="text/javascript">
+  var switchDomApp = angular.module('switchDomApp', []);
+  switchDomApp.controller('NgIfCtrl', function($scope) {
+    $scope.opinion = true;
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgIfCtrl&quot;&gt;
+  &lt;label style=&quot;margin-right:20px;&quot;&gt; 
+    &lt;input type=&quot;radio&quot; ng-model=&quot;opinion&quot; ng-value=&quot;true&quot;&gt; I like AngularJS
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;radio&quot; ng-model=&quot;opinion&quot; ng-value=&quot;false&quot;&gt; I dont't like it
+  &lt;/label&gt;
+  &lt;h3 ng-if=&quot;opinion&quot;&gt;In general, AngularJS is straightforward.&lt;/h3&gt;
+  &lt;h3 ng-if=&quot;!opinion&quot;&gt;Oh. no! AngularJS is so obscure.&lt;/h3&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var switchDomApp = angular.module('switchDomApp', []);
+switchDomApp.controller('NgIfCtrl', function($scope) {
+  $scope.opinion = true;
+});
+  </code>
+</pre>
+<p class="bg-info example-heading">ngSwitch</p>
+<div ng-controller="NgSwitchCtrl">
+  <label style="margin-right:20px;">
+    <input type="radio" ng-model="opinion" value="0"> Neutral
+  </label>
+  <label style="margin-right:20px;"> 
+    <input type="radio" ng-model="opinion" value="1"> Advocate
+  </label>
+  <label style="margin-right:20px;">
+    <input type="radio" ng-model="opinion" value="2"> Opponent
+  </label>
+  <label>
+    <input type="radio" ng-model="opinion" value="3">  Somebody
+  </label>
+  <div ng-switch on="opinion">
+    <div ng-switch-when="1">
+      <p class="bg-success lead diff-opinion">AngularJS comes from Google, I trust Google, so I trust AngularJS.</p>
+      <p class="bg-info lead diff-opinion">It's so powerfull, I love it.</p>
+      <p class="bg-warning lead diff-opinion">I love its elegant grammar.</p>
+    </div>
+    <div ng-switch-when="2">
+      <p class="bg-danger lead diff-opinion">Oh. no! AngularJS is so obscure. It's my nightmare.</p>
+      <p class="bg-warning lead diff-opinion">AngularJS is too bloated. It's not my type.</p>
+    </div>
+    <div ng-switch-when="3">
+      <p class="bg-primary lead diff-opinion">Hey, dude! What's AngularJS?</p>
+    </div>
+    <div ng-switch-default>
+      <p class="bg-success lead diff-opinion">You know I'm backend guy, I don't care.</p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  switchDomApp.controller('NgSwitchCtrl', function($scope) {
+    $scope.opinion = '1';
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;NgSwitchCtrl&quot;&gt;
+  &lt;label style=&quot;margin-right:20px;&quot;&gt;
+    &lt;input type=&quot;radio&quot; ng-model=&quot;opinion&quot; value=&quot;0&quot;&gt; Neutral
+  &lt;/label&gt;
+  &lt;label style=&quot;margin-right:20px;&quot;&gt; 
+    &lt;input type=&quot;radio&quot; ng-model=&quot;opinion&quot; value=&quot;1&quot;&gt; Advocate
+  &lt;/label&gt;
+  &lt;label style=&quot;margin-right:20px;&quot;&gt;
+    &lt;input type=&quot;radio&quot; ng-model=&quot;opinion&quot; value=&quot;2&quot;&gt; Opponent
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;radio&quot; ng-model=&quot;opinion&quot; value=&quot;3&quot;&gt;  Somebody
+  &lt;/label&gt;
+  &lt;div ng-switch on=&quot;opinion&quot;&gt;
+    &lt;div ng-switch-when=&quot;1&quot;&gt;
+      &lt;p class=&quot;bg-success diff-opinion&quot;&gt;AngularJS comes from Google, I trust Google, so I trust AngularJS.&lt;/p&gt;
+      &lt;p class=&quot;bg-info diff-opinion&quot;&gt;It's so powerfull, I love it.&lt;/p&gt;
+      &lt;p class=&quot;bg-warning diff-opinion&quot;&gt;I love its elegant grammar.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div ng-switch-when=&quot;2&quot;&gt;
+      &lt;p class=&quot;bg-danger diff-opinion&quot;&gt;Oh. no! AngularJS is so obscure. It's my nightmare.&lt;/p&gt;
+      &lt;p class=&quot;bg-warning diff-opinion&quot;&gt;AngularJS is too bloated. It's not my type.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div ng-switch-when=&quot;3&quot;&gt;
+      &lt;p class=&quot;bg-primary diff-opinion&quot;&gt;Hey, dude! What's AngularJS?&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div ng-switch-default&gt;
+      &lt;p class=&quot;bg-success diff-opinion&quot;&gt;You know I'm backend guy, I don't care.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var switchDomApp = angular.module('switchDomApp', []);
+switchDomApp.controller('NgSwitchCtrl', function($scope) {
+  $scope.opinion = '1';
+});
+  </code>
+</pre>
