@@ -3,14 +3,6 @@
   background-color: #f0ad4e;
 }
 
-.left-col.second-level {
-  margin: 12px -9px 12px -15px;
-}
-
-.right-col.second-level {
-  margin: 12px -15px 0px -9px;
-}
-
 .feature-wrapper {
   padding-bottom: 15px;
 }
@@ -30,18 +22,6 @@
 .feature .popover-title {
   color: #5bc0de;
   font-weight: bold;
-}
-
-.left-col.feature {
-  margin-right: -9px;
-  margin-left: -15px;
-  overflow-y: hidden;
-}
-
-.right-col.feature {
-  margin-right: -15px;
-  margin-left: -9px;
-  overflow-y: hidden;
 }
 
 .col-md-12 .feature {

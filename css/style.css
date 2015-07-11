@@ -57,3 +57,7 @@ pre {
 .toolbar i a:hover {
   color: #337ab7;
 }
+
+.example-card {
+  margin-top: 12px;
+}
