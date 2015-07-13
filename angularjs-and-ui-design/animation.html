@@ -11,18 +11,12 @@
 <div class="row">
   <h1 class="heading first-level">Animations in AngularJS</h1>
 </div>
-<div class="row example-card">
-  <div class="feature" ng-include="'view/animation/data-bind.html'"></div>
+<div class="row example-card" ng-include="'view/animation/css3-transitions.html'">
 </div>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/angular.min.js"></script>
 <script type="text/javascript" src="../js/highlight.pack.js"></script>
-<script type="text/javascript">
-  angular.module('myApp', [])
-  .controller('DataBindCtrl', function($scope) {
-    $scope.favSport = '';
-  });
-</script>
+<script type="text/javascript" src="js/css3-transitions.js"></script>
 </body>
 </html>

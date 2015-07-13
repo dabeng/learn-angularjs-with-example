@@ -59,5 +59,11 @@ pre {
 }
 
 .example-card {
+  border: 2px solid #5bc0de;
+  border-radius: 6px;
+  height: 360px;
+  margin-bottom: 0px;
+  padding: 10px;
   margin-top: 12px;
+  overflow: hidden;
 }
