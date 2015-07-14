@@ -10,24 +10,24 @@
 <div ng-controller="NgRepeatCtrl" class="row">
   <div class="col-md-6">
     <div class="row">
-    <div class="input-group col-md-6" style="float: left;">
-      <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
-      <input type="text" class="form-control" ng-model="myFilter.keyword">
+      <div class="input-group col-md-6" style="float: left;">
+        <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
+        <input type="text" class="form-control" ng-model="myFilter.keyword">
+      </div>
+      <div class="col-md-6">
+        <label>Sort by:</label>
+        <label>
+          <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
+          <span class="label label-warning" style="color: #000;">Name</span>
+        </label>
+        <label>
+          <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
+          <span class="label label-warning" style="color: #000;">Department</span>
+        </label>
+      </div>
     </div>
-    <div class="btn-group col-md-6">
-      <button type="button" class="btn btn-primary">Sort by</button>
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Name</a></li>
-        <li><a href="#">Department</a></li>
-      </ul>
-</div>
-</div>
     <ul>
-      <li ng-repeat="candidate in candidates | filter: myFilter.keyword">
+      <li ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
         {{ candidate.name }} from {{ candidate.department }}
       </li>
     </ul>

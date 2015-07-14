@@ -16,6 +16,9 @@ angular.module('myApp', [])
        {name:'Julia', department:'Tourism Science'},
        {name:'Donald', department:'Politics'}];
 
+    $scope.myFilter = {};
+    $scope.myFilter.sortby = 'name';
+
     $scope.appendCandidate = function() {
       if (this.newCandidate.name && this.newCandidate.department) {
         this.candidates.push({ 'name': this.newCandidate.name, 'department': this.newCandidate.department });
