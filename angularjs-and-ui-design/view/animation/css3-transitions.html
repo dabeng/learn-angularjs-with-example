@@ -1,53 +1,88 @@
-<div class="toolbar">
-  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
-  <i class="feature-name"><a name="data-bind">CSS3 Transitions</a></i>
-  <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
-  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
-  <div class="popoverContent hidden">
-    <img src="img/data-bind.jpg">
+<div ng-controller="TransitionCtrl">
+  <div class="toolbar">
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on" ng-click="toggleWindow()"></i>
+    <i class="feature-name"><a name="data-bind">CSS3 Transitions</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
+    <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+    <div class="popoverContent hidden">
+      <img src="img/data-bind.jpg">
+    </div>
   </div>
-</div>
-<div ng-controller="NgRepeatCtrl" class="row">
-  <div class="col-md-6">
-    <div class="row">
-      <div class="input-group col-md-5" style="float: left;">
-        <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
-        <input type="text" class="form-control" ng-model="myFilter.keyword">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="input-group col-md-5" style="float: left;">
+          <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
+          <input type="text" class="form-control" ng-model="myFilter.keyword">
+        </div>
+        <div class="col-md-7">
+          <label>Sort by:</label>
+          <label>
+            <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
+            <span class="label label-warning" style="color:#000;font-size:1.2em;">Name</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
+            <span class="label label-warning" style="color: #000;font-size:1.2em;">Department</span>
+          </label>
+        </div>
       </div>
-      <div class="col-md-7">
-        <label>Sort by:</label>
-        <label>
-          <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
-          <span class="label label-warning" style="color:#000;font-size:1.2em;">Name</span>
-        </label>
-        <label>
-          <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
-          <span class="label label-warning" style="color: #000;font-size:1.2em;">Department</span>
-        </label>
+      <ul>
+        <li class="repeat-transition" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
+          <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group" style="margin-bottom: 20px;">
+        <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
+        <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
       </div>
+      <div class="input-group" style="margin-bottom: 20px;">
+        <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
+        <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
+      </div>
+      <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
     </div>
-    <ul>
-      <li class="repeat-transition" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
-        <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
-      </li>
-    </ul>
   </div>
-  <div class="col-md-6">
-    <div class="input-group" style="margin-bottom: 20px; margin-top: 20px;">
-      <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
-      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
-    </div>
-    <div class="input-group" style="margin-bottom: 20px;">
-      <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
-      <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
-    </div>
-    <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
-  </div>
+  <hr>
+  <p class="bg-success code-heading">html source code</p>
+  <pre>
+    <code class="html">
+&lt;li class=&quot;repeat-transition&quot; ng-repeat=&quot;candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby&quot;&gt;
+  &lt;strong&gt;{{ candidate.name }}&lt;/strong&gt; from &lt;i&gt;{{ candidate.department }}&lt;/i&gt;
+&lt;/li&gt;
+    </code>
+  </pre>
+  <p class="bg-success code-heading">css source code</p>
+  <pre>
+    <code class="css">
+.repeat-transition.ng-enter,
+.repeat-transition.ng-leave,
+.repeat-transition.ng-move {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+.repeat-transition.ng-enter {
+  opacity: 0;
+}
+.repeat-transition.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.repeat-transition.ng-leave {
+  opacity: 1;
+}
+.repeat-transition.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.repeat-transition.ng-move {
+  opacity: 0;
+}
+.repeat-transition.ng-move.ng-move-active {
+  opacity: 1;
+}
+    </code>
+  </pre>
 </div>
-<hr>
-<p class="bg-success code-heading">html source code</p>
-<pre>
-  <code class="html">
-
-  </code>
-</pre>

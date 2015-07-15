@@ -1,5 +1,11 @@
-angular.module('myApp', ['ngAnimate'])
-  .controller('NgRepeatCtrl', function($scope) {
+app.controller('TransitionCtrl', function($scope, $element) {
+    $element.find('code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+
+    $scope.toggleWindow = function() {
+      $scope.$emit('openSingleWindow');
+    };
 
     $scope.candidates =
       [{name:'Sebastiane', department:'Philosophy'},
