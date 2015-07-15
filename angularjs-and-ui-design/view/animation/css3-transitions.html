@@ -10,25 +10,25 @@
 <div ng-controller="NgRepeatCtrl" class="row">
   <div class="col-md-6">
     <div class="row">
-      <div class="input-group col-md-6" style="float: left;">
+      <div class="input-group col-md-5" style="float: left;">
         <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
         <input type="text" class="form-control" ng-model="myFilter.keyword">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-7">
         <label>Sort by:</label>
         <label>
           <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
-          <span class="label label-warning" style="color: #000;">Name</span>
+          <span class="label label-warning" style="color:#000;font-size:1.2em;">Name</span>
         </label>
         <label>
           <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
-          <span class="label label-warning" style="color: #000;">Department</span>
+          <span class="label label-warning" style="color: #000;font-size:1.2em;">Department</span>
         </label>
       </div>
     </div>
     <ul>
-      <li ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
-        {{ candidate.name }} from {{ candidate.department }}
+      <li class="repeat-transition" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
+        <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
       </li>
     </ul>
   </div>

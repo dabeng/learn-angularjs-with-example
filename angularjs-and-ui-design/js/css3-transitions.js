@@ -1,6 +1,5 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngAnimate'])
   .controller('NgRepeatCtrl', function($scope) {
-    $scope.newCandidate = {};
 
     $scope.candidates =
       [{name:'Sebastiane', department:'Philosophy'},
@@ -19,6 +18,7 @@ angular.module('myApp', [])
     $scope.myFilter = {};
     $scope.myFilter.sortby = 'name';
 
+    $scope.newCandidate = {};
     $scope.appendCandidate = function() {
       if (this.newCandidate.name && this.newCandidate.department) {
         this.candidates.push({ 'name': this.newCandidate.name, 'department': this.newCandidate.department });
