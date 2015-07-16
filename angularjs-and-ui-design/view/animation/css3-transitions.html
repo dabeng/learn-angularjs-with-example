@@ -1,9 +1,9 @@
 <div ng-controller="TransitionCtrl">
   <div class="toolbar">
-    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on" ng-click="toggleWindow()"></i>
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on" ng-click="toggleWindow($event)"></i>
     <i class="feature-name"><a name="data-bind">CSS3 Transitions</a></i>
-    <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom"></i>
-    <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom" on-click="openTips()"></i>
+    <i class="fa fa-star fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
     <div class="popoverContent hidden">
       <img src="img/data-bind.jpg">
     </div>
@@ -48,7 +48,7 @@
   <hr>
   <p class="bg-success code-heading">html source code</p>
   <pre>
-    <code class="html">
+    <code class="html" ng-non-bindable>
 &lt;li class=&quot;repeat-transition&quot; ng-repeat=&quot;candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby&quot;&gt;
   &lt;strong&gt;{{ candidate.name }}&lt;/strong&gt; from &lt;i&gt;{{ candidate.department }}&lt;/i&gt;
 &lt;/li&gt;

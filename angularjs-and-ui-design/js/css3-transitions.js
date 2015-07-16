@@ -4,7 +4,7 @@ app.controller('TransitionCtrl', function($scope, $element) {
     });
 
     $scope.toggleWindow = function() {
-      $scope.$emit('openSingleWindow');
+      $scope.$emit('openSingleWindow', $element);
     };
 
     $scope.candidates =

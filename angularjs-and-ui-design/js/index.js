@@ -4,7 +4,11 @@ var app = angular.module('myApp', ['ngAnimate'])
     $scope.singleWindow = false;
 
     $scope.$on('openSingleWindow', function(event, data) {
-      console.log(data);
-      $scope.singleWindow = !$scope.singleWindow;
+      var exampleCard = data.parent();
+      if (!exampleCard.is('.single-window')) {
+        exampleCard.addClass('single-window').siblings().addClass('hidden');
+      } else {
+        exampleCard.removeClass('single-window').siblings().removeClass('hidden');
+      }
     });
   });
