@@ -1,0 +1,54 @@
+repeat-animation.ng-enter,
+repeat-animation.ng-move {
+  -webkit-animation:0.5s fadein;
+  -moz-animation:0.5s fadein;
+  -o-animation:0.5s fadein;
+  animation:0.5s fadein;
+}
+
+@keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-moz-keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-o-keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+.repeat-animation.ng-leave {
+  -webkit-animation:0.5s fadeout;
+  -moz-animation:0.5s fadeout;
+  -o-animation:0.5s fadeout;
+  animation:0.5s fadeout;
+}
+
+@keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
