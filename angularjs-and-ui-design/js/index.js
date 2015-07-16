@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngAnimate'])
+var app = angular.module('myApp', ['ui.bootstrap', 'ngAnimate'])
   .controller('RootCtrl', function($scope) {
 
     $scope.singleWindow = false;
@@ -11,4 +11,13 @@ var app = angular.module('myApp', ['ngAnimate'])
         exampleCard.removeClass('single-window').siblings().removeClass('hidden');
       }
     });
+
+    // angular.element('.example-card').popover({
+    //   selector: '.btn-toggleTips',
+    //   html : true,
+    //   content: function() {
+    //     return angular.element(this).siblings('.coreTips').html();
+    //   }
+    // });
+
   });

@@ -1,12 +1,16 @@
 <div ng-controller="TransitionCtrl">
   <div class="toolbar">
-    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on" ng-click="toggleWindow($event)"></i>
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on" ng-click="toggleWindow()"></i>
     <i class="feature-name"><a name="data-bind">CSS3 Transitions</a></i>
-    <i class="fa fa-lightbulb-o fa-lg tool-btn btn-expl" title="Two Way Data-Binding" data-placement="bottom" on-click="openTips()"></i>
+    <i class="fa fa-lightbulb-o fa-lg" popover-placement="bottom" popover-template="'coreTips'" popover-append-to-body="true" ng-click="toggleTips($event)"></i>
     <i class="fa fa-star fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
-    <div class="popoverContent hidden">
-      <img src="img/data-bind.jpg">
-    </div>
+    <script type="text/ng-template" id="coreTips">
+      <p class="bg-primary">Though animations can be written in JavaScript, it is recommended to use CSS animations. This is because CSS animations are treated with low priority by the browser, and they don’t block the processing thread when the thread could be doing something important.</p>
+      <p class="bg-success">...</p>
+      <p class="bg-info">...</p>
+      <p class="bg-warning">...</p>
+      <p class="bg-danger">...</p>
+    </script>
   </div>
   <div class="row">
     <div class="col-md-6">

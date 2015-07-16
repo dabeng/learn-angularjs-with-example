@@ -1,4 +1,11 @@
-app.controller('TransitionCtrl', function($scope, $element) {
+app.controller('TransitionCtrl', function($scope, $element, $timeout) {
+    // customize the style of UI elements on toolbar
+    $scope.toggleTips = function($event) {
+      angular.element('.arrow').css('margin-left',
+        angular.element($event.target).offset().left - (angular.element('.popover').outerWidth()/2) - 33);
+    }
+
+
     $element.find('code').each(function(i, block) {
       hljs.highlightBlock(block);
     });

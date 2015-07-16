@@ -82,3 +82,8 @@ pre {
   margin: auto;
   overflow-y: auto;
 }
+
+.popover {
+  max-width: 80%;
+  left: 27px!important;
+}
