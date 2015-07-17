@@ -1,4 +1,4 @@
-<div ng-controller="AnimationCtrl">
+<div ng-controller="CssTransitionCtrl">
   <div class="toolbar">
     <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
     <i class="feature-name"><a name="data-bind">CSS3 Transitions</a></i>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <ul>
-        <li class="repeat-transition" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
+        <li class="repeat-css-trans" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
           <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
         </li>
       </ul>
@@ -51,7 +51,7 @@
   <p class="bg-success code-heading">html source code</p>
   <pre>
     <code class="html" ng-non-bindable>
-&lt;li class=&quot;repeat-transition&quot; ng-repeat=&quot;candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby&quot;&gt;
+&lt;li class=&quot;repeat-css-trans&quot; ng-repeat=&quot;candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby&quot;&gt;
   &lt;strong&gt;{{ candidate.name }}&lt;/strong&gt; from &lt;i&gt;{{ candidate.department }}&lt;/i&gt;
 &lt;/li&gt;
     </code>
@@ -59,30 +59,30 @@
   <p class="bg-success code-heading">css source code</p>
   <pre>
     <code class="css">
-.repeat-transition.ng-enter,
-.repeat-transition.ng-leave,
-.repeat-transition.ng-move {
+.repeat-css-trans.ng-enter,
+.repeat-css-trans.ng-leave,
+.repeat-css-trans.ng-move {
   -webkit-transition: all linear 0.5s;
   -moz-transition: all linear 0.5s;
   -o-transition: all linear 0.5s;
   transition: all linear 0.5s;
 }
-.repeat-transition.ng-enter {
+.repeat-css-trans.ng-enter {
   opacity: 0;
 }
-.repeat-transition.ng-enter.ng-enter-active {
+.repeat-css-trans.ng-enter.ng-enter-active {
   opacity: 1;
 }
-.repeat-transition.ng-leave {
+.repeat-css-trans.ng-leave {
   opacity: 1;
 }
-.repeat-transition.ng-leave.ng-leave-active {
+.repeat-css-trans.ng-leave.ng-leave-active {
   opacity: 0;
 }
-.repeat-transition.ng-move {
+.repeat-css-trans.ng-move {
   opacity: 0;
 }
-.repeat-transition.ng-move.ng-move-active {
+.repeat-css-trans.ng-move.ng-move-active {
   opacity: 1;
 }
     </code>

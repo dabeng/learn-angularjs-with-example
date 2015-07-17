@@ -1,4 +1,4 @@
-app.controller('AnimationCtrl', function($scope, $element) {
+app.controller('CssAnimationCtrl', function($scope, $element) {
     // customize the style of UI elements on toolbar
     $scope.toggleTips = function($event) {
       $scope.$emit('openTips', $event);
@@ -27,8 +27,7 @@ app.controller('AnimationCtrl', function($scope, $element) {
        {name:'Julia', department:'Tourism Science'},
        {name:'Donald', department:'Politics'}];
 
-    $scope.myFilter = {};
-    $scope.myFilter.sortby = 'name';
+    $scope.myFilter = { sortby: 'name' };
 
     $scope.newCandidate = {};
     $scope.appendCandidate = function() {

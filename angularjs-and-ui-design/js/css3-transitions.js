@@ -1,4 +1,4 @@
-app.controller('TransitionCtrl', function($scope, $element, $timeout) {
+app.controller('CssTransitionCtrl', function($scope, $element, $timeout) {
     // customize the style of UI elements on toolbar
     $scope.toggleTips = function($event) {
       angular.element('.arrow').css('margin-left',
@@ -27,9 +27,8 @@ app.controller('TransitionCtrl', function($scope, $element, $timeout) {
        {name:'Marina', department:'Human Resources'},
        {name:'Julia', department:'Tourism Science'},
        {name:'Donald', department:'Politics'}];
-
-    $scope.myFilter = {};
-    $scope.myFilter.sortby = 'name';
+    
+    $scope.myFilter = { sortby: 'name'};
 
     $scope.newCandidate = {};
     $scope.appendCandidate = function() {

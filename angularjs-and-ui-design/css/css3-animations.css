@@ -1,5 +1,5 @@
-repeat-animation.ng-enter,
-repeat-animation.ng-move {
+.repeat-css-ani.ng-enter,
+.repeat-css-ani.ng-move {
   -webkit-animation:0.5s fadein;
   -moz-animation:0.5s fadein;
   -o-animation:0.5s fadein;
@@ -26,7 +26,7 @@ repeat-animation.ng-move {
   to { opacity:1; }
 }
 
-.repeat-animation.ng-leave {
+.repeat-css-ani.ng-leave {
   -webkit-animation:0.5s fadeout;
   -moz-animation:0.5s fadeout;
   -o-animation:0.5s fadeout;
