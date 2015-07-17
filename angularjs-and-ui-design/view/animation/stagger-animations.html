@@ -1,0 +1,78 @@
+<div ng-controller="StaggerAnimationCtrl">
+  <div class="toolbar">
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
+    <i class="feature-name"><a name="data-bind">Staggering Animations</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'animatecssTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star-half-o fa-lg" tooltip="difficulty coefficient"></i>
+    <script type="text/ng-template" id="animatecssTips">
+      <p class="bg-primary">It&apos;s a CSS trick that informs $animate to stagger all successive CSS animations(transitions or keyframe animations) into a curtain-like effect.</p>
+      <p class="bg-success"> the stagger effect can be performed by creating a ng-EVENT-stagger CSS class and attaching that class to the base CSS class used for the animation.</p>
+      <p class="bg-info">Staggering animations work by default in ngRepeat. Outside of ngRepeat, to use staggering animations, they can be triggered by firing multiple calls to the same event on $animate. </p>
+    </script>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="input-group col-md-5" style="float: left;">
+          <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
+          <input type="text" class="form-control" ng-model="myFilter.keyword">
+        </div>
+        <div class="col-md-7">
+          <label>Sort by:</label>
+          <label>
+            <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
+            <span class="label label-warning" style="color:#000;font-size:1.2em;">Name</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
+            <span class="label label-warning" style="color: #000;font-size:1.2em;">Department</span>
+          </label>
+        </div>
+      </div>
+      <ul>
+        <li class="repeat-ani-css" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
+          <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group" style="margin-bottom: 20px;">
+        <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
+        <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
+      </div>
+      <div class="input-group" style="margin-bottom: 20px;">
+        <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
+        <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
+      </div>
+      <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
+    </div>
+  </div>
+  <hr>
+  <p class="bg-success code-heading">html source code</p>
+  <pre>
+    <code class="html" ng-non-bindable>
+&lt;li class=&quot;repeat-ani-css&quot; ng-repeat=&quot;candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby&quot;&gt;
+  &lt;strong&gt;{{ candidate.name }}&lt;/strong&gt; from &lt;i&gt;{{ candidate.department }}&lt;/i&gt;
+&lt;/li&gt;
+    </code>
+  </pre>
+  <p class="bg-success code-heading">css source code</p>
+  <pre>
+    <code class="css">
+.repeat-ani-css.ng-enter,
+.repeat-ani-css.ng-move {  
+  -webkit-animation: slideInLeft 0.5s;
+  -moz-animation: slideInLeft 0.5s;
+  -ms-animation: slideInLeft 0.5s;
+  animation: slideInLeft 0.5s;
+}
+
+.repeat-ani-css.ng-leave {  
+  -webkit-animation: slideOutRight 0.5s;
+  -moz-animation: slideOutRight 0.5s;
+  -ms-animation: slideOutRight 0.5s;
+  animation: slideOutRight 0.5s;
+}
+    </code>
+  </pre>
+</div>

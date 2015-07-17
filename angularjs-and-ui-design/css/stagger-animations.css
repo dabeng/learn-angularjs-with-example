@@ -6,6 +6,18 @@
   animation: slideInDown 0.5s;
 }
 
+.repeat-ani-css.ng-enter-stagger,
+.repeat-ani-css.ng-leave-stagger,
+.repeat-ani-css.ng-move-stagger {
+  /* 50ms between each item being animated after the other */
+  -webkit-animation-delay:50ms;
+  animation-delay:50ms;
+
+  /* this is required here to prevent any CSS inheritance issues */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
 .repeat-ani-css.ng-leave {  
   -webkit-animation: slideOutUp 0.5s;
   -moz-animation: slideOutUp 0.5s;
