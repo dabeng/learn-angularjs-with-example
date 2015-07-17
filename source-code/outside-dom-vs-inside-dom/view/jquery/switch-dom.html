@@ -1,0 +1,55 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name">Switch Dom Structure</i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">append(), wrap(), replaceWith(), remove(), clone()</p>
+<div>
+  <label style="margin-right:20px;"> 
+    <input type="radio" name="opinion1" value="1" checked="checked"> I like AngularJS
+  </label>
+  <label>
+    <input type="radio" name="opinion1" value="0"> I dont't like it
+  </label>
+  <div id="myOpinion1">
+    <h3>In general, AngularJS is straightforward.</h3>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function($) {
+    $('input[name="opinion1"]').on('click', function() {
+      if(this.value==='1') {
+        $('#myOpinion1').empty().append('<h3>In general, AngularJS is straightforward.</h3>');
+      } else {
+        $('#myOpinion1').empty().append('<h3>Oh. no! AngularJS is so obscure.</h3>');
+      }
+    });
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;label&gt; 
+  &lt;input type=&quot;radio&quot; name=&quot;opinion1&quot; value=&quot;1&quot; checked=&quot;checked&quot;&gt; I like AngularJS
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;opinion1&quot; value=&quot;0&quot;&gt; I dont't like it
+&lt;/label&gt;
+&lt;div id=&quot;myOpinion1&quot;&gt;
+  &lt;h3&gt;In general, AngularJS is straightforward.&lt;/h3&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+$('input[name="opinion1"]').on('click', function() {
+  if(this.value === '1') {
+    $('#myOpinion1').empty().append('&lt;h3&gt;In general, AngularJS is straightforward.&lt;/h3&gt;');
+  } else {
+    $('#myOpinion1').empty().append('&lt;h3&gt;Oh. no! AngularJS is so obscure.&lt;/h3&gt;');
+  }
+});
+  </code>
+</pre>

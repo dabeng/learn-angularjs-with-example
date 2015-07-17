@@ -1,0 +1,84 @@
+.input-group-addon {
+  color: #000;
+  background-color: #f0ad4e;
+}
+
+.feature-wrapper {
+  padding-bottom: 15px;
+}
+
+.feature {
+  border: 2px solid #5bc0de;
+  border-radius: 6px;
+  height: 360px;
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.toolbar .tool-btn {
+  cursor:  pointer;
+}
+
+.feature .popover-title {
+  color: #5bc0de;
+  font-weight: bold;
+}
+
+.col-md-12 .feature {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  height: auto;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.toolbar {
+  background-color: #5bc0de;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.toolbar i {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.toolbar .tool-btn:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+.feature-name {
+  color: #fff;
+  font-weight: bold;
+}
+
+pre {
+  background-color: transparent; 
+  border: none;
+  border-radius: 6px;
+  padding: 0px;
+  overflow-y: hidden;
+}
+
+.diff-opinion {
+  padding: 10px;
+}
+
+.single-window {
+  height: auto;
+  margin: 15px;
+}
+
+.popover {
+  max-width: 80%;
+  width: 80%;
+  left: 27px!important;
+}

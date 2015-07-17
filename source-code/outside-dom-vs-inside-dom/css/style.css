@@ -1,0 +1,93 @@
+.input-group-addon {
+  color: #000;
+  background-color: #f0ad4e;
+}
+
+.left-col.second-level {
+  margin: 12px -9px 12px -15px;
+}
+
+.right-col.second-level {
+  margin: 12px -15px 0px -9px;
+}
+
+.feature-wrapper {
+  padding-bottom: 15px;
+}
+
+.feature {
+  border: 2px solid #5bc0de;
+  border-radius: 6px;
+  height: 360px;
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.toolbar .tool-btn {
+  cursor:  pointer;
+}
+
+.feature .popover-title {
+  color: #5bc0de;
+  font-weight: bold;
+}
+
+.left-col.feature {
+  margin-right: -9px;
+  margin-left: -15px;
+  overflow-y: hidden;
+}
+
+.right-col.feature {
+  margin-right: -15px;
+  margin-left: -9px;
+  overflow-y: hidden;
+}
+
+.col-md-12 .feature {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  height: auto;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.toolbar {
+  background-color: #5bc0de;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.toolbar i {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.toolbar .tool-btn:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+.feature-name {
+  color: #fff;
+  font-weight: bold;
+}
+
+pre {
+  background-color: transparent; 
+  border: none;
+  border-radius: 6px;
+  padding: 0px;
+  overflow-y: hidden;
+}
+
+.diff-opinion {
+  padding: 10px;
+}

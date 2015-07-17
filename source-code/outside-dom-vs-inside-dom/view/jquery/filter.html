@@ -1,0 +1,58 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name">It's where Regular Expression comes in</i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">manual filter</p>
+<div ng-controller="FilterCtrl">
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-thumbs-o-up fa-lg"></i></span>
+    <input type="text" class="form-control" placeholder="Candidate" id="keyword">
+  </div>
+  <ul id="candidate-list">
+    <li>Sebastiane from Philosophy</li>
+    <li>Wendy from Mathematics</li>
+    <li>Mike from Economics</li>
+    <li>Adam from Computer Science</li>
+    <li>Barton from Electronics</li>
+    <li>Clark from Accountancy</li>
+    <li>Emma from Mechanical Engineering</li>
+    <li>George from Communications</li>
+    <li>Mike from Civil Engineering</li>
+    <li>Marina from Human Resources</li>
+    <li>Julia from Tourism Science</li>
+    <li>Donald from Politics</li>
+  </ul>
+</div>
+<script type="text/javascript">
+  $(function($) {
+    $('#keyword').on('keyup', function(event) {
+      var candidates = $('#candidate-list').children();
+      for (var i = 0; i < candidates.length; i++) {
+        var item = candidates.eq(i);
+        if ((new RegExp(event.target.value, 'i')).test(item.text())) {
+          item.show();
+        } else {
+          item.hide();
+        }
+      }
+    });
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javscript">
+$('#keyword').on('keyup', function(event) {
+  var candidates = $('#candidate-list').children();
+  for (var i = 0; i < candidates.length; i++) {
+    var item = candidates.eq(i);
+    if ((new RegExp(event.target.value, 'i')).test(item.text())) {
+      item.show();
+    } else {
+      item.hide();
+    }
+  }
+});
+  </code>
+</pre>

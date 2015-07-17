@@ -1,0 +1,37 @@
+<div class="toolbar">
+  <i class="fa fa-square-o fa-lg tool-btn btn-toggle" data-toggle="tooltip" title="focus on"></i>
+  <i class="feature-name"><a name="event-bind">Event-Binding</a></i>
+  <i class="fa fa-star-half-o fa-lg" data-toggle="tooltip" title="difficulty coefficient"></i>
+</div>
+<p class="bg-info example-heading">onBlaBla</p>
+<div ng-controller="EventBindCtrl">
+  <button type="button" class="btn btn-success" ng-click="sayHello()">Say Hello</button>
+</div>
+<script type="text/javascript">
+  var eventBindApp = angular.module('eventBindApp', []);
+  eventBindApp.controller('EventBindCtrl', function($scope) {
+    $scope.sayHello = function() {
+      alert('Hello, guys!');
+    };
+  });
+</script>
+<hr>
+<p class="bg-success code-heading">html source code</p>
+<pre>
+  <code class="html">
+&lt;div ng-controller=&quot;EventBindCtrl&quot;&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; ng-click=&quot;sayHello()&quot;&gt;Say Hello&lt;/button&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+<p class="bg-success code-heading">javascript source code</p>
+<pre>
+  <code class="javascript">
+var eventBindApp = angular.module('eventBindApp', []);
+eventBindApp.controller('EventBindCtrl', function($scope) {
+  $scope.sayHello = function() {
+    alert('Hello, guys!');
+  };
+});
+  </code>
+</pre>

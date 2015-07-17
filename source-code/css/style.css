@@ -1,0 +1,69 @@
+.row {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.heading {
+  background-color: #5bc0de;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.first-level {
+  padding: 15px;
+  margin-bottom: 0px;
+}
+
+.second-level {
+  padding: 12px;
+  margin: 12px -9px 0px -15px;
+}
+
+hr {
+  border: 1px dashed #5bc0de;
+}
+
+pre {
+  margin-top: -20px;
+}
+
+.example-heading, .code-heading {
+  padding: 5px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.code-heading i {
+  margin-right: 10px;
+}
+
+.code-heading i:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+.feature .popover {
+  max-width: 100%;
+}
+
+.toolbar i a {
+  color: #fff;
+  text-decoration:none;
+}
+
+.toolbar i a:hover {
+  color: #337ab7;
+}
+
+.example-card {
+  border: 2px solid #5bc0de;
+  border-radius: 6px;
+  height: 360px;
+  margin-bottom: 0px;
+  padding: 10px;
+  margin-top: 12px;
+  overflow: hidden;
+}

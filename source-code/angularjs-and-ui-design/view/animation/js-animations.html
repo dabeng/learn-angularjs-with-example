@@ -1,0 +1,104 @@
+<div ng-controller="JsAnimationCtrl">
+  <div class="toolbar">
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
+    <i class="feature-name"><a name="data-bind">Javascript Animations</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'jsAnimationTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <script type="text/ng-template" id="jsAnimationTips">
+      <p class="bg-primary">With CSS3 animations, we’ll use the same initial class ng-[EVENT], but we don’t need to define animation states in the ng-[EVENT]-active state, because our CSS rules will handle the rest of the block.</p>
+    </script>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="input-group col-md-5" style="float: left;">
+          <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
+          <input type="text" class="form-control" ng-model="myFilter.keyword">
+        </div>
+        <div class="col-md-7">
+          <label>Sort by:</label>
+          <label>
+            <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
+            <span class="label label-warning" style="color:#000;font-size:1.2em;">Name</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
+            <span class="label label-warning" style="color: #000;font-size:1.2em;">Department</span>
+          </label>
+        </div>
+      </div>
+      <ul>
+        <li class="repeat-js-ani" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
+          <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group" style="margin-bottom: 20px;">
+        <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
+        <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
+      </div>
+      <div class="input-group" style="margin-bottom: 20px;">
+        <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
+        <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
+      </div>
+      <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
+    </div>
+  </div>
+  <hr>
+  <p class="bg-success code-heading">html source code</p>
+  <pre>
+    <code class="html" ng-non-bindable>
+&lt;li class=&quot;repeat-js-ani&quot; ng-repeat=&quot;candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby&quot;&gt;
+  &lt;strong&gt;{{ candidate.name }}&lt;/strong&gt; from &lt;i&gt;{{ candidate.department }}&lt;/i&gt;
+&lt;/li&gt;
+    </code>
+  </pre>
+  <p class="bg-success code-heading">javascript source code</p>
+  <pre>
+    <code class="javascript">
+myModule.animation('.repeat-js-ani', function() {
+  return {
+    enter : function(element, done) {
+      element.css('opacity',0);
+      jQuery(element).animate({
+        opacity: 1
+      }, 500, done);
+
+      // optional onDone or onCancel callback function to handle any post-animation
+      // cleanup operations
+      return function(isCancelled) {
+        if(isCancelled) {
+          jQuery(element).stop();
+        }
+      }
+    },
+    leave : function(element, done) {
+      element.css('opacity', 1);
+      jQuery(element).animate({
+        opacity: 0
+      }, 500, done);
+
+      return function(isCancelled) {
+        if(isCancelled) {
+          jQuery(element).stop();
+        }
+      }
+    },
+    move : function(element, done) {
+      element.css('opacity', 0);
+      jQuery(element).animate({
+        opacity: 1
+      }, 500, done);
+
+      return function(isCancelled) {
+        if(isCancelled) {
+          jQuery(element).stop();
+        }
+      }
+    }
+  }
+});
+    </code>
+  </pre>
+</div>
