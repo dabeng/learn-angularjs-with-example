@@ -73,14 +73,8 @@ pre {
 }
 
 .single-window {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
   height: auto;
-  margin: auto;
-  overflow-y: auto;
+  margin: 15px;
 }
 
 .popover {
