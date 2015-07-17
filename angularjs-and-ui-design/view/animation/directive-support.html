@@ -1,0 +1,55 @@
+<div ng-controller="DirectiveSupportCtrl">
+  <div class="toolbar">
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
+    <i class="feature-name"><a name="data-bind">Directive Support</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'dictSupportTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <script type="text/ng-template" id="dictSupportTips">
+      <p class="bg-primary">The following events are generated automatically when there is any change in the state of the directives.</p>
+      <p class="bg-success">Th following events are generated only when the module ngAnimate is passed as a dependency in the application module.</p>
+      <p class="bg-info">When these events are fired, they add CSS classes on the applied element. The corresponding names of the CSS classes are mentioned in the below table.</p>
+      <p class="bg-warning">As you can see, we are given liberty to define behavior when the event is happening and also after the event has happened.</p>
+      <p class="bg-danger">Animations in AngularJS are completely based on CSS classes. As long as you have a CSS class attached to a HTML element within your website, you can apply animations to it.</p>
+    </script>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Directive</th>
+          <th>Events</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="active">
+          <td>ngRepeat</td>
+          <td>enter, leave and move</td>
+        </tr>
+        <tr>
+          <td>ngView, ngInclude, ngSwitch, ngIf</td>
+          <td>enter and leave</td>
+        </tr>
+        <tr class="success">
+          <td>ngClass</td>
+          <td>add and remove (the CSS class(es) present)</td>
+        </tr>
+        <tr>
+          <td>ngShow, ngHide</td>
+          <td>add and remove (the ng-hide class value)</td>
+        </tr>
+        <tr class="info">
+          <td>form, ngModel</td>
+          <td>add and remove (dirty, pristine, valid, invalid and all other validations)</td>
+        </tr>
+        <tr>
+          <td>ngMessages</td>
+          <td>add and remove (ng-active and ng-inactive)</td>
+        </tr>
+        <tr class="warning">
+          <td>ngMessage</td>
+          <td>enter and leave</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

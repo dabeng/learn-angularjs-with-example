@@ -85,5 +85,6 @@ pre {
 
 .popover {
   max-width: 80%;
+  width: 80%;
   left: 27px!important;
 }

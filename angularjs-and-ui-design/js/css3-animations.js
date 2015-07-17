@@ -1,8 +1,7 @@
-app.controller('AnimationCtrl', function($scope, $element, $timeout) {
+app.controller('AnimationCtrl', function($scope, $element) {
     // customize the style of UI elements on toolbar
     $scope.toggleTips = function($event) {
-      angular.element('.arrow').css('margin-left',
-        angular.element($event.target).offset().left - (angular.element('.popover').outerWidth()/2) - 33);
+      $scope.$emit('openTips', $event);
     }
 
 

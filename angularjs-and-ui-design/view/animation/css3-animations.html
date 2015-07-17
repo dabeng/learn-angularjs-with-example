@@ -2,10 +2,10 @@
   <div class="toolbar">
     <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
     <i class="feature-name"><a name="data-bind">CSS3 Animations</a></i>
-    <i class="fa fa-lightbulb-o fa-lg" popover-placement="bottom" popover-template="'coreTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'animationTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
     <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
-    <script type="text/ng-template" id="coreTips">
-      <p class="bg-primary">Though animations can be written in JavaScript, it is recommended to use CSS animations. This is because CSS animations are treated with low priority by the browser, and they don’t block the processing thread when the thread could be doing something important.</p>
+    <script type="text/ng-template" id="animationTips">
+      <p class="bg-primary">With CSS3 animations, we’ll use the same initial class ng-[EVENT], but we don’t need to define animation states in the ng-[EVENT]-active state, because our CSS rules will handle the rest of the block.</p>
     </script>
   </div>
   <div class="row">
@@ -57,31 +57,59 @@
   <p class="bg-success code-heading">css source code</p>
   <pre>
     <code class="css">
-.repeat-transition.ng-enter,
-.repeat-transition.ng-leave,
-.repeat-transition.ng-move {
-  -webkit-transition: all linear 0.5s;
-  -moz-transition: all linear 0.5s;
-  -o-transition: all linear 0.5s;
-  transition: all linear 0.5s;
+repeat-animation.ng-enter,
+repeat-animation.ng-move {
+  -webkit-animation:0.5s fadein;
+  -moz-animation:0.5s fadein;
+  -o-animation:0.5s fadein;
+  animation:0.5s fadein;
 }
-.repeat-transition.ng-enter {
-  opacity: 0;
+
+@keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
 }
-.repeat-transition.ng-enter.ng-enter-active {
-  opacity: 1;
+
+@-webkit-keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
 }
-.repeat-transition.ng-leave {
-  opacity: 1;
+
+@-moz-keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
 }
-.repeat-transition.ng-leave.ng-leave-active {
-  opacity: 0;
+
+@-o-keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
 }
-.repeat-transition.ng-move {
-  opacity: 0;
+
+.repeat-animation.ng-leave {
+  -webkit-animation:0.5s fadeout;
+  -moz-animation:0.5s fadeout;
+  -o-animation:0.5s fadeout;
+  animation:0.5s fadeout;
 }
-.repeat-transition.ng-move.ng-move-active {
-  opacity: 1;
+
+@keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes fadeout {
+  from { opacity:1; }
+  to { opacity:0; }
 }
     </code>
   </pre>
