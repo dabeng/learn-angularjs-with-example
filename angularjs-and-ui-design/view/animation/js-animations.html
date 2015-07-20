@@ -8,7 +8,7 @@
       <p class="bg-primary">With CSS3 animations, we’ll use the same initial class ng-[EVENT], but we don’t need to define animation states in the ng-[EVENT]-active state, because our CSS rules will handle the rest of the block.</p>
     </script>
   </div>
-  <div class="row">
+  <div class="row" style="min-height:284px;">
     <div class="col-md-6">
       <div class="row">
         <div class="input-group col-md-5" style="float: left;">
@@ -60,10 +60,8 @@
 myModule.animation('.repeat-js-ani', function() {
   return {
     enter : function(element, done) {
-      element.css('opacity',0);
-      jQuery(element).animate({
-        opacity: 1
-      }, 500, done);
+      element.css({ 'opacity': 0, 'max-height': 0 });
+      jQuery(element).animate({ 'opacity': 1, 'max-height': 20 }, 500, done);
 
       // optional onDone or onCancel callback function to handle any post-animation
       // cleanup operations
@@ -74,10 +72,8 @@ myModule.animation('.repeat-js-ani', function() {
       }
     },
     leave : function(element, done) {
-      element.css('opacity', 1);
-      jQuery(element).animate({
-        opacity: 0
-      }, 500, done);
+      element.css({ 'opacity': 1, 'max-height': 20 });
+      jQuery(element).animate({ 'opacity': 0, 'max-height': 0 }, 500, done);
 
       return function(isCancelled) {
         if(isCancelled) {
@@ -86,10 +82,8 @@ myModule.animation('.repeat-js-ani', function() {
       }
     },
     move : function(element, done) {
-      element.css('opacity', 0);
-      jQuery(element).animate({
-        opacity: 1
-      }, 500, done);
+      element.css({ 'opacity': 0, 'max-height': 0 });
+      jQuery(element).animate({ 'opacity': 1, 'max-height': 20 }, 500, done);
 
       return function(isCancelled) {
         if(isCancelled) {

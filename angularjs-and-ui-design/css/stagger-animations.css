@@ -1,14 +1,14 @@
-.repeat-ani-css.ng-enter,
-.repeat-ani-css.ng-move {  
+.repeat-stagger-ani.ng-enter,
+.repeat-stagger-ani.ng-move {  
   -webkit-animation: slideInDown 0.5s;
   -moz-animation: slideInDown 0.5s;
   -ms-animation: slideInDown 0.5s;
   animation: slideInDown 0.5s;
 }
 
-.repeat-ani-css.ng-enter-stagger,
-.repeat-ani-css.ng-leave-stagger,
-.repeat-ani-css.ng-move-stagger {
+.repeat-stagger-ani.ng-enter-stagger,
+.repeat-stagger-ani.ng-leave-stagger,
+.repeat-stagger-ani.ng-move-stagger {
   /* 50ms between each item being animated after the other */
   -webkit-animation-delay:50ms;
   animation-delay:50ms;
@@ -18,7 +18,7 @@
   animation-duration:0;
 }
 
-.repeat-ani-css.ng-leave {  
+.repeat-stagger-ani.ng-leave {  
   -webkit-animation: slideOutUp 0.5s;
   -moz-animation: slideOutUp 0.5s;
   -ms-animation: slideOutUp 0.5s;

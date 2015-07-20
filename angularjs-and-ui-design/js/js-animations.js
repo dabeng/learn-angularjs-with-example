@@ -40,13 +40,10 @@ app.controller('JsAnimationCtrl', function($scope, $element) {
 app.animation('.repeat-js-ani', function() {
   return {
     enter : function(element, done) {
-      element.css('opacity',0);
-      jQuery(element).animate({
-        opacity: 1
-      }, 500, done);
+      element.css({ 'opacity': 0, 'max-height': 0 });
+      jQuery(element).animate({ 'opacity': 1, 'max-height': 20 }, 500, done);
 
-      // optional onDone or onCancel callback
-      // function to handle any post-animation
+      // optional onDone or onCancel callback function to handle any post-animation
       // cleanup operations
       return function(isCancelled) {
         if(isCancelled) {
@@ -55,14 +52,9 @@ app.animation('.repeat-js-ani', function() {
       }
     },
     leave : function(element, done) {
-      element.css('opacity', 1);
-      jQuery(element).animate({
-        opacity: 0
-      }, 500, done);
+      element.css({ 'opacity': 1, 'max-height': 20 });
+      jQuery(element).animate({ 'opacity': 0, 'max-height': 0 }, 500, done);
 
-      // optional onDone or onCancel callback
-      // function to handle any post-animation
-      // cleanup operations
       return function(isCancelled) {
         if(isCancelled) {
           jQuery(element).stop();
@@ -70,14 +62,9 @@ app.animation('.repeat-js-ani', function() {
       }
     },
     move : function(element, done) {
-      element.css('opacity', 0);
-      jQuery(element).animate({
-        opacity: 1
-      }, 500, done);
+      element.css({ 'opacity': 0, 'max-height': 0 });
+      jQuery(element).animate({ 'opacity': 1, 'max-height': 20 }, 500, done);
 
-      // optional onDone or onCancel callback
-      // function to handle any post-animation
-      // cleanup operations
       return function(isCancelled) {
         if(isCancelled) {
           jQuery(element).stop();

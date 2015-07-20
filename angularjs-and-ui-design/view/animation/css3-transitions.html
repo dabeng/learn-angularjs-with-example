@@ -10,7 +10,7 @@
       <p class="bg-info">The ng-[EVENT] CSS class represents the initial state of the animation, while the ng-[EVENT]-active CSS class is there so we can define the final state of the animation.</p>
     </script>
   </div>
-  <div class="row">
+  <div class="row" style="min-height:284px;">
     <div class="col-md-6">
       <div class="row">
         <div class="input-group col-md-5" style="float: left;">
@@ -69,21 +69,27 @@
 }
 .repeat-css-trans.ng-enter {
   opacity: 0;
+  max-height: 0px;
 }
 .repeat-css-trans.ng-enter.ng-enter-active {
   opacity: 1;
+  max-height: 20px;
 }
 .repeat-css-trans.ng-leave {
   opacity: 1;
+  max-height: 20px;
 }
 .repeat-css-trans.ng-leave.ng-leave-active {
   opacity: 0;
+  max-height: 0px;
 }
 .repeat-css-trans.ng-move {
   opacity: 0;
+  max-height: 0px;
 }
 .repeat-css-trans.ng-move.ng-move-active {
   opacity: 1;
+  max-height: 20px;
 }
     </code>
   </pre>

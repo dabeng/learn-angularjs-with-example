@@ -1,0 +1,37 @@
+<div ng-controller="AnimationAnchorCtrl">
+  <div class="toolbar">
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
+    <i class="feature-name"><a name="data-bind">Animation Anchoring</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'animatecssTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star-half-o fa-lg" tooltip="difficulty coefficient"></i>
+    <script type="text/ng-template" id="animatecssTips">
+      <p class="bg-primary">The attribute "ng-animate-ref"(as of AnguarlJS 1.4) allow us to cross-animate elements between structural areas of an application (like views)</p>
+      <p class="bg-success">Internally,ngAnimate will now create a transport element for paired up elemetns and it will then attempt to animate from the original position in the one view to the target position of the other view.</p>
+      <p class="bg-info">For the animation to work a special CSS class called ng-anchor will be added to the transported element.</p>
+      <p class="bg-warning">We can now attach a transition onto the .anchor-element.ng-anchor CSS class and then ngAnimate will handle the entire transition for us as well as the addition and removal of any changes of CSS classes between the elements.</p>
+      <p class="bg-danger">When the animation happens, there are two stages that occur: an out and an in stage. ".ng-anchor" sets up a transition for both the in and out phases, but we can also target the out or in phases directly via ng-anchor-out and ng-anchor-in.</p>
+    </script>
+  </div>
+  <div class="row">
+<iframe class="frame" height="320px" width="100%" frameborder="0" border="0" src="view/animation/animation-anchor/index.html"></iframe>
+  </div>
+  <hr>
+  <p class="bg-success code-heading">html source code</p>
+  <pre>
+    <code class="html" ng-non-bindable>
+
+    </code>
+  </pre>
+  <p class="bg-success code-heading">css source code</p>
+  <pre>
+    <code class="css">
+
+    </code>
+  </pre>
+  <p class="bg-success code-heading">javascript source code</p>
+  <pre>
+    <code class="css">
+
+    </code>
+  </pre>
+</div>
