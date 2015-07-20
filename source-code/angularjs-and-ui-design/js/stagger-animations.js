@@ -1,4 +1,4 @@
-app.controller('JsAnimationCtrl', function($scope, $element) {
+app.controller('StaggerAnimationCtrl', function($scope, $element) {
     // customize the style of UI elements on toolbar
     $scope.toggleTips = function($event) {
       $scope.$emit('openTips', $event);
@@ -36,40 +36,3 @@ app.controller('JsAnimationCtrl', function($scope, $element) {
       }
     };
   });
-
-app.animation('.repeat-js-ani', function() {
-  return {
-    enter : function(element, done) {
-      element.css({ 'opacity': 0, 'max-height': 0 });
-      jQuery(element).animate({ 'opacity': 1, 'max-height': 20 }, 500, done);
-
-      // optional onDone or onCancel callback function to handle any post-animation
-      // cleanup operations
-      return function(isCancelled) {
-        if(isCancelled) {
-          jQuery(element).stop();
-        }
-      }
-    },
-    leave : function(element, done) {
-      element.css({ 'opacity': 1, 'max-height': 20 });
-      jQuery(element).animate({ 'opacity': 0, 'max-height': 0 }, 500, done);
-
-      return function(isCancelled) {
-        if(isCancelled) {
-          jQuery(element).stop();
-        }
-      }
-    },
-    move : function(element, done) {
-      element.css({ 'opacity': 0, 'max-height': 0 });
-      jQuery(element).animate({ 'opacity': 1, 'max-height': 20 }, 500, done);
-
-      return function(isCancelled) {
-        if(isCancelled) {
-          jQuery(element).stop();
-        }
-      }
-    }
-  }
-});

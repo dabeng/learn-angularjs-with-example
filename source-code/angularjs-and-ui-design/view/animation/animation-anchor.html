@@ -1,0 +1,146 @@
+<div ng-controller="AnimationAnchorCtrl">
+  <div class="toolbar">
+    <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
+    <i class="feature-name"><a name="data-bind">Animation Anchoring</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'animatecssTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star-half-o fa-lg" tooltip="difficulty coefficient"></i>
+    <script type="text/ng-template" id="animatecssTips">
+      <p class="bg-primary">The attribute "ng-animate-ref"(as of AnguarlJS 1.4) allow us to cross-animate elements between structural areas of an application (like views)</p>
+      <p class="bg-success">Internally,ngAnimate will now create a transport element for paired up elemetns and it will then attempt to animate from the original position in the one view to the target position of the other view.</p>
+      <p class="bg-info">For the animation to work a special CSS class called ng-anchor will be added to the transported element.</p>
+      <p class="bg-warning">We can now attach a transition onto the .anchor-element.ng-anchor CSS class and then ngAnimate will handle the entire transition for us as well as the addition and removal of any changes of CSS classes between the elements.</p>
+      <p class="bg-danger">When the animation happens, there are two stages that occur: an out and an in stage. ".ng-anchor" sets up a transition for both the in and out phases, but we can also target the out or in phases directly via ng-anchor-out and ng-anchor-in.</p>
+    </script>
+  </div>
+  <div class="row">
+    <iframe class="frame" height="320px" width="100%" frameborder="0" border="0" src="view/animation/animation-anchor/index.html"></iframe>
+  </div>
+  <hr>
+  <p class="bg-success code-heading">index.html source code</p>
+  <pre>
+    <code class="html" ng-non-bindable>
+&lt;body ng-app=&quot;animationAnchor&quot;&gt;
+  &lt;nav class=&quot;navbar navbar-default&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+      &lt;div class=&quot;navbar-header&quot;&gt;
+        &lt;a class=&quot;navbar-brand&quot; href=&quot;#/&quot;&gt;Home&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;collapse navbar-collapse&quot;&gt;
+        &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+          &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Bla&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bla&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+  &lt;div class=&quot;view&quot; ui-view&gt;&lt;/div&gt;
+&lt;/dody&gt;
+    </code>
+  </pre>
+  <p class="bg-success code-heading">home.html source code</p>
+  <pre>
+    <code class="html" ng-non-bindable>
+&lt;h3&gt;Candidates for the chairman of student union&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li class=&quot;candidate-item candidate&quot; ng-repeat=&quot;candidate in candidates&quot; ng-animate-ref=&quot;{{ candidate.index }}&quot;&gt;
+    &lt;a ng-href=&quot;#/profile/{{ candidate.index }}&quot; &gt;
+      {{ candidate.name }} from {{ candidate.department }}
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+    </code>
+  </pre>
+  <p class="bg-success code-heading">profile.html source code</p>
+  <pre>
+    <code class="html" ng-non-bindable>
+&lt;div class=&quot;candidate-heading candidate&quot; ng-animate-ref=&quot;{{ candidate.index }}&quot;&gt;
+  {{ candidate.name }} from {{ candidate.department }}
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4 id-photo&quot;&gt;
+    &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;
+  &lt;/div&gt;
+    &lt;div class=&quot;col-md-8 resume&quot;&gt;
+      &lt;p class=&quot;bg-primary&quot;&gt;...&lt;/p&gt;
+      &lt;p class=&quot;bg-success&quot;&gt;...&lt;/p&gt;
+      &lt;p class=&quot;bg-info&quot;&gt;...&lt;/p&gt;
+      &lt;p class=&quot;bg-warning&quot;&gt;...&lt;/p&gt;
+      &lt;p class=&quot;bg-danger&quot;&gt;...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
+  <p class="bg-success code-heading">javascript source code</p>
+  <pre>
+    <code class="javascript">
+angular.module('animationAnchor', ['ui.router', 'ngAnimate'])
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+  .state('home', {
+    url: '/',
+    templateUrl: 'home.html',
+    controller: 'HomeController'
+  })
+  .state('profile', {
+    url: '/profile/:index',
+    templateUrl: 'profile.html',
+    controller: 'ProfileController'
+  });
+})
+.run(['$rootScope', function($rootScope) {
+  $rootScope.candidates = [
+    { index: 0, name:'Sebastiane', department:'Philosophy' },
+    { index: 1, name:'Wendy', department:'Mathematics' },
+    { index: 2, name:'Mike', department:'Economics' },
+    { index: 3, name:'Adam', department:'Computer Science' },
+    { index: 4, name:'Barton', department:'Electronics'} ,
+    { index: 5, name:'Clark', department:'Accountancy' },
+    { index: 6, name:'Emma', department:'Mechanical Engineering' },
+    { index: 7, name:'George', department:'Communications' }
+  ];
+}])
+.controller('HomeController', [function() {
+  //empty
+}])
+.controller('ProfileController', function($rootScope,$scope, $stateParams) {
+  $scope.candidate = $rootScope.candidates[parseInt($stateParams.index, 10)];
+});
+    </code>
+  </pre>
+  <p class="bg-success code-heading">css source code</p>
+  <pre>
+    <code class="css">
+.view.ng-enter,
+.view.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+.view.ng-enter {
+  opacity: 0;
+}
+.view.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.view.ng-leave {
+  opacity: 1;
+}
+.view.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.candidate.ng-anchor {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+.candidate.ng-anchor-out {
+  background-color: #5bc0de;
+  color: #fff;
+}
+    </code>
+  </pre>
+</div>

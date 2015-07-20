@@ -1,0 +1,26 @@
+.repeat-stagger-ani.ng-enter,
+.repeat-stagger-ani.ng-move {  
+  -webkit-animation: slideInDown 0.5s;
+  -moz-animation: slideInDown 0.5s;
+  -ms-animation: slideInDown 0.5s;
+  animation: slideInDown 0.5s;
+}
+
+.repeat-stagger-ani.ng-enter-stagger,
+.repeat-stagger-ani.ng-leave-stagger,
+.repeat-stagger-ani.ng-move-stagger {
+  /* 50ms between each item being animated after the other */
+  -webkit-animation-delay:50ms;
+  animation-delay:50ms;
+
+  /* this is required here to prevent any CSS inheritance issues */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.repeat-stagger-ani.ng-leave {  
+  -webkit-animation: slideOutUp 0.5s;
+  -moz-animation: slideOutUp 0.5s;
+  -ms-animation: slideOutUp 0.5s;
+  animation: slideOutUp 0.5s;
+}

@@ -1,0 +1,8 @@
+<h3 style="color:#3c763d">Candidates for the chairman of student union</h3>
+<ul>
+  <li class="candidate-item candidate" ng-repeat="candidate in candidates" ng-animate-ref="{{ candidate.index }}">
+    <a ng-href="#/profile/{{ candidate.index }}" >
+      {{ candidate.name }} from {{ candidate.department }}
+    </a>
+  </li>
+</ul>
