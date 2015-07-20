@@ -4,7 +4,6 @@ app.controller('AnimationAnchorCtrl', function($scope, $element) {
       $scope.$emit('openTips', $event);
     }
 
-
     $element.find('code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
