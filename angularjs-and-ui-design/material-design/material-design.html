@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="StarterApp" style="overflow:hidden!important;">
+<head>
+  <link rel="stylesheet" href="angular-material.min.css">
+  <link rel="stylesheet" href="material-design.css">
+</head>
+<body layout="column" ng-controller="AppCtrl">
+  <md-toolbar layout="row" ng-controller="ToolbarCtrl">
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Settings">
+      <ng-md-icon icon="menu" style="fill:white"></ng-md-icon>
+    </md-button>
+    <h2><span class="app-name">Demo</span></h2>
+    <md-menu md-offset="10 58">
+      <md-button ng-click="$mdOpenMenu()">Dashboards</md-button>
+      <md-menu-content width="4">
+        <md-menu-item><md-button ng-click="doSomething()">View System Dashboard</md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item><md-button ng-click="ctrl.toggleNotifications()">Manage Dashboards</md-button></md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu md-offset="10 58">
+      <md-button ng-click="$mdOpenMenu()">Projects</md-button>
+      <md-menu-content width="4">
+        <md-menu-item><md-button ng-click="doSomething()">TCMS(TCMS)</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">OnePieceJS(ONEPIECEJS)</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">Cantas(CANTAS)</md-button></md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item><md-button ng-click="doSomething()">View All Projects</md-button></md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu md-offset="10 58">
+      <md-button ng-click="$mdOpenMenu()">Issues</md-button>
+      <md-menu-content width="4">
+        <md-menu-item><md-button ng-click="doSomething()">Search for Issues</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">Create issue</md-button></md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item><md-button ng-click="doSomething()">Import issues from CSV</md-button></md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item><md-button ng-click="doSomething()">My Open Issues</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">Reported by Me</md-button></md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item><md-button ng-click="doSomething()">Mange Filters</md-button></md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu md-offset="10 58">
+      <md-button ng-click="$mdOpenMenu()">Agile</md-button>
+      <md-menu-content width="4">
+        <md-menu-item><md-button ng-click="doSomething()">TCMS Scrum</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">OnePieceJS Scrum</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">Cantas Scrum</md-button></md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item><md-button ng-click="doSomething()">Manage Dashboards</md-button></md-menu-item>
+        <md-menu-item><md-button ng-click="doSomething()">Getting Started</md-button></md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-button class="md-raised" ng-click="showCreateIssueDialog($event)">Create issue</md-button>
+        <span flex></span>
+  </div>
+  </md-toolbar>
+  <div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          
+    </md-sidenav>
+    <div layout="column" flex id="content">
+      <md-content layout="column" flex class="md-padding">
+            
+      </md-content>
+    </div>
+  </div>
+  <script type="text/ng-template" id="dialog1.tmpl.html"><md-dialog aria-label="Mango (Fruit)">
+  <form id="form_ci">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Create Issue</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+        <ng-md-icon icon="close" style="fill:white" aria-label="Close dialog"></ng-md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+<div layout="row" layout-align="start center">
+       <label class="label_field" for="ci_project" flex="33">Project
+<ng-md-icon icon="star_outline" style="fill:red" size="18"></ng-md-icon>
+       </label>
+
+<md-select ng-model="topping" placeholder="Topping" id="ci_project" flex="66">
+        <md-optgroup label="Meats">
+          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+        </md-optgroup>
+        <md-optgroup label="Veggies">
+          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+        </md-optgroup>
+      </md-select>
+</div>
+
+  </md-dialog-content>
+
+  <div class="md-actions" layout="row">
+    <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
+      More on Wikipedia
+    </md-button>
+    <span flex></span>
+    <md-button ng-click="answer('not useful')" class="md-primary">
+     Not Useful
+    </md-button>
+    <md-button ng-click="answer('useful')" class="md-primary">
+      Useful
+    </md-button>
+  </div>
+  </form>
+</md-dialog>
+</script>
+  <script src="../../js/angular.min.js"></script>
+  <script src="../js/angular-animate.min.js"></script>
+  <script src="angular-material.min.js"></script>
+  <script src="angular-aria.min.js"></script>
+  <script src="angular-material-icons.min.js"></script>
+  <script src="index.js"></script>
+  <script src="toolbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.app-name{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+}
+
+md-toolbar {
+  background-color: #0277BD;
+  color: rgba(255,255,255,0.87);
+}
+
+md-toolbar .md-button {
+  font-weight: bold;
+}
+
+.md-button.md-icon-button {
+  line-height: 0px;
+}
+
+md-input-container {
+  flex-direction: row;
+}
+
+#form_ci {
+  width: 600px;
+}
+
+.label_field {
+  text-align: right;
+  padding-right: 20px;
+}
+
+md-select-label {
+  width: 100%;
+}
