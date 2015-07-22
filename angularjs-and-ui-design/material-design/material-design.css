@@ -4,6 +4,15 @@
   color: #fff;
 }
 
+.toolbar-icon {
+  fill: white;
+}
+
+.toolbar-icon.caret-down {
+  position: relative;
+  top: 6px;
+}
+
 md-toolbar {
   background-color: #0277BD;
   color: rgba(255,255,255,0.87);

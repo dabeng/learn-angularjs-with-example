@@ -8,11 +8,13 @@
   <md-toolbar layout="row" ng-controller="ToolbarCtrl">
   <div class="md-toolbar-tools">
     <md-button class="md-icon-button" aria-label="Settings">
-      <ng-md-icon icon="menu" style="fill:white"></ng-md-icon>
+      <ng-md-icon icon="menu" class="toolbar-icon"></ng-md-icon>
     </md-button>
     <h2><span class="app-name">Demo</span></h2>
     <md-menu md-offset="10 58">
-      <md-button ng-click="$mdOpenMenu()">Dashboards</md-button>
+      <md-button ng-click="$mdOpenMenu()">Dashboards
+        <ng-md-icon icon="arrow_drop_down" class="toolbar-icon caret-down"></ng-md-icon>
+      </md-button>
       <md-menu-content width="4">
         <md-menu-item><md-button ng-click="doSomething()">View System Dashboard</md-button>
         </md-menu-item>
@@ -21,7 +23,9 @@
       </md-menu-content>
     </md-menu>
     <md-menu md-offset="10 58">
-      <md-button ng-click="$mdOpenMenu()">Projects</md-button>
+      <md-button ng-click="$mdOpenMenu()">Projects
+        <ng-md-icon icon="arrow_drop_down" class="toolbar-icon caret-down"></ng-md-icon>
+      </md-button>
       <md-menu-content width="4">
         <md-menu-item><md-button ng-click="doSomething()">TCMS(TCMS)</md-button></md-menu-item>
         <md-menu-item><md-button ng-click="doSomething()">OnePieceJS(ONEPIECEJS)</md-button></md-menu-item>
@@ -31,7 +35,9 @@
       </md-menu-content>
     </md-menu>
     <md-menu md-offset="10 58">
-      <md-button ng-click="$mdOpenMenu()">Issues</md-button>
+      <md-button ng-click="$mdOpenMenu()">Issues
+        <ng-md-icon icon="arrow_drop_down" class="toolbar-icon caret-down"></ng-md-icon>
+      </md-button>
       <md-menu-content width="4">
         <md-menu-item><md-button ng-click="doSomething()">Search for Issues</md-button></md-menu-item>
         <md-menu-item><md-button ng-click="doSomething()">Create issue</md-button></md-menu-item>
@@ -45,7 +51,9 @@
       </md-menu-content>
     </md-menu>
     <md-menu md-offset="10 58">
-      <md-button ng-click="$mdOpenMenu()">Agile</md-button>
+      <md-button ng-click="$mdOpenMenu()">Agile
+        <ng-md-icon icon="arrow_drop_down" class="toolbar-icon caret-down"></ng-md-icon>
+      </md-button>
       <md-menu-content width="4">
         <md-menu-item><md-button ng-click="doSomething()">TCMS Scrum</md-button></md-menu-item>
         <md-menu-item><md-button ng-click="doSomething()">OnePieceJS Scrum</md-button></md-menu-item>
@@ -83,18 +91,27 @@
     </md-toolbar>
     <md-dialog-content>
       <div layout="row" layout-align="start center">
-        <label class="label_field" for="ci_project" flex="33">Project
+        <label class="label_field" flex="33">Project
           <ng-md-icon icon="star_outline" style="fill:red" size="18"></ng-md-icon>
         </label>
-        <md-select ng-model="project" id="ci_project" flex="66" ng-init="project.name=projects[0].name">
+        <md-select ng-model="project" flex="66">
           <md-optgroup label="Recent Projects">
-            <md-option ng-value="project.name" ng-repeat="project in projects | filter: {category: 'recent' }">{{project.name}}</md-option>
+            <md-option ng-value="pro" ng-repeat="pro in projects | filter: {category: 'recent' }">{{pro.name}}</md-option>
           </md-optgroup>
           <md-optgroup label="All Projects">
-            <md-option ng-value="project.name" ng-repeat="project in projects | filter: {category: 'all' }">{{project.name}}</md-option>
+            <md-option ng-value="pro" ng-repeat="pro in projects | filter: {category: 'all' }">{{pro.name}}</md-option>
           </md-optgroup>
         </md-select>
       </div>
+      <div layout="row" layout-align="start center">
+        <label class="label_field" flex="33">Issue Type
+          <ng-md-icon icon="star_outline" style="fill:red" size="18"></ng-md-icon>
+        </label>
+        <md-select ng-model="issue_type.id" flex="66">
+          <md-option ng-repeat="type in issue_types" value="{{type.id}}">{{type.name}}</md-option>
+        </md-select>
+      </div>
+      <md-divider md-inset></md-divider>
     </md-dialog-content>
     <div class="md-actions" layout="row">
       <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>More on Wikipedia</md-button>
