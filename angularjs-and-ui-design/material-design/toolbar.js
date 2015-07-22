@@ -23,15 +23,13 @@ app.controller('ToolbarCtrl', function($scope, $mdDialog) {
   $scope.answer = function(answer) {
     $mdDialog.hide(answer);
   };
-  $scope.toppings = [
-        { category: 'meat', name: 'Pepperoni' },
-        { category: 'meat', name: 'Sausage' },
-        { category: 'meat', name: 'Ground Beef' },
-        { category: 'meat', name: 'Bacon' },
-        { category: 'veg', name: 'Mushrooms' },
-        { category: 'veg', name: 'Onion' },
-        { category: 'veg', name: 'Green Pepper' },
-        { category: 'veg', name: 'Green Olives' }
+  $scope.projects = [
+        { category: 'recent', name: 'TCMS' },
+        { category: 'recent', name: 'OnePieceJS' },
+        { category: 'recent', name: 'Cantas' },
+        { category: 'all', name: 'TCMS' },
+        { category: 'all', name: 'OnePieceJS' },
+        { category: 'all', name: 'Cantas' }
       ];
 }
 

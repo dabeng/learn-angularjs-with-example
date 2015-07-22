@@ -69,50 +69,42 @@
       </md-content>
     </div>
   </div>
-  <script type="text/ng-template" id="dialog1.tmpl.html"><md-dialog aria-label="Mango (Fruit)">
+  <script type="text/ng-template" id="dialog1.tmpl.html">
+  <md-dialog aria-label="Mango (Fruit)">
   <form id="form_ci">
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <h2>Create Issue</h2>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Create Issue</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <ng-md-icon icon="close" style="fill:white" aria-label="Close dialog"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div layout="row" layout-align="start center">
+        <label class="label_field" for="ci_project" flex="33">Project
+          <ng-md-icon icon="star_outline" style="fill:red" size="18"></ng-md-icon>
+        </label>
+        <md-select ng-model="project" id="ci_project" flex="66" ng-init="project.name=projects[0].name">
+          <md-optgroup label="Recent Projects">
+            <md-option ng-value="project.name" ng-repeat="project in projects | filter: {category: 'recent' }">{{project.name}}</md-option>
+          </md-optgroup>
+          <md-optgroup label="All Projects">
+            <md-option ng-value="project.name" ng-repeat="project in projects | filter: {category: 'all' }">{{project.name}}</md-option>
+          </md-optgroup>
+        </md-select>
+      </div>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+      <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>More on Wikipedia</md-button>
       <span flex></span>
-      <md-button class="md-icon-button" ng-click="answer('not applicable')">
-        <ng-md-icon icon="close" style="fill:white" aria-label="Close dialog"></ng-md-icon>
-      </md-button>
+      <md-button ng-click="answer('not useful')" class="md-raised md-primary">Create</md-button>
+      <md-button ng-click="cancel()" class="md-primary">Cancel</md-button>
     </div>
-  </md-toolbar>
-  <md-dialog-content>
-<div layout="row" layout-align="start center">
-       <label class="label_field" for="ci_project" flex="33">Project
-<ng-md-icon icon="star_outline" style="fill:red" size="18"></ng-md-icon>
-       </label>
-
-<md-select ng-model="topping" placeholder="Topping" id="ci_project" flex="66">
-        <md-optgroup label="Meats">
-          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
-        </md-optgroup>
-        <md-optgroup label="Veggies">
-          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
-        </md-optgroup>
-      </md-select>
-</div>
-
-  </md-dialog-content>
-
-  <div class="md-actions" layout="row">
-    <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
-      More on Wikipedia
-    </md-button>
-    <span flex></span>
-    <md-button ng-click="answer('not useful')" class="md-primary">
-     Not Useful
-    </md-button>
-    <md-button ng-click="answer('useful')" class="md-primary">
-      Useful
-    </md-button>
-  </div>
   </form>
-</md-dialog>
-</script>
+  </md-dialog>
+  </script>
   <script src="../../js/angular.min.js"></script>
   <script src="../js/angular-animate.min.js"></script>
   <script src="angular-material.min.js"></script>
