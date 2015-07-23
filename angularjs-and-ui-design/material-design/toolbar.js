@@ -35,14 +35,14 @@ app.controller('ToolbarCtrl', function($scope, $mdDialog) {
   $scope.project =  { id: '1', name: 'TCMS', category: 'recent' };
 
   $scope.issue_types = [
-    { 'id': '1', 'name': 'Bug'},
-    { 'id': '2', 'name': 'New Feature'},
-    { 'id': '3', 'name': 'Task'},
-    { 'id': '4', 'name': 'Improvement'},
-    { 'id': '5', 'name': 'Epic'},
-    { 'id': '6', 'name': 'Story'},
-    { 'id': '7', 'name': 'Risk'},
-    { 'id': '8', 'name': 'Milestone'}
+    { id: '1', name: 'Bug', icon: 'bug_report' },
+    { id: '2', name: 'New Feature', icon: 'local_florist' },
+    { id: '3', name: 'Task', icon: 'mail' },
+    { id: '4', name: 'Improvement', icon: 'trending_up' },
+    { id: '5', name: 'Epic', icon: 'local_offer' },
+    { id: '6', name: 'Story', icon: 'face' },
+    { id: '7', name: 'Risk', icon: 'flash_on' },
+    { id: '8', name: 'Milestone', icon: 'cake' }
   ];
 
   $scope.issue_type = { 'id': 1, 'name': 'Bug' };

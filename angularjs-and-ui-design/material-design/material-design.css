@@ -1,10 +1,13 @@
 .app-name{
   font-size: 1.5em;
   font-weight: bold;
-  color: #fff;
 }
 
-.toolbar-icon {
+.app-logo {
+  margin-right: 10px;
+}
+
+.primary-toolbar .toolbar-icon {
   fill: white;
 }
 
@@ -13,12 +16,11 @@
   top: 6px;
 }
 
-md-toolbar {
-  background-color: #0277BD;
-  color: rgba(255,255,255,0.87);
+.primary-toolbar {
+  z-index: 1001;
 }
 
-md-toolbar .md-button {
+.primary-toolbar .md-button {
   font-weight: bold;
 }
 
@@ -42,3 +44,29 @@ md-input-container {
 md-select-label {
   width: 100%;
 }
+
+.secondary-toolbar {
+  background-color: #f7f7f7;
+  color: #666;
+}
+
+.secondary-toolbar .toolbar-icon {
+  fill: #666;
+}
+
+.required-icon {
+  fill: red;
+  size: 18;
+  position: relative;
+  top: 6px;
+}
+
+.field-icon {
+  fill: #0277BD;
+  size: 18;
+  position: relative;
+  top: 6px;
+  margin-right: 20px;
+}
+
+
