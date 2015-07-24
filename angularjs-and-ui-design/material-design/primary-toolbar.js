@@ -1,4 +1,4 @@
-app.controller('ToolbarCtrl', function($scope, $mdDialog) {
+app.controller('PrimaryToolbarCtrl', function($scope, $mdDialog) {
   $scope.showCreateIssueDialog = function($event) {
     $mdDialog.show({
       controller: DialogController,

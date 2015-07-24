@@ -69,4 +69,12 @@ md-select-label {
   margin-right: 20px;
 }
 
+.md-button.md-fab, .md-button.md-fab.md-mini {
+  line-height: 0px;
+}
+
+#btn-sidenav {
+  width: 40px;
+  height: 40px;
+}
 

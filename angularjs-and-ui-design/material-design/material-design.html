@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../../css/font-awesome.min.css">
 </head>
 <body layout="column" ng-controller="AppCtrl">
-  <md-toolbar layout="row" ng-controller="ToolbarCtrl" class="md-primary md-whiteframe-z2 primary-toolbar">
+  <md-toolbar layout="row" ng-controller="PrimaryToolbarCtrl" class="md-primary md-whiteframe-z2 primary-toolbar">
   <div class="md-toolbar-tools">
     <i icon="leaf" class="fa fa-leaf fa-lg app-logo"></i>
     <h2><span class="app-name">Demo</span></h2>
@@ -66,9 +66,24 @@
     <span flex></span>
   </div>
   </md-toolbar>
-  <md-toolbar layout="row" class="md-default-theme md-whiteframe-z1 secondary-toolbar">
+  <md-toolbar layout="row" ng-controller="SecondaryToolbarCtrl" class="md-default-theme md-whiteframe-z1 secondary-toolbar">
   <div class="md-toolbar-tools">
     <h2><span>Cantas</span></h2>
+      <md-fab-speed-dial md-open="false" md-direction="right" class="md-fling">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn" id="btn-sidenav">
+            <ng-md-icon icon="menu"></ng-md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="twitter" class="md-fab md-raised md-mini" id="btn-sn-versions" ng-click="toggleSidenav()">
+            <ng-md-icon icon="local_attraction"></ng-md-icon>
+          </md-button>
+          <md-button aria-label="facebook" class="md-fab md-raised md-mini" id="btn-sn-epics">
+            <ng-md-icon icon="local_offer"></ng-md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
     <span flex></span>
     <md-button class="md-raised md-primary">Backlog</md-button>
     <md-button class="md-raised">Active sprints</md-button>
@@ -90,29 +105,16 @@
   </div>
   </md-toolbar>
   <div layout="row" flex>
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-    <md-content layout-padding style="height: 100%;position:absolute;">
-      <md-tabs md-static-height md-border-bottom>
-      <md-tab label="one">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab One</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="two">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Two</h1>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="three">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Three</h1>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-    </md-tabs>  
-  </div>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="sn-versions" md-is-locked-open="$mdMedia('gt-md')" >
+      <md-list ng-controller="SnVersionsCtrl">
+        <md-subheader class="md-no-sticky">Versions</md-subheader>
+          <md-list-item><p>All issues</p></md-list-item>
+          <md-list-item ng-repeat="version in versions">
+            <span> {{ version.name }} </span>
+            <md-progress-circular md-mode="determinate" value="30"></md-progress-circular>
+          </md-list-item>
+          <md-list-item><p>Issues without versions</p></md-list-item>
+      </md-list>
     </md-sidenav>
     <div layout="column" flex id="content">
       <md-content layout="column" flex class="md-padding">
@@ -180,6 +182,8 @@
   <script src="angular-aria.min.js"></script>
   <script src="angular-material-icons.min.js"></script>
   <script src="index.js"></script>
-  <script src="toolbar.js"></script>
+  <script src="primary-toolbar.js"></script>
+  <script src="secondary-toolbar.js"></script>
+  <script src="sn-versions.js"></script>
 </body>
 </html>
