@@ -78,3 +78,16 @@ md-select-label {
   height: 40px;
 }
 
+#sn-versions .md-list-item-text {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.selected {
+  background-color: #9CCC65;
+}
+
+#issues-container  md-list-item {
+  margin-top: 6px;
+}
+
