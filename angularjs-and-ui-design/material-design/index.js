@@ -2,7 +2,7 @@ var app = angular.module('StarterApp', ['ngMaterial', 'ngMdIcons']);
 
 app.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('blue-grey')
+    .primaryPalette('teal')
     .accentPalette('brown')
     .warnPalette('light-green');
 });

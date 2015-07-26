@@ -1,4 +1,4 @@
-app.controller('SnVersionsCtrl', function($scope, $element) {
+app.controller('SnVersionsCtrl', function($scope, $element, $timeout, $mdSidenav, $mdUtil, $log) {
 
   $scope.versions = [
     { id: '1', name: '3.8.13' , complete: 100 },
@@ -11,9 +11,20 @@ app.controller('SnVersionsCtrl', function($scope, $element) {
     { id: '8', name: '3.9.2', complete: 0 }
   ];
 
+  $scope.closeSidenav = $mdUtil.debounce(function(){
+            $mdSidenav('sn-versions')
+              .toggle()
+              .then(function () {
+                $log.debug("toggle sn-versions is done");
+              });
+          },300);
+
   $scope.focusItem = function($event) {
-    $element.find('md-list-item').removeClass('selected');
-    angular.element($event.target).closest('md-list-item').addClass('selected');
+    $element.find('md-list-item.selected').removeClass('selected');
+    var item = angular.element($event.target).closest('md-list-item').addClass('selected');
+    $scope.$emit('selectOneVersion', item[0].id);
   };
+
+
 
 });

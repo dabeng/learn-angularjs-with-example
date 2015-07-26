@@ -3,6 +3,9 @@
   font-weight: bold;
 }
 
+ng-md-icon {
+  line-height: 0px;
+}
 .app-logo {
   margin-right: 10px;
 }
@@ -22,10 +25,6 @@
 
 .primary-toolbar .md-button {
   font-weight: bold;
-}
-
-.md-button.md-icon-button {
-  line-height: 0px;
 }
 
 md-input-container {
@@ -69,10 +68,6 @@ md-select-label {
   margin-right: 20px;
 }
 
-.md-button.md-fab, .md-button.md-fab.md-mini {
-  line-height: 0px;
-}
-
 #btn-sidenav {
   width: 40px;
   height: 40px;
@@ -91,3 +86,33 @@ md-select-label {
   margin-top: 6px;
 }
 
+#sn-versions .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#sn-left {
+  z-index: 1;
+}
+
+.list-item-icon {
+  margin-right: 10px;
+  fill: #0277BD;
+}
+
+.issue-sum {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+md-list-item .md-list-item-inner>.md-avatar:last-child, md-list-item>.md-avatar:last-child {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
