@@ -1,0 +1,118 @@
+.app-name{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+ng-md-icon {
+  line-height: 0px;
+}
+.app-logo {
+  margin-right: 10px;
+}
+
+.primary-toolbar .toolbar-icon {
+  fill: white;
+}
+
+.toolbar-icon.caret-down {
+  position: relative;
+  top: 6px;
+}
+
+.primary-toolbar {
+  z-index: 1001;
+}
+
+.primary-toolbar .md-button {
+  font-weight: bold;
+}
+
+md-input-container {
+  flex-direction: row;
+}
+
+#form_ci {
+  width: 600px;
+}
+
+.label_field {
+  text-align: right;
+  padding-right: 20px;
+}
+
+md-select-label {
+  width: 100%;
+}
+
+.secondary-toolbar {
+  background-color: #f7f7f7;
+  color: #666;
+}
+
+.secondary-toolbar .toolbar-icon {
+  fill: #666;
+}
+
+.required-icon {
+  fill: red;
+  size: 18;
+  position: relative;
+  top: 6px;
+}
+
+.field-icon {
+  fill: #0277BD;
+  size: 18;
+  position: relative;
+  top: 6px;
+  margin-right: 20px;
+}
+
+#btn-sidenav {
+  width: 40px;
+  height: 40px;
+}
+
+#sn-versions .md-list-item-text {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.selected {
+  background-color: #9CCC65;
+}
+
+#issues-container  md-list-item {
+  margin-top: 6px;
+}
+
+#sn-versions .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#sn-left {
+  z-index: 1;
+}
+
+.list-item-icon {
+  margin-right: 10px;
+  fill: #0277BD;
+}
+
+.issue-sum {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+md-list-item .md-list-item-inner>.md-avatar:last-child, md-list-item>.md-avatar:last-child {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
