@@ -35,9 +35,20 @@ app.controller('IssuesContainerCtrl', function($scope, $element) {
   $scope.slectedVersion = '';
 
   $scope.$on('filterIssues', function(event, data) {
-
-      $scope.selectedVersion = data.slice(2);
-
+    $scope.selectedVersion = data.slice(2);
   });
+
+  $scope.focusOneIssue = function($event) {
+    if (angular.element('#sidebar-right').is(':hidden')) {
+      angular.element('#sidebar-right').toggle();
+    }
+    $element.find('md-list-item.selected').removeClass('selected');
+    var item = angular.element($event.target).closest('md-list-item').addClass('selected');
+    var data = {
+      name: item.find('.md-list-item-inner').children('span')[0].textContent,
+      summary: item.find('.md-list-item-inner').children('span')[1].textContent
+    }
+    $scope.$emit('selectOneIssue', data);
+  };
 
 });

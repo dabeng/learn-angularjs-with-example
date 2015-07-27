@@ -73,7 +73,7 @@ md-select-label {
   height: 40px;
 }
 
-#sn-versions .md-list-item-text {
+#sidebar-left .md-list-item-text {
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -86,14 +86,11 @@ md-select-label {
   margin-top: 6px;
 }
 
-#sn-versions .btn-close {
+#sidebar-left .btn-close {
   position: absolute;
   top: 0;
   right: 0;
-}
-
-#sn-left {
-  z-index: 1;
+  z-index: 3;
 }
 
 .list-item-icon {
@@ -115,4 +112,16 @@ md-list-item .md-list-item-inner>.md-avatar:last-child, md-list-item>.md-avatar:
   margin-right: 0px;
   border-radius: 50%;
   box-sizing: content-box;
+}
+
+#sidebar-left {
+  width: 200px;
+  display: none;
+  z-index: 1;
+}
+
+#sidebar-right {
+  width: 300px;
+  display: none;
+  z-index: 1;
 }
