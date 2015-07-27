@@ -1,4 +1,4 @@
-app.controller('SnVersionsCtrl', function($scope, $element, $timeout, $mdSidenav, $mdUtil, $log) {
+app.controller('LeftSidebarCtrl', function($scope, $element, $timeout, $mdSidenav, $mdUtil, $log) {
 
   $scope.versions = [
     { id: '1', name: '3.8.13' , complete: 100 },
@@ -11,13 +11,9 @@ app.controller('SnVersionsCtrl', function($scope, $element, $timeout, $mdSidenav
     { id: '8', name: '3.9.2', complete: 0 }
   ];
 
-  $scope.closeSidenav = $mdUtil.debounce(function(){
-            $mdSidenav('sn-versions')
-              .toggle()
-              .then(function () {
-                $log.debug("toggle sn-versions is done");
-              });
-          },300);
+  $scope.closeSidebar = function($event) {
+    $scope.$emit('closeSidebar', $($event.target).closest('.sidebar'));
+  };
 
   $scope.focusItem = function($event) {
     $element.find('md-list-item.selected').removeClass('selected');

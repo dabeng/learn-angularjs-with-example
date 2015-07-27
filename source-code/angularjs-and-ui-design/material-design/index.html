@@ -76,11 +76,11 @@
           </md-button>
         </md-fab-trigger>
         <md-fab-actions>
-          <md-button aria-label="twitter" class="md-fab md-raised md-mini" id="btn-sn-versions" ng-click="toggleSidenav()">
-            <ng-md-icon icon="local_attraction"></ng-md-icon>
+          <md-button aria-label="twitter" class="md-fab md-raised md-mini" id="btn-sn-versions" ng-click="toggleLeftSidebar()">
+            <ng-md-icon icon="local_attraction" style="line-height:54px;"></ng-md-icon>
           </md-button>
           <md-button aria-label="facebook" class="md-fab md-raised md-mini" id="btn-sn-epics">
-            <ng-md-icon icon="local_offer"></ng-md-icon>
+            <ng-md-icon icon="local_offer" style="line-height:54px;"></ng-md-icon>
           </md-button>
         </md-fab-actions>
       </md-fab-speed-dial>
@@ -104,38 +104,40 @@
     </md-menu>
   </div>
   </md-toolbar>
-  <div layout="row" flex ng-controller="ContentContainerCtrl">
-    <div ng-controller="SnVersionsCtrl" class="md-whiteframe-z2" id="sn-left">
-    <md-sidenav layout="column" class="md-sidenav-left" md-component-id="sn-versions" md-is-locked-open="$mdMedia('gt-md')" id="sn-versions">
-      <ng-md-icon icon="close" size="18" class="btn-close" layout="row" layout-align="end center"  ng-click="closeSidenav()"></ng-md-icon>
-      <md-list >
-        <md-subheader class="md-no-sticky">Versions
-
-        </md-subheader>
-
+  <div layout="row" flex ng-controller="ContentContainerCtrl" style="position:relative;">
+    <div layout="column" ng-controller="LeftSidebarCtrl" class="md-whiteframe-z2 sidebar" id="sidebar-left" style="position:relative;">
+      <ng-md-icon icon="close" size="18" class="btn-close" layout="row" layout-align="end center" ng-click="closeSidebar($event)"></ng-md-icon>
+      <md-list>
+        <md-subheader class="md-no-sticky">Versions</md-subheader>
           <md-list-item id="v-" ng-click="focusItem($event)" class="selected"><p>All issues</p></md-list-item>
           <md-list-item id="v-{{ version.id }}" ng-repeat="version in versions" class="md-2-line" ng-click="focusItem($event)">
-          <div class="md-list-item-text">
-            <p> {{ version.name }}
-              <md-tooltip>{{version.complete}}% of estimated work done</md-tooltip>
-            </p>
+            <div class="md-list-item-text">
+              <p> {{ version.name }}
+                <md-tooltip>{{version.complete}}% of estimated work done</md-tooltip>
+              </p>
               <md-progress-linear md-mode="determinate" value="{{ version.complete }}"></md-progress-linear>
-          </div>
+            </div>
           </md-list-item>
           <md-list-item id="v-0" ng-click="focusItem($event)"><p>Issues without versions</p></md-list-item>
       </md-list>
-    </md-sidenav>
-  </div>
+    </div>
     <div layout="column" flex ng-controller="IssuesContainerCtrl" id="issues-container">
       <md-content layout="column" flex class="md-padding">
         <md-subheader class="md-no-sticky">Backlog</md-subheader>
-          <md-list-item ng-click="openIssueMiniWindow()" ng-repeat="issue in issues | filter: { vId: selectedVersion}" class="md-whiteframe-z1">
+          <md-list-item ng-click="focusOneIssue($event)" ng-repeat="issue in issues | filter: { vId: selectedVersion}" class="md-whiteframe-z1">
             <ng-md-icon icon="{{ issue.icon }}" class="list-item-icon"></ng-md-icon>
             <span> {{ issue.name }} </span>
             <span flex class="issue-sum"> {{ issue.summary }} </span>
             <img ng-src="img/{{ issue.asId }}.jpg" class="md-avatar" />
           </md-list-item>
       </md-content>
+    </div>
+    <div layout="column" ng-controller="RightSidebarCtrl" class="md-whiteframe-z2 sidebar" id="sidebar-right" style="position:relative;">
+      <ng-md-icon icon="close" size="18" class="btn-close" layout="row" layout-align="end center" ng-click="closeSidebar($event)"></ng-md-icon>
+      <md-list>
+        <md-subheader class="md-no-sticky">TCMS / {{ name }}</md-subheader>
+        <md-list-item id="v-0" ng-click="focusItem($event)"><p>{{ summary }}</p></md-list-item>
+      </md-list>
     </div>
   </div>
   <script type="text/ng-template" id="dialog1.tmpl.html">
@@ -202,7 +204,8 @@
   <script src="primary-toolbar.js"></script>
   <script src="secondary-toolbar.js"></script>
   <script src="content-container.js"></script>
-  <script src="sn-versions.js"></script>
+  <script src="left-sidebar.js"></script>
   <script src="issues-container.js"></script>
+  <script src="right-sidebar.js"></script>
 </body>
 </html>
