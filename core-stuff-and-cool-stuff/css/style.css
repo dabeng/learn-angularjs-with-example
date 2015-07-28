@@ -82,3 +82,7 @@ pre {
   width: 80%;
   left: 27px!important;
 }
+
+.example-card {
+  height: 660px;
+}

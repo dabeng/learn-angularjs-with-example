@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ui.bootstrap', 'ngAnimate'])
+var app = angular.module('myApp', ['ui.bootstrap'])
   .controller('RootCtrl', function($scope) {
 
     $scope.$on('openTips', function(event, data) {
