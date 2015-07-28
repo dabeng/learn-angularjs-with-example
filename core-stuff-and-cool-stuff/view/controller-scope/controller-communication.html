@@ -1,9 +1,10 @@
 <div ng-controller="CssTransitionCtrl">
   <div class="toolbar">
     <i class="fa fa-square-o fa-lg tool-btn btn-toggle" tooltip="focus on" ng-click="toggleWindow()"></i>
-    <i class="feature-name"><a name="data-bind">CSS3 Transitions</a></i>
+    <i class="feature-name"><a name="data-bind">Controller Communication</a></i>
     <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
     <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-code fa-lg pull-right" tooltip="difficulty coefficient"></i>
     <script type="text/ng-template" id="transitionTips">
       <p class="bg-primary">Though animations can be written in JavaScript, it is recommended to use CSS animations. This is because CSS animations are treated with low priority by the browser, and they don’t block the processing thread when the thread could be doing something important.</p>
       <p class="bg-success">Angular starts our directive animations by adding two classes to each animation event: the initial ng-[EVENT] class and, shortly thereafter, the ng-[EVENT]-active class.</p>
@@ -11,41 +12,11 @@
     </script>
   </div>
   <div class="row" style="min-height:284px;">
-    <div class="col-md-6">
-      <div class="row">
-        <div class="input-group col-md-5" style="float: left;">
-          <span class="input-group-addon"><li class="fa fa-filter fa-lg"></li></span>
-          <input type="text" class="form-control" ng-model="myFilter.keyword">
-        </div>
-        <div class="col-md-7">
-          <label>Sort by:</label>
-          <label>
-            <input type="radio" name="gender" value="name" ng-model="myFilter.sortby">
-            <span class="label label-warning" style="color:#000;font-size:1.2em;">Name</span>
-          </label>
-          <label>
-            <input type="radio" name="gender" value="department" ng-model="myFilter.sortby">
-            <span class="label label-warning" style="color: #000;font-size:1.2em;">Department</span>
-          </label>
-        </div>
-      </div>
-      <ul>
-        <li class="repeat-css-trans" ng-repeat="candidate in candidates | filter: myFilter.keyword | orderBy: myFilter.sortby">
-          <strong>{{ candidate.name }}</strong> from <i>{{ candidate.department }}</i>
-        </li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <div class="input-group" style="margin-bottom: 20px;">
-        <span class="input-group-addon" id="basic-addon1"><li class="fa fa-smile-o fa-lg"></li></span>
-        <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newCandidate.name">
-      </div>
-      <div class="input-group" style="margin-bottom: 20px;">
-        <span class="input-group-addon" id="basic-addon2"><li class="fa fa-book fa-lg"></li></span>
-        <input type="text" class="form-control" placeholder="Department" aria-describedby="basic-addon2" ng-model="newCandidate.department">
-      </div>
-      <button type="button" class="btn btn-success" ng-click="appendCandidate()">Append New Candidate</button>
-    </div>
+<tabset justified="true">
+    <tab heading="Justified">Justified content</tab>
+    <tab heading="SJ">Short Labeled Justified content</tab>
+    <tab heading="Long Justified">Long Labeled Justified content</tab>
+  </tabset>
   </div>
   <hr>
   <p class="bg-success code-heading">html source code</p>
