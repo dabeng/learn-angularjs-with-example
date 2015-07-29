@@ -3,6 +3,10 @@ app.controller('ControllerCommunicationCtrl', function($scope, $element) {
   $scope.showCode = false;
   $scope.toggleCodeTip = 'source code';
 
+  $element.find('code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
   $scope.toggleCode = function() {
     this.showCode = !this.showCode;
     this.toggleCodeTip = this.showCode ? 'example' : 'source code';

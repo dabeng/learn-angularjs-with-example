@@ -29,13 +29,82 @@
           <button type="button" class="btn btn-primary pull-right" style="margin-top:30px;font-size:1.5em;" ng-click="reset()">Reset</button>
         </div>
         <div class="col-md-6"></div>
-      </div>
-      </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
-      <tab heading="Justified">Justified content</tab>
-      <tab heading="SJ">Short Labeled Justified content</tab>
-      <tab heading="Long Justified">Long Labeled Justified content</tab>
+      <tab heading="html code">
+        <pre>
+          <code class="html" ng-non-bindable>
+&lt;div ng-controller=&quot;ParentCtrl&quot;&gt;
+  &lt;h3&gt;{{ myResponse }}&lt;/h3&gt;
+    &lt;div ng-controller=&quot;SelfCtrl&quot;&gt;
+      &lt;h3&gt;Self Node&lt;/h3&gt;
+      &lt;button type=&quot;button&quot; ng-click=&quot;makeInvitation()&quot;&gt;I wanna treate you to diner&lt;/button&gt;
+      &lt;div ng-controller=&quot;ChildCtrl&quot;&gt;
+        &lt;h3&gt;{{ myResponse }}&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div ng-controller=&quot;BrotherCtrl&quot;&gt;
+      &lt;h3&gt;{{ myResponse }}&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;button type=&quot;button&quot; ng-click=&quot;reset()&quot;&gt;Reset&lt;/button&gt;
+&lt;/div&gt;
+          </code>
+        </pre>
+      </tab>
+      <tab heading="javascript code">
+        <pre>
+          <code class="javascript">
+app.controller('SelfCtrl', function($scope) {
+  $scope.makeInvitation = function () {
+    $scope.$broadcast('to-child', 'Child');
+    $scope.$emit('to-parent', 'Parent');
+    $scope.$emit('to-brother', 'Brother');
+  };
+});
+
+app.controller('ParentCtrl', function($scope) {
+  $scope.myResponse = 'Parent Node';
+
+  $scope.$on('to-parent', function(event,data) {
+    $scope.myResponse = data + ': anytime is OK!';
+  });
+
+  $scope.$on('to-brother', function(event,data) {
+    $scope.$broadcast('to-another-child', data);
+  });
+
+  $scope.reset = function() {
+    $scope.myResponse = 'Parent Node';
+    $scope.$broadcast('reset');
+  };
+});
+
+app.controller('ChildCtrl', function($scope){
+  $scope.myResponse = 'Child Node';
+
+  $scope.$on('to-child', function(event,data) {
+    $scope.myResponse = data + ': anytime is OK!';
+  });
+
+  $scope.$on('reset', function(event,data) {
+    $scope.myResponse = 'Child Node';
+  });
+});
+
+app.controller('BrotherCtrl', function($scope){  
+  $scope.myResponse = 'Brother Node';
+
+  $scope.$on('to-another-child', function(event,data) {  
+    $scope.myResponse = data + ': anytime is OK!';
+  });
+
+  $scope.$on('reset', function(event,data) {
+    $scope.myResponse = 'Brother Node';
+  });
+});
+          </code>
+        </pre>
+      </tab>
     </tabset>
   </div>
 
