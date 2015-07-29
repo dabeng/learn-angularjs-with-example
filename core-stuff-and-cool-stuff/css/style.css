@@ -86,3 +86,15 @@ pre {
 .example-card {
   height: 660px;
 }
+
+.content {
+  height: 590px;
+}
+
+.pane-example {
+  height: 100%;
+}
+
+.pane-sourcecode {
+  height: 100%;
+}
