@@ -11,7 +11,27 @@
     </script>
   </div>
   <div class="content">
-    <div class="example" ng-class="{'hidden': showCode}">123</div>
+    <div class="example" ng-class="{'hidden': showCode}">
+        <div ng-controller="ParentCtrl" class="col-md-6 bg-warning" style="height:590px;">
+          <h3>{{ myResponse }}</h3>
+          <div style="height:400px;margin-top:50px;">
+            <div ng-controller="SelfCtrl" class="col-md-6 bg-success" style="height:100%;text-align:center;">
+              <h3>Self Node</h3>
+              <button type="button" class="btn btn-primary" style="margin-top:20px;font-size:1.5em;" ng-click="makeInvitation()">I wanna treate you to diner</button>
+              <div ng-controller="ChildCtrl" class="bg-danger" style="height:200px;margin-top:70px;padding-top:1px;">
+                <h3>{{ myResponse }}</h3>
+              </div>
+            </div>
+            <div ng-controller="BrotherCtrl" class="col-md-6 bg-info" style="height:100%;">
+              <h3>{{ myResponse }}</h3>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary pull-right" style="margin-top:30px;font-size:1.5em;" ng-click="reset()">Reset</button>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+      </div>
+    </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
       <tab heading="Justified">Justified content</tab>
       <tab heading="SJ">Short Labeled Justified content</tab>
