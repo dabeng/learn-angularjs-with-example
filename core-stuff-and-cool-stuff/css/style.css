@@ -66,6 +66,7 @@ pre {
   border-radius: 6px;
   padding: 0px;
   overflow-y: hidden;
+  margin-top: 0px;
 }
 
 .diff-opinion {
@@ -97,4 +98,9 @@ pre {
 
 .pane-sourcecode {
   height: 100%;
+}
+
+.tab-pane {
+  height: 550px;
+  overflow-y: auto;
 }

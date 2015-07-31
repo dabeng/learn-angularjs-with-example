@@ -3,11 +3,10 @@
     <i class="feature-name"><a name="data-bind">Controller Communication</a></i>
     <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
     <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
-    <i class="fa fa-lg pull-right" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
+    <i class="fa fa-lg pull-right tool-btn" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
     <script type="text/ng-template" id="transitionTips">
-      <p class="bg-primary">Though animations can be written in JavaScript, it is recommended to use CSS animations. This is because CSS animations are treated with low priority by the browser, and they don’t block the processing thread when the thread could be doing something important.</p>
-      <p class="bg-success">Angular starts our directive animations by adding two classes to each animation event: the initial ng-[EVENT] class and, shortly thereafter, the ng-[EVENT]-active class.</p>
-      <p class="bg-info">The ng-[EVENT] CSS class represents the initial state of the animation, while the ng-[EVENT]-active CSS class is there so we can define the final state of the animation.</p>
+      <p class="bg-primary">$broadcast -- dispatches the event downwards to all child scopes.</p>
+      <p class="bg-success">$emit -- dispatches the event upwards through the scope hierarchy to the $rootScope.</p>
     </script>
   </div>
   <div class="content">
@@ -28,7 +27,9 @@
           </div>
           <button type="button" class="btn btn-primary pull-right" style="margin-top:30px;font-size:1.5em;" ng-click="reset()">Reset</button>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <img src="controller-communication.svg" width="100%">
+        </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
       <tab heading="html code">
