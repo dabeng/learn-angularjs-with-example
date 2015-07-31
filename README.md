@@ -15,8 +15,8 @@ AngularJS is amiable js framework as well as powerful. Let's step to her inch by
 * [Vivify layout of webapp with ngClass & ngAnimate](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/animation)
 * [AngularJS Material Design](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/material-design)
 
-## [Lesson 3 - core stuff, cool stuff](https://dabeng.github.io/core-stuff-and-coll-stuff/controller-scope)
-* [Controller and Scope](https://dabeng.github.io/core-stuff-and-coll-stuff/controller-scope)
+## [Lesson 3 - core stuff, cool stuff](https://dabeng.github.io/core-stuff-and-cool-stuff/controller-scope)
+* [Controller and Scope](https://dabeng.github.io/core-stuff-and-cool-stuff/controller-scope)
 * Directive(wrapping Datatables)
 * service & factory & provider
 
