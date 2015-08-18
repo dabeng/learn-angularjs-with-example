@@ -9,8 +9,14 @@ var app = angular.module('myApp', ['ui.bootstrap'])
       }
     });
 
-    $scope.$on('to-parent', function(event,data) {
-      console.log($scope === $rootScope);
-    });
+    $scope.toggleCode =  function(example) {
+      if (!example.find('.hljs').length) {
+      angular.forEach(example.find('code'), function(block, index) {
+        hljs.highlightBlock(block);
+      });
+    }
+    // this.showCode = !this.showCode;
+    // this.toggleCodeTip = this.showCode ? 'example' : 'source code';
+    };
 
   });
