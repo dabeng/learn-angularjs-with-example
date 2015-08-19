@@ -9,14 +9,13 @@ var app = angular.module('myApp', ['ui.bootstrap'])
       }
     });
 
-    $scope.toggleCode =  function(example) {
+    $scope.$on('toggleCode' ,  function(event, example) {
       if (!example.find('.hljs').length) {
       angular.forEach(example.find('code'), function(block, index) {
         hljs.highlightBlock(block);
       });
     }
-    // this.showCode = !this.showCode;
-    // this.toggleCodeTip = this.showCode ? 'example' : 'source code';
-    };
+
+    });
 
   });

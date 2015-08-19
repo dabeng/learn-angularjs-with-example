@@ -3,6 +3,8 @@
     <i class="feature-name"><a name="data-bind">Custom Directive -- Tag Pool</a></i>
     <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
     <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
     <i class="fa fa-lg pull-right tool-btn" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
     <script type="text/ng-template" id="transitionTips">
       <p class="bg-primary">$broadcast -- dispatches the event downwards to all child scopes.</p>
@@ -19,17 +21,107 @@
         </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
-      <tab heading="html code">
+      <tab heading="custom-directive.html">
         <pre>
           <code class="html" ng-non-bindable>
-
+&lt;div class=&quot;example&quot;&gt;
+    &lt;div class=&quot;col-md-6&quot;&gt;
+      &lt;tag-pool datasource=&quot;tags&quot;&gt;&lt;/tag-pool&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-6&quot;&gt;
+      &lt;h1&gt;&lt;span class=&quot;label label-primary&quot;&gt;Ready to append jQuery equivalent&lt;/span&gt;&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
           </code>
         </pre>
       </tab>
-      <tab heading="javascript code">
+      <tab heading="custom-directive.js">
         <pre>
           <code class="javascript">
+app.controller('CustomDirectiveCtrl', function($scope, $element) {
 
+  $scope.tags = [ 'AngularJS', 'React', 'Polymer', 'Meteor', 'Ember','Backbone.js', 'jQuery' ];
+
+});
+          </code>
+        </pre>
+      </tab>
+      <tab heading="tag-pool.html">
+        <pre>
+          <code class="html" ng-non-bindable>
+&lt;div class=&quot;tag-pool&quot; ng-keyup=&quot;deleteTags($event)&quot; tabindex=&quot;0&quot;&gt;
+  &lt;span class=&quot;tp-tag&quot; ng-repeat=&quot;tag in datasource track by $index&quot; ng-click=&quot;selectTag($event)&quot;&gt;
+    {{ tag }}&lt;i class=&quot;fa fa-times-circle tp-close&quot; ng-click=&quot;closeTag($event)&quot;&gt;&lt;/i&gt;
+  &lt;/span&gt;
+  &lt;input type=&quot;text&quot; class=&quot;tp-input&quot; ng-keyup=&quot;addTag($event)&quot;/&gt;
+&lt;/div&gt;
+          </code>
+        </pre>
+      </tab>
+      <tab heading="tag-pool.directive.js">
+        <pre>
+          <code class="javascript">
+'use strict';
+
+angular.module('myApp').directive('tagPool', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    scope: {
+      datasource: '='
+    },
+    templateUrl: 'tag-pool.html',
+    controller: function($scope, $element, $attrs) {
+      $scope.selectTag = function($event) {
+        var clickedTag = angular.element($event.target);
+        if (clickedTag.is('.selected')) {
+          clickedTag.removeClass('selected');
+        } else {
+          clickedTag.addClass('selected');
+        }
+      };
+
+      $scope.closeTag = function($event) {
+        $event.stopPropagation();
+        var closedTag = angular.element($event.target).parent()[0].childNodes[0].nodeValue.trim();
+        angular.forEach($scope.datasource, function(item, index) {
+          if (closedTag === item) {
+            $scope.datasource.splice(index, 1);
+          }
+        });
+      };
+
+      $scope.addTag = function($event) {
+        $event.stopPropagation();
+
+        if ($event.which === 13) {
+          var inputTag = angular.element($event.target);
+          var tagName = inputTag.val().trim();
+          if (tagName) {
+            $scope.datasource.push(tagName);
+            inputTag.val('');
+          }
+        }
+      };
+
+      $scope.deleteTags = function($event) {
+
+        $event.stopPropagation();
+        var selectedTags = $element.find('.selected');
+        if ($event.which === 46 && selectedTags.length) {
+          var tagNames = [];
+          angular.forEach(selectedTags, function(item, index) {
+            tagNames.push(item.childNodes[0].nodeValue.trim());
+          });
+          $scope.datasource = $scope.datasource.filter(function(item) {
+            return tagNames.indexOf(item) < 0;
+          });
+        }
+      };
+
+    }
+  };
+});
           </code>
         </pre>
       </tab>

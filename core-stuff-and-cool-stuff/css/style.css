@@ -57,7 +57,6 @@
 
 .feature-name {
   color: #fff;
-  font-weight: bold;
 }
 
 pre {
@@ -98,6 +97,10 @@ pre {
 
 .pane-sourcecode {
   height: 100%;
+}
+
+.pane-sourcecode .nav-tabs a {
+  font-size: 1.2em;
 }
 
 .tab-pane {

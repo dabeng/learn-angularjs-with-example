@@ -7,11 +7,8 @@ app.controller('CustomDirectiveCtrl', function($scope, $element) {
   };
 
   $scope.toggleCode = function() {
-    if (!$element.find('.hljs').length) {
-      angular.forEach($element.find('code'), function(block, index) {
-        hljs.highlightBlock(block);
-      });
-    }
+    $scope.$emit('toggleCode', $element);
+
     this.showCode = !this.showCode;
     this.toggleCodeTip = this.showCode ? 'example' : 'source code';
   };
