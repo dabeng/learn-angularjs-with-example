@@ -1,3 +1,6 @@
-<span class="tp-tag btn-info" ng-repeat="tag in datasource">
-  {{ tag }}<i class="tp-close">x</i>
+<div class="tag-pool" ng-keyup="deleteTags($event)" tabindex="0">
+<span class="tp-tag btn-success" ng-repeat="tag in datasource track by $index" ng-click="selectTag($event)">
+  {{ tag }}<i class="fa fa-times-circle tp-close" ng-click="closeTag($event)"></i>
 </span>
+<input type="text" class="tp-input" ng-keyup="addTag($event)"/>
+</div>
