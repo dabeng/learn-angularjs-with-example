@@ -1,0 +1,57 @@
+<div ng-controller="WrapDatatablesCtrl">
+  <div class="toolbar">
+    <i class="feature-name"><a name="data-bind">Custom Directive -- Tag Pool</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-lg pull-right tool-btn" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
+    <script type="text/ng-template" id="transitionTips">
+      <p class="bg-primary">$broadcast -- dispatches the event downwards to all child scopes.</p>
+      <p class="bg-success">$emit -- dispatches the event upwards through the scope hierarchy to the $rootScope.</p>
+    </script>
+  </div>
+  <div class="content">
+    <div class="example" ng-class="{'hidden': showCode}">
+      <jq-datatables options="tableOptions" datasource="dataset"></jq-datatables>
+      <input type="text" class="field"/>
+      <input type="text" class="field"/>
+      <input type="text" class="field"/>
+      <input type="text" class="field"/>
+      <input type="text" class="field"/>
+            <input type="text" class="field"/>
+      <button ng-click="addRow()">Add a record</button>
+    </div>
+    <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
+      <tab heading="custom-directive.html">
+        <pre>
+          <code class="html" ng-non-bindable>
+
+          </code>
+        </pre>
+      </tab>
+      <tab heading="custom-directive.js">
+        <pre>
+          <code class="javascript">
+
+          </code>
+        </pre>
+      </tab>
+      <tab heading="tag-pool.html">
+        <pre>
+          <code class="html" ng-non-bindable>
+
+          </code>
+        </pre>
+      </tab>
+      <tab heading="tag-pool.directive.js">
+        <pre>
+          <code class="javascript">
+
+          </code>
+        </pre>
+      </tab>
+    </tabset>
+  </div>
+
+
+</div>
