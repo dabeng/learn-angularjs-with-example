@@ -40,13 +40,13 @@ app.controller('WrapDatatablesCtrl', function($scope, $element) {
   ];
 
   var columns = [
-            { title: "Name" },
-            { title: "Position" },
-            { title: "Office" },
-            { title: "Extn." },
-            { title: "Start date" },
-            { title: "Salary" }
-        ];
+    { title: "Name" },
+    { title: "Position" },
+    { title: "Office" },
+    { title: "Extn." },
+    { title: "Start date" },
+    { title: "Salary" }
+  ];
   $scope.tableOptions = { 'columns': columns };
 
   $scope.toggleTips = function($event) {
@@ -58,16 +58,6 @@ app.controller('WrapDatatablesCtrl', function($scope, $element) {
 
     this.showCode = !this.showCode;
     this.toggleCodeTip = this.showCode ? 'example' : 'source code';
-  };
-
-  $scope.addRow = function() {
-    var field1 = $element.find('.field').eq(0).val();
-    var field2 = $element.find('.field').eq(1).val();
-    var field3 = $element.find('.field').eq(2).val();
-    var field4 = $element.find('.field').eq(3).val();
-    var field5 = $element.find('.field').eq(4).val();
-    var field6 = $element.find('.field').eq(5).val();
-    $scope.dataset.push([field1, field2, field3, field4, field5, field6 ]);
   };
 
 });
