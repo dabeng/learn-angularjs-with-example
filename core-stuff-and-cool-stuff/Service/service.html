@@ -1,0 +1,83 @@
+<div ng-controller="ServiceCtrl">
+  <div class="toolbar">
+    <i class="feature-name"><a name="data-bind">A service is an injectable constructor</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-lg pull-right tool-btn" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
+    <script type="text/ng-template" id="transitionTips">
+      <p class="bg-primary">$broadcast -- dispatches the event downwards to all child scopes.</p>
+      <p class="bg-success">$emit -- dispatches the event upwards through the scope hierarchy to the $rootScope.</p>
+    </script>
+  </div>
+  <div class="content">
+    <div class="example" ng-class="{'hidden': showCode}">
+        <div class="col-md-6 ">
+          <h2>Username retrived from authentication service: {{ dataFromService }}</h2>
+          <h2><span class="label label-primary">Instruction</span></h2>
+          <ul class="instruction">
+            <li>Use Service when you need just a simple object such as a Hash, for example {foo:1, bar:2} .</li>
+            <li>It's easy to code, but you cannot instantiate it. A service is an injectable constructor. </li>
+            <li>If you want you can specify the dependencies that you need in the function. </li>
+            <li>A service is a singleton and will only be created once by AngularJS. Services are a great way for communicating between controllers like sharing data.</li>
+          </ul>
+        </div>
+        <div class="col-md-6 boilerplate">
+        <h2><span class="label label-primary">Boilerplate of creating service</span></h2>
+          <pre>
+            <code class="javascript"> 
+//define a service with service() method
+app.service('MyService', function () {
+  this.variable1 = someValue1;
+  this.variable2 = someValue2;
+
+  this.method1 = function () {
+     //TO DO:
+  };
+ 
+  this.function2 = function () {
+    //TO DO:
+   };
+});
+            </code>
+          </pre>
+        </div>
+    </div>
+    <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
+      <tab heading="index.html">
+        <pre>
+          <code class="html" ng-non-bindable>
+&lt;div ng-controller=&quot;ServiceCtrl&quot;&gt;
+  &lt;h2&gt;Authentication data retrived from service: {{ dataFromService }}&lt;/h2&gt;
+&lt;div&quot;&gt;
+          </code>
+        </pre>
+      </tab>
+      <tab heading="index.js">
+        <pre>
+          <code class="javascript">
+app.controller('ServiceCtrl', function($scope, $element, authenticationService) {
+
+  $scope.dataFromService = authenticationService.setName('Snoopy');
+
+});
+          </code>
+        </pre>
+      </tab>
+      <tab heading="authentication-service.js">
+        <pre>
+          <code class="javascript">
+app.service('authenticationService', function () {
+  this.name = '';
+  this.setName = function (newName) {
+    this.name = newName;
+    return this.name;
+   };
+ });
+          </code>
+        </pre>
+      </tab>
+    </tabset>
+  </div>
+
+
+</div>
