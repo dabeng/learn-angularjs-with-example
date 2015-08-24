@@ -11,20 +11,10 @@
   </div>
   <div class="content">
     <div class="example" ng-class="{'hidden': showCode}">
-        <div class="col-md-6 ">
-          <h2>Username retrived from authentication service: {{ dataFromService }}</h2>
-          <h2><span class="label label-primary">Instruction</span></h2>
-          <ul class="instruction">
-            <li>Use Service when you need just a simple object such as a Hash, for example {foo:1, bar:2} .</li>
-            <li>It's easy to code, but you cannot instantiate it. A service is an injectable constructor. </li>
-            <li>If you want you can specify the dependencies that you need in the function. </li>
-            <li>A service is a singleton and will only be created once by AngularJS. Services are a great way for communicating between controllers like sharing data.</li>
-          </ul>
-        </div>
-        <div class="col-md-6 boilerplate">
-        <h2><span class="label label-primary">Boilerplate of creating service</span></h2>
-          <pre>
-            <code class="javascript"> 
+      <div class="col-md-6 boilerplate">
+        <h2 class="crosshead"><span class="label label-primary">Boilerplate of creating service</span></h2>
+        <pre>
+          <code class="javascript"> 
 //define a service with service() method
 app.service('MyService', function () {
   this.variable1 = someValue1;
@@ -38,9 +28,19 @@ app.service('MyService', function () {
     //TO DO:
    };
 });
-            </code>
-          </pre>
-        </div>
+          </code>
+        </pre>
+      </div>
+      <div class="col-md-6 ">
+        <h2>Username retrived from authentication service: {{ dataFromService }}</h2>
+        <h2 class="crosshead"><span class="label label-primary">Instruction</span></h2>
+        <ul class="instruction">
+          <li>Use Service when you need just a simple object such as a Hash, for example {foo:1, bar:2} .</li>
+          <li>It's easy to code, but you cannot instantiate it. A service is an injectable constructor. </li>
+          <li>If you want you can specify the dependencies that you need in the function. </li>
+          <li>A service is a singleton and will only be created once by AngularJS. Services are a great way for communicating between controllers like sharing data.</li>
+        </ul>
+      </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
       <tab heading="index.html">

@@ -11,16 +11,8 @@
   </div>
   <div class="content">
     <div class="example" ng-class="{'hidden': showCode}">
-        <div class="col-md-6 ">
-          <h2>Username retrived from authentication factory: {{ dataFromFactory }}</h2>
-          <h2><span class="label label-primary">Instruction</span></h2>
-          <ul class="instruction">
-            <li>A factory is basically a function that returns an object representing the recipe. </li>
-            <li>We could have some variables private to the factory and some other logic not directly visible from the service object instance.</li>
-          </ul>
-        </div>
-        <div class="col-md-6 boilerplate">
-        <h2><span class="label label-primary">Boilerplate of creating factory</span></h2>
+      <div class="col-md-6 boilerplate">
+        <h2 class="crosshead"><span class="label label-primary">Boilerplate of creating factory</span></h2>
           <pre>
             <code class="javascript">
 //define a factory using factory() function
@@ -40,9 +32,17 @@ app.factory('myFactory', function () {
  
  return serviceObj;
 });
-            </code>
-          </pre>
-        </div>
+          </code>
+        </pre>
+      </div>
+      <div class="col-md-6 ">
+        <h2>Username retrived from authentication factory: {{ dataFromFactory }}</h2>
+        <h2 class="crosshead"><span class="label label-primary">Instruction</span></h2>
+        <ul class="instruction">
+          <li>A factory is basically a function that returns an object representing the recipe. </li>
+          <li>We could have some variables private to the factory and some other logic not directly visible from the service object instance.</li>
+        </ul>
+      </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
       <tab heading="index.html">

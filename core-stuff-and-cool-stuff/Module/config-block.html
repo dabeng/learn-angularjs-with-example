@@ -1,0 +1,45 @@
+<div ng-controller="ProviderCtrl">
+  <div class="toolbar">
+    <i class="feature-name"><a name="data-bind">Configuration block</a></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+  </div>
+  <div class="content">
+    <div class="example">
+      <div class="col-md-7 boilerplate">
+        <h2 class="crosshead"><span class="label label-primary">Example of configuration block</span></h2>
+        <pre>
+          <code class="javascript">
+app.config(function($stateProvider, $urlRouterProvider) {
+  // You can have as many of these as you want.
+  // You can only inject Providers (not instances)
+
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+     .state('home', {
+       url: '/',
+       templateUrl: 'modules/home/views/main.html'
+     })
+     .state('blogs', {
+       url: '/blogs',
+       templateUrl: 'modules/blogs/views/main.html'
+     })
+     .state('comments', {
+       url: '/comments',
+       templateUrl: 'modules/comments/views/main.html'
+     });
+
+]);
+            </code>
+          </pre>
+        </div>
+        <div class="col-md-5">
+          <h2 class="crosshead"><span class="label label-primary">Instruction</span></h2>
+          <ul class="instruction">
+            <li>The config function is useful to configure providers before they're actually created.</li>
+            <li>This is typically where you could configure application-wide stuff, such as the rout settings.</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>

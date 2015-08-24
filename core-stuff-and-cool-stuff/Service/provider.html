@@ -11,21 +11,10 @@
   </div>
   <div class="content">
     <div class="example" ng-class="{'hidden': showCode}">
-        <div class="col-md-6 ">
-          <h2>Username retrived from authentication provider: {{ dataFromProvider }}</h2>
-          <h2><span class="label label-primary">Instruction</span></h2>
-          <ul class="instruction">
-            <li>A provider is used to create a configurable service object. </li>
-            <li>It returns value by using $get() function.</li>
-            <li>The config function is useful to configure providers before they're actually created.</li>
-            <li>The run function could be useful to perform any kind of initialization after the objects instances registered in the module have already been created.</li>
-            <li>We can have multiple config and run functions in the same module.</li>
-          </ul>
-        </div>
-        <div class="col-md-6 boilerplate">
-        <h2><span class="label label-primary">Boilerplate of creating provider</span></h2>
-          <pre>
-            <code class="javascript">
+      <div class="col-md-6 boilerplate">
+        <h2 class="crosshead"><span class="label label-primary">Boilerplate of creating provider</span></h2>
+        <pre>
+          <code class="javascript">
 //define a provider using provider() function
 app.provider('custom', function () {
   // private variable
@@ -48,9 +37,20 @@ app.provider('custom', function () {
 app.config(function (customProvider) {
   myProviderProvider.method1('good luck');
 });
-            </code>
-          </pre>
-        </div>
+          </code>
+        </pre>
+      </div>
+      <div class="col-md-6 ">
+        <h2>Username retrived from authentication provider: {{ dataFromProvider }}</h2>
+        <h2 class="crosshead"><span class="label label-primary">Instruction</span></h2>
+        <ul class="instruction">
+          <li>A provider is used to create a configurable service object. </li>
+          <li>It returns value by using $get() function.</li>
+          <li>The config function is useful to configure providers before they're actually created.</li>
+          <li>The run function could be useful to perform any kind of initialization after the objects instances registered in the module have already been created.</li>
+          <li>We can have multiple config and run functions in the same module.</li>
+        </ul>
+      </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
       <tab heading="index.html">
