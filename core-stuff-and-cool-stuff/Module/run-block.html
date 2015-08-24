@@ -9,7 +9,10 @@
         <h2 class="crosshead"><span class="label label-primary">Example of run block</span></h2>
         <pre>
           <code class="javascript">
+// You can have as many of these as you want.
+// You can only inject instances (not Providers)
 app.run(function($rootScope, AuthService) {
+
   $rootScope.$on('$routeChangeStart',function(evt, next, current) {
     // If the user is NOT logged in
     if (!AuthService.userLoggedIn()) {
@@ -66,7 +69,7 @@ app.run(function($rootScope, AuthService) {
         <ul class="instruction">
           <li>The run function is useful to perform any kind of initialization after the objects instances registered in the module have already been created.</li>
           <li>Typically, this is where we can set up handlers for some events that happen at the global scale of the app.</li>
-          <li>For example, we could set up listeners for routing events or unauthenticated requests.</li>
+          <li>For example,  we wanna run a function that validates that we have an authenticated user every time we change route</li>
           <li>Especially, we could mock backend response in this region.</li>
         </ul>
       </div>

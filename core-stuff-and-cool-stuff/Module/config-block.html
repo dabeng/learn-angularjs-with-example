@@ -9,9 +9,9 @@
         <h2 class="crosshead"><span class="label label-primary">Example of configuration block</span></h2>
         <pre>
           <code class="javascript">
+// You can have as many of these as you want
+// You can only inject Providers (not instances)
 app.config(function($stateProvider, $urlRouterProvider) {
-  // You can have as many of these as you want.
-  // You can only inject Providers (not instances)
 
   $urlRouterProvider.otherwise("/");
 
