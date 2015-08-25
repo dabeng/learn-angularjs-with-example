@@ -35,7 +35,7 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 * [Directives](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
   * [Create custom directive -- Tag Pool](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
   * [Wrapping the existing awesome jQuery plugin -- Datatables](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
-* service & factory & provider
+* [service & factory & provider](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/services)
 
 ## Lesson 4 - backend-less development
 * ngResource
