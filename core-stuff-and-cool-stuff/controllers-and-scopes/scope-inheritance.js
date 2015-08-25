@@ -1,4 +1,7 @@
-app.controller('ScopeInheritanceCtrl', function($scope, $element, $timeout) {
+app.controller('ScopeInheritanceCtrl', function($scope, $element, $timeout,$location, $anchorScroll, $routeParams) {
+   // $location.hash($location.$$path.slice(1));
+   // $anchorScroll(); 
+
   $scope.toggleTips = function($event) {
     $scope.$emit('openTips', $event);
   };
