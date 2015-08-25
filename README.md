@@ -42,7 +42,7 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 * ngResource
 * ngMockE2E
 
-## Lesson 5 - practical app demonstration
+## [Lesson 5 - practical app demonstration](https://github.com/dabeng/cohort)
 * [Cohort](https://github.com/dabeng/cohort)
 
 ## Lesson 6 - sumup and best practices
