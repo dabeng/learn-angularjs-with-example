@@ -29,9 +29,9 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 * [AngularJS Material Design](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/material-design)
 
 ## [Lesson 3 - core stuff, cool stuff](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controller-scope)
-* [Controller and Scope](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controller-scope)
+* [Controllers and Scopes](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controller-scope)
   * Scope inheritance
-  * Controller communication
+  * [Controller communication](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes/#controller-communication)
 * Directive(wrapping Datatables)
   * Wrap the reusable dom fragment in a directive
   * Wrap the complicated plugin in a directive 
