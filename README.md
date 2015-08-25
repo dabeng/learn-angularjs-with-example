@@ -29,12 +29,12 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 * [AngularJS Material Design](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/material-design)
 
 ## [Lesson 3 - core stuff, cool stuff](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controller-scope)
-* [Controllers and Scopes](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controller-scope)
-  * Scope inheritance
-  * [Controller communication](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes/index.html#controller-communication)
-* Directive(wrapping Datatables)
-  * Wrap the reusable dom fragment in a directive
-  * Wrap the complicated plugin in a directive 
+* [Controllers and Scopes](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes)
+  * [Scope inheritance](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes)
+  * [Controller communication](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes/)
+* [Directives](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
+  * [Create custom directive -- Tag Pool](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
+  * [Wrapping the existing awesome jQuery plugin -- Datatables](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
 * service & factory & provider
 
 ## Lesson 4 - backend-less development
@@ -44,3 +44,7 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 ## Lesson 5 - practical app demonstration
 * Let's sumup what AnguarlJS can do for you
 * Cohort — https://github.com/dabeng/cohort
+
+## Lesson 6 - sumup and best practices
+* Let's sumup what AnguarlJS can do for you
+* coding style and best practives
