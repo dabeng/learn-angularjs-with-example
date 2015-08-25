@@ -1,0 +1,68 @@
+<div ng-controller="ScopeInheritanceCtrl">
+  <div class="toolbar">
+    <i class="feature-name"><a name="data-bind">Scope Inheritance</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'scopeTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <script type="text/ng-template" id="scopeTips">
+      <p class="bg-primary">Every application has a single top-most root scope. </p>
+      <p class="bg-success">All other scopes are descendant scopes of the root scope.</p>
+      <p class="bg-warning">Hence the $rootScope acts like a global variable. </p>
+    </script>
+  </div>
+  <div class="content">
+    <div class="example">
+      <div class="col-md-5">
+        <div class="nested-scopes">
+          <p><b>{{ subject }}</b><p>
+          <div ng-controller="MainController">
+            <p>Hi <b>{{ product }}</b>, I'm a <b>{{ job }}</b> programmer</p>
+            <div ng-controller="ChildController">
+              <p>Hello <b>{{ product }}</b>, I'm a <b>{{ job }}</b> programmer </p>
+              <div ng-controller="GrandChildController">
+                <p>Hello <b>{{ product }}</b>, I'm a <b>{{ job }}</b> programmer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 boilerplate">
+        <tabset class="pane-sourcecode">
+          <tab heading="html source code">
+            <pre>
+              <code class="html" ng-non-bindable>
+&lt;div class=&quot;nested-scopes&quot;&gt;
+  &lt;p&gt;{{ subject }}&lt;p&gt;
+  &lt;div ng-controller=&quot;MainController&quot;&gt;
+    &lt;p&gt;Hi {{ product }}, I'm a {{ job }} programmer&lt;/p&gt;
+    &lt;div ng-controller=&quot;ChildController&quot;&gt;
+      &lt;p&gt;Hi {{ product }}, I'm a {{ job }} programmer &lt;/p&gt;
+      &lt;div ng-controller=&quot;GrandChildController&quot;&gt;
+        &lt;p&gt;Hi {{ product }}, I'm a {{ job }} programmer&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </code>
+            </pre>
+          </tab>
+          <tab heading="javascript source code">
+            <pre>
+              <code class="javascript" ng-non-bindable>
+app.controller('MainController', function($scope, $rootScope) {
+  $rootScope.subject = "Today, we'll disscuss AngularJS.";
+  $scope.product = 'AngularJS';
+  $scope.job = 'front-end';
+})
+.controller('ChildController', function($scope) {
+  $scope.job = 'javascript';
+})
+.controller('GrandChildController', function($scope) {
+  $scope.job = 'MEAN.JS';
+});
+              </code>
+            </pre>
+          </tab>
+        </div>
+    </div>
+  </div>
+</div>
