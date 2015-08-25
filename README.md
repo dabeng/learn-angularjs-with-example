@@ -43,9 +43,8 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 * ngMockE2E
 
 ## Lesson 5 - practical app demonstration
-* Let's sumup what AnguarlJS can do for you
 * Cohort — https://github.com/dabeng/cohort
 
 ## Lesson 6 - sumup and best practices
-* Let's sumup what AnguarlJS can do for you
+* [Let's sumup what AnguarlJS can do for you](https://dabeng.github.io/amiable-angularjs/best-practices/sumup)
 * coding style and best practives
