@@ -13,11 +13,48 @@
   </div>
   <div class="content">
     <div class="example" ng-class="{'hidden': showCode}">
-        <div class="col-md-6" style="height:590px; ">
+        <div class="col-md-5" style="height:580px; ">
           <tag-pool datasource="tags"></tag-pool>
         </div>
-        <div class="col-md-6">
-          <h1><span class="label label-primary">Ready to append jQuery equivalent</span></h1>
+        <div class="col-md-7 boilerplate" >
+          <h2 class="crosshead"><span class="label label-primary">Boilerplate of creating custom directive</span></h2>
+           <pre>
+             <code class="javascript" style="font-size:1em;" ng-non-bindable>
+myApp.directive("myDirective", function () {
+  return {
+    //directive types: E = element, A = attribute, C = class, M = comment
+    restrict: "E",
+
+    //Isolated scope is required for building  self contained and reusable directive
+    scope: {
+      //@ set up a one-way binding from a local scope property(string) to the value of the DOM attribute
+      //= set up a two-way binding between the local scope property and the parent property
+      //& allow us to execute a function in the context of the parent scope
+    },
+
+    // define HTML markup
+    template: "&lt;div&gt;{{ myName }}&lt;/div&gt;",
+
+    // path to the template, used by the directive
+    templateUrl: 'mytemplate.html',
+
+    // replace original markup with template yes/no
+    replace: true | false, 
+
+    // It's like any other common controller
+    controller: function ($scope, $element, $attrs) {
+      //TODO:
+    },
+
+    // It's where we attach event listeners to DOM elements, 
+    // watch model properties for changes, and update the DOM
+    link: function (scope, element, attrs, controller) {
+      //TODO:
+    }
+  }
+});
+            </code>
+          </pre>
         </div>
     </div>
     <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
