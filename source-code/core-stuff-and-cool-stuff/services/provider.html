@@ -1,0 +1,97 @@
+<div ng-controller="ProviderCtrl">
+  <div class="toolbar">
+    <i class="feature-name"><a name="data-bind">A provider is a configurable factory</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-lg pull-right tool-btn" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
+    <script type="text/ng-template" id="transitionTips">
+      <p class="bg-primary">$broadcast -- dispatches the event downwards to all child scopes.</p>
+      <p class="bg-success">$emit -- dispatches the event upwards through the scope hierarchy to the $rootScope.</p>
+    </script>
+  </div>
+  <div class="content">
+    <div class="example" ng-class="{'hidden': showCode}">
+      <div class="col-md-6 boilerplate">
+        <h2 class="crosshead"><span class="label label-primary">Boilerplate of creating provider</span></h2>
+        <pre>
+          <code class="javascript">
+//define a provider using provider() function
+app.provider('custom', function () {
+  // private variable
+  var variable1 = '';
+  // invokable method in configuration phase
+  this.method1 = function (someValue) {
+    variable1 = someValue;
+  };
+  var method2 = function() {};
+
+  this.$get = function () {
+  return {
+    exposedVariable: variable1,
+    exposedMethod: method2
+   };
+  };
+}); 
+
+//configuring provider
+app.config(function (customProvider) {
+  myProviderProvider.method1('good luck');
+});
+          </code>
+        </pre>
+      </div>
+      <div class="col-md-6 ">
+        <h2>Username retrived from authentication provider: {{ dataFromProvider }}</h2>
+        <h2 class="crosshead"><span class="label label-primary">Instruction</span></h2>
+        <ul class="instruction">
+          <li>A provider is used to create a configurable service object. </li>
+          <li>It returns value by using $get() function.</li>
+          <li>The config function is useful to configure providers before they're actually created.</li>
+          <li>The run function could be useful to perform any kind of initialization after the objects instances registered in the module have already been created.</li>
+          <li>We can have multiple config and run functions in the same module.</li>
+        </ul>
+      </div>
+    </div>
+    <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
+      <tab heading="index.html">
+        <pre>
+          <code class="html" ng-non-bindable>
+&lt;div ng-controller=&quot;ProviderCtrl&quot;&gt;
+  &lt;h2&gt;Authentication data retrived from service: {{ dataFromProvider }}&lt;/h2&gt;
+&lt;div&quot;&gt;
+          </code>
+        </pre>
+      </tab>
+      <tab heading="index.js">
+        <pre>
+          <code class="javascript">
+app.controller('ProviderCtrl', function($scope, $element, authentication) {
+
+  $scope.dataFromProvider = authentication.name;
+
+});
+          </code>
+        </pre>
+      </tab>
+      <tab heading="authentication-provider.js">
+        <pre>
+          <code class="javascript">
+app.provider('authentication', function () {
+ var privateName = '';
+ this.setName = function (newName) {
+   privateName = newName;
+ };
+ this.$get = function () {
+ return {
+   name: privateName
+ };
+ };
+});
+          </code>
+        </pre>
+      </tab>
+    </tabset>
+  </div>
+
+
+</div>

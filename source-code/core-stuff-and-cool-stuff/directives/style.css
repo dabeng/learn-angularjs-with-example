@@ -1,0 +1,39 @@
+.tag-pool {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5em;
+  border: 1px solid #ccc;
+  font-size: 1.5em
+}
+
+.tp-input {
+  width: 10em;
+  height: 2.5em;
+  margin-top: 0.5em;
+  border: none;
+  border-bottom: 2px solid #337ab7;
+}
+
+.tp-tag {
+  padding: 0.5em 1em;
+  padding-right: 1.5em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  border-radius: 1.5em;
+  float: left;
+}
+
+.tp-close {
+  position: relative;
+  right:  -1em;
+}
+
+.tp-tag:hover {
+  cursor: pointer;
+}
+
+.tp-tag.selected {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}

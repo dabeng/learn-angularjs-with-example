@@ -1,0 +1,86 @@
+<div ng-controller="FactoryCtrl">
+  <div class="toolbar">
+    <i class="feature-name"><a name="data-bind">A factory is an injectable function.</a></i>
+    <i class="fa fa-lightbulb-o fa-lg tool-btn" popover-placement="bottom" popover-template="'transitionTips'" popover-append-to-body="true" ng-click="toggleTips($event)" tooltip="core tips"></i>
+    <i class="fa fa-star fa-lg" tooltip="difficulty coefficient"></i>
+    <i class="fa fa-lg pull-right tool-btn" ng-class="{'fa-code': !showCode,'fa-motorcycle': showCode}" tooltip="{{toggleCodeTip}}" ng-click="toggleCode()"></i>
+    <script type="text/ng-template" id="transitionTips">
+      <p class="bg-primary">$broadcast -- dispatches the event downwards to all child scopes.</p>
+      <p class="bg-success">$emit -- dispatches the event upwards through the scope hierarchy to the $rootScope.</p>
+    </script>
+  </div>
+  <div class="content">
+    <div class="example" ng-class="{'hidden': showCode}">
+      <div class="col-md-6 boilerplate">
+        <h2 class="crosshead"><span class="label label-primary">Boilerplate of creating factory</span></h2>
+          <pre>
+            <code class="javascript">
+//define a factory using factory() function
+app.factory('myFactory', function () {
+ 
+  var serviceObj = {};
+  serviceObj.variable1 = someValue1; 
+  serviceObj.variable2 = someValue2; 
+
+  serviceObj.method1 = function () {
+    //TO DO:
+  };
+ 
+  serviceObj.method2 = function () {
+   //TO DO:
+  };
+ 
+ return serviceObj;
+});
+          </code>
+        </pre>
+      </div>
+      <div class="col-md-6 ">
+        <h2>Username retrived from authentication factory: {{ dataFromFactory }}</h2>
+        <h2 class="crosshead"><span class="label label-primary">Instruction</span></h2>
+        <ul class="instruction">
+          <li>A factory is basically a function that returns an object representing the recipe. </li>
+          <li>We could have some variables private to the factory and some other logic not directly visible from the service object instance.</li>
+        </ul>
+      </div>
+    </div>
+    <tabset class="pane-sourcecode" ng-class="{'hidden': !showCode}">
+      <tab heading="index.html">
+        <pre>
+          <code class="html" ng-non-bindable>
+&lt;div ng-controller=&quot;FactoryCtrl&quot;&gt;
+  &lt;h2&gt;Authentication data retrived from service: {{ dataFromFactory }}&lt;/h2&gt;
+&lt;div&quot;&gt;
+          </code>
+        </pre>
+      </tab>
+      <tab heading="index.js">
+        <pre>
+          <code class="javascript">
+app.controller('FactoryCtrl', function($scope, $element, authenticationFactory) {
+
+  $scope.dataFromFactory = authenticationService.setName('Snoopy').name;
+
+});
+          </code>
+        </pre>
+      </tab>
+      <tab heading="authentication-factory.js">
+        <pre>
+          <code class="javascript">
+app.factory('authenticationFactory', function () {
+  var authent = {};
+  authent.name = '';
+  authent.setName = function (newName) {
+    authent.name = newName;
+  };
+ return authent;
+});
+          </code>
+        </pre>
+      </tab>
+    </tabset>
+  </div>
+
+
+</div>

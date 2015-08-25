@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/monokai_sublime.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body ng-controller="RootCtrl">
+<div class="row">
+  <h1 class="heading first-level">Services</h1>
+</div>
+<div class="row example-card" ng-include="'service.html'"></div>
+<div class="row example-card" ng-include="'factory.html'"></div>
+<div class="row example-card" ng-include="'provider.html'"></div>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/angular.min.js"></script>
+<script type="text/javascript" src="../../js/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="../../js/highlight.pack.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="authentication-service.js"></script>
+<script type="text/javascript" src="authentication-factory.js"></script>
+<script type="text/javascript" src="authentication-provider.js"></script>
+<script type="text/javascript" src="service.js"></script>
+<script type="text/javascript" src="factory.js"></script>
+<script type="text/javascript" src="provider.js"></script>
+</body>
+</html>
