@@ -45,6 +45,6 @@ So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission*
 ## [Lesson 5 - practical app demonstration](https://github.com/dabeng/cohort)
 * [Cohort](https://github.com/dabeng/cohort)
 
-## Lesson 6 - sumup and best practices
+## [Lesson 6 - sumup and best practices](https://dabeng.github.io/amiable-angularjs/best-practices/sumup.html)
 * [Let's sum up what AnguarlJS brings to us](https://dabeng.github.io/amiable-angularjs/best-practices/sumup.html)
 * coding style and best practives
