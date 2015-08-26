@@ -7,9 +7,9 @@ At present, in the field of front-end js framework, a hundred flowers bloom, a h
 
 I know there is an argument -- front-end engineers should **move from the monolithic frameworks** like AngularJS and Ember **to the small, dedicated libraries**. But **I don't think so**, if I do that, I have to dispose endless issues on integration of heterogeneous frameworks and put much more effort in digging into every single library in order to adjust some trivial details.
 
-Frankly, I'm a **lazy minimalist**, I **hate** the application that its features provided to the customers are **less than** the quantity of frameworks or libraries it includes. I love to get rid of anything I think of as ‘extra’. Don't waste any 1k of js framework you introduced into the apllication.Don't spend too much time in accomplishing MVC layering or data flowing, beacause we are deveoping application on top of framework not inventing new framework. So I love AngularJS, it's my type. 
+Frankly, I'm a **lazy minimalist**, I **hate** the application that its features provided to the customers are **less than** the quantity of frameworks or libraries it includes. I love to get rid of anything I think of as ‘extra’. Don't waste any 1k of js framework you introduced into the apllication.Don't spend too much time in accomplishing MVC layering or data flowing, beacause we are **deveoping application** on top of framework **not inventing new framework**.
 
-Additionally, someone claims that angularjs **1.x is out**, AngularJS 2.0 is entirely new version. It looks quite different. I won't use AngularJS any more, at least for now.But I want to tell you that, by the time the **ES6 truly arrives**, Which framework is not going to change correspondingly? 
+Additionally, someone claims that angularjs **1.x is out**, AngularJS **2.0 is entirely new version**. It looks quite different. I won't use AngularJS any more, at least for now.But I want to tell you that, by the time the **ES6 truly arrives**, Which framework is not going to change correspondingly? 
 
 So It's not big deal. It's **too soon to panic** on AngularJS. It's **our mission** and **our fate** to be prepared for change and look forward to learning what is coming around the corner.Isn't it? Come on, just enjoy it.
 
