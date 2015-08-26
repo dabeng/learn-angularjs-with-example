@@ -5,7 +5,7 @@ Before we begin, I put forwrad my individual opinions about AngularJS:
 
 At present, in the field of front-end js framework, a hundred flowers bloom, a hundred schools of thought contend. Personally, I prefer AngularJS, because it supply a comprehensive front-end solution, **make me focus on business logic** rather than high-end techniques full of **obscure syntax and ugly writing**. 
 
-I know there is an argument -- front-end engineers should **move from the monolithic frameworks** like AngularJS and Ember **to the small, dedicated libraries**. But **I don't think so**, if I do that, I have to dispose endless issues on integration of various elements and put much more effort in digging into every single library in order to adjust some trivial details.
+I know there is an argument -- front-end engineers should **move from the monolithic frameworks** like AngularJS and Ember **to the small, dedicated libraries**. But **I don't think so**, if I do that, I have to dispose endless issues on integration of heterogeneous frameworks and put much more effort in digging into every single library in order to adjust some trivial details.
 
 Frankly, I'm a **lazy minimalist**, I **hate** the application that its features provided to the customers are **less than** the quantity of frameworks or libraries it includes. I love to get rid of anything I think of as ‘extra’. So I love AngularJS, it's my type. 
 
