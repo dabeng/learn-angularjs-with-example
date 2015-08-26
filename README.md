@@ -11,7 +11,7 @@ Frankly, I'm a **lazy minimalist**, I **hate** the application that its features
 
 Additionally, someone claims that angularjs **1.x is out**, AngularJS 2.0 is entirely new version. It looks quite different. I won't use AngularJS any more, at least for now.But I want to tell you that, by the time the **ES6 truly arrives**, Which framework is not going to change correspondingly? 
 
-So It's not big deal. It's *too soon to panic* on AngularJS. It's **our mission** and **our fate** to be prepared for change and look forward to learning what is coming around the corner.Isn't it? Come on, just enjoy it.
+So It's not big deal. It's **too soon to panic** on AngularJS. It's **our mission** and **our fate** to be prepared for change and look forward to learning what is coming around the corner.Isn't it? Come on, just enjoy it.
 
 
 ## [Lesson 1 - jQuery vs AngularJS == outside DOM vs inside DOM](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/)
