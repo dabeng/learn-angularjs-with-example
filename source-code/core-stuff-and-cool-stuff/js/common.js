@@ -1,5 +1,5 @@
-var app = angular.module('myApp', ['ui.bootstrap'])
-  .controller('RootCtrl', function($scope, $rootScope) {
+var app = angular.module('myApp', ['ui.bootstrap', 'ngRoute'])
+.controller('RootCtrl', function($scope, $rootScope) {
 
     $scope.$on('openTips', function(event, data) {
       var popover = angular.element('.popover');

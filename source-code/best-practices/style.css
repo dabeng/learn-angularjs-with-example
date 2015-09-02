@@ -1,0 +1,14 @@
+.sumup {
+  height: 590px;
+  overflow-y: auto;
+}
+
+.crosshead {
+  margin-top: 0px;
+}
+p {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #666;
+  margin-bottom: 1.5em;
+}

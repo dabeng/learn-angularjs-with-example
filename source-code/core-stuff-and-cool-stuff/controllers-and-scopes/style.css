@@ -1,0 +1,6 @@
+.nested-scopes ,.nested-scopes div {
+  padding: 10px;
+  border: solid 2px #5cb85c;
+  font-size: 18px;
+  color: #666;	
+}
