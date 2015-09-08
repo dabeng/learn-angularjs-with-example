@@ -1,4 +1,4 @@
-# amiable-angularjs
+# Learn AngularJS with example
 AngularJS is amiable js framework as well as powerful. Let's step to her inch by inch.
 
 Before we begin, I put forwrad my individual opinions about AngularJS:
