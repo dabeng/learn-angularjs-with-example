@@ -9,7 +9,7 @@ I know there is an argument -- front-end engineers should **move from the monoli
 
 Frankly, I'm a **lazy minimalist**, I **hate** the application that its features provided to the customers are **less than** the quantity of frameworks or libraries it includes. I love to get rid of anything I think of as ‘extra’. Don't waste any 1k of js framework you introduced into the apllication.Don't spend too much time in accomplishing MVC layering or data flowing, beacause we are **deveoping application** on top of framework **not inventing new framework**.
 
-Additionally, someone claims that angularjs **1.x is out**, AngularJS **2.0 is entirely new version**. It looks quite different. I won't use AngularJS any more, at least for now.But I want to tell you that, by the time the **web components era truly arrives**, Which framework is not going to change correspondingly? 
+Additionally, someone claims that angularjs **1.x is out**, AngularJS **2.0 is entirely new version**. It looks quite different. I want to wait and see a litte more.But I want to tell you that, by the time the **web components era truly arrives**, Which framework is not going to change correspondingly? 
 
 So It's not big deal. It's **too soon to panic** on AngularJS. It's **our mission** and **our fate** to be prepared for change and look forward to learning what is coming around the corner.Isn't it? Come on, just enjoy it.
 
