@@ -14,29 +14,29 @@ Additionally, someone claims that angularjs **1.x is out**, AngularJS **2.0 is e
 So It's not big deal. It's **too soon to panic** on AngularJS. It's **our mission** and **our fate** to be prepared for change and look forward to learning what is coming around the corner.Isn't it? Come on, just enjoy it.
 
 
-## [Lesson 1 - jQuery vs AngularJS == outside DOM vs inside DOM](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/)
-* [Event-Binding](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#event-bind)
-* [Two-way Data-Binding](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#data-bind)
-* [Show/Hide Control](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#show-hide)
-* [Switch Dom Structure](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#switch-dom)
-* [More free rendering](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#free-render)
-* [Filter is awesome](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/index.html#filter)
-* [$watch() + $digest() + $apply()](https://dabeng.github.io/amiable-angularjs/outside-dom-vs-inside-dom/#watcher)
+## [Lesson 1 - jQuery vs AngularJS == outside DOM vs inside DOM](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/)
+* [Event-Binding](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/index.html#event-bind)
+* [Two-way Data-Binding](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/index.html#data-bind)
+* [Show/Hide Control](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/index.html#show-hide)
+* [Switch Dom Structure](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/index.html#switch-dom)
+* [More free rendering](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/index.html#free-render)
+* [Filter is awesome](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/index.html#filter)
+* [$watch() + $digest() + $apply()](https://dabeng.github.io/learn-angularjs-with-example/outside-dom-vs-inside-dom/#watcher)
 
-## [Lesson 2 - Angularjs and UI Design](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/collaboration)
-* [collaboration between UE designer and ng developer](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/collaboration)
-* [Vivify layout of webapp with ngClass & ngAnimate](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/animation)
-* [AngularJS Material Design](https://dabeng.github.io/amiable-angularjs/angularjs-and-ui-design/material-design)
+## [Lesson 2 - Angularjs and UI Design](https://dabeng.github.io/learn-angularjs-with-example/angularjs-and-ui-design/collaboration)
+* [collaboration between UE designer and ng developer](https://dabeng.github.io/learn-angularjs-with-example/angularjs-and-ui-design/collaboration)
+* [Vivify layout of webapp with ngClass & ngAnimate](https://dabeng.github.io/learn-angularjs-with-example/angularjs-and-ui-design/animation)
+* [AngularJS Material Design](https://dabeng.github.io/learn-angularjs-with-example/angularjs-and-ui-design/material-design)
 
-## [Lesson 3 - core stuff, cool stuff](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controller-scope)
-* [Controllers and Scopes](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes)
-  * [Scope inheritance](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes)
-  * [Controller communication](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/controllers-and-scopes/)
-* [Directives](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
-  * [Create custom directive -- Tag Pool](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
-  * [Wrapping the existing awesome jQuery plugin -- Datatables](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/directives)
-* [service vs factory vs provider](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/services)
-* [modules](https://dabeng.github.io/amiable-angularjs/core-stuff-and-cool-stuff/modules)
+## [Lesson 3 - core stuff, cool stuff](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/controller-scope)
+* [Controllers and Scopes](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/controllers-and-scopes)
+  * [Scope inheritance](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/controllers-and-scopes)
+  * [Controller communication](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/controllers-and-scopes/)
+* [Directives](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/directives)
+  * [Create custom directive -- Tag Pool](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/directives)
+  * [Wrapping the existing awesome jQuery plugin -- Datatables](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/directives)
+* [service vs factory vs provider](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/services)
+* [modules](https://dabeng.github.io/learn-angularjs-with-example/core-stuff-and-cool-stuff/modules)
 
 ## Lesson 4 - backend-less development
 * ngResource
@@ -45,6 +45,6 @@ So It's not big deal. It's **too soon to panic** on AngularJS. It's **our missio
 ## [Lesson 5 - practical app demonstration](https://github.com/dabeng/cohort)
 * [Cohort](https://github.com/dabeng/cohort)
 
-## [Lesson 6 - sumup and best practices](https://dabeng.github.io/amiable-angularjs/best-practices/sumup.html)
-* [Let's sum up what AnguarlJS brings to us](https://dabeng.github.io/amiable-angularjs/best-practices/sumup.html)
+## [Lesson 6 - sumup and best practices](https://dabeng.github.io/learn-angularjs-with-example/best-practices/sumup.html)
+* [Let's sum up what AnguarlJS brings to us](https://dabeng.github.io/learn-angularjs-with-example/best-practices/sumup.html)
 * coding style and best practives
